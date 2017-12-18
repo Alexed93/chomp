@@ -25,6 +25,7 @@ $color-nav: $color-link;
 \*----------------------------------------------------------------*/
 
 .nav-container {
+    position: relative;
 }
 
 
@@ -38,9 +39,38 @@ $color-nav: $color-link;
 }
 
 .nav__item {
+    margin-bottom: 0;
+
+    &.is-current .nav__link {
+        color: $italian;
+        border-bottom: 1px solid $italian;
+    }
+
+    @include respond-min($bp2) {
+        display: inline-block;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
 }
 
 .nav__link {
+    display: block;
+    padding: $base*0.4 $base/4;
+    color: $color-text;
+    font-weight: $weight-light;
+    border-bottom: 1px solid rgba(112, 112, 112, .25);
+    transition: all .2s;
+
+    @include respond-min($bp2) {
+        padding: 0;
+    }
+
+    &:hover, &:focus {
+        color: $italian;
+        border-bottom: 1px solid $italian;
+    }
 }
 
 
@@ -49,6 +79,28 @@ $color-nav: $color-link;
 \*----------------------------------------------------------------*/
 
 .nav--primary {
+    font-size: 1.5rem;
+
+    @include respond-min($bp2) {
+        margin-left: .75em;
+        font-size: 1.4rem;
+
+        .nav__item {
+            margin-left: $base;
+        }
+    }
+
+    @include respond-min($bp3) {
+        margin-top: $base*2.14;
+
+        .nav__item {
+            margin-left: $base;
+        }
+    }
+
+    @include respond-min($bp4) {
+        margin-top: $base*1.325;
+    }
 }
 
 
@@ -57,6 +109,40 @@ $color-nav: $color-link;
 \*----------------------------------------------------------------*/
 
 .nav--secondary {
+    padding: $base/3 0;
+    margin-bottom: $base;
+    text-align: right;
+    background: rgba(225, 225, 225, 0.25);
+
+    .nav__item {
+        position: relative;
+        margin-left: $base*3;
+        display: inline-block;
+        font-size: .7rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover, &:focus {
+            color: $color-text;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+        }
+
+        @include respond-min($bp2) {
+            margin-left: $base*3;
+
+            .icon {
+                left: -25px;
+            }
+        }
+    }
 }
 
 

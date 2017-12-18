@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: $base;
     line-height: 1.2;
-    font-weight: $weight-normal;
+    font-weight: $weight-light;
 }
 
 pre, p, ul, ol, dl, hr {
@@ -98,5 +98,28 @@ strong {
 
     @include respond-min($bp5) {
         font-size: 2.88rem; // 52px
+    }
+}
+
+h1.sub-heading {
+    @include respond-min($bp2) {
+        color: $white;
+    }
+}
+
+h1.sub-heading--inverted {
+    @include respond-min($bp2) {
+        color: $color-text;
+    }
+}
+
+a.sub-link {
+    text-align: center;
+    border: none;
+    text-decoration: underline;
+
+    @include respond-min($bp2) {
+        text-align: right;
+        float: right;
     }
 }

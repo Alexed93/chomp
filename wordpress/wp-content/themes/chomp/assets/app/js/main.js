@@ -38,9 +38,3 @@ grunticon([
     stylesheet.dir + "/assets/dist/grunticon/icons.data.png.css",
     stylesheet.dir + "/assets/dist/grunticon/icons.fallback.css"
 ]);
-
-// grunticon([
-//     "/content/themes/chomp/assets/dist/grunticon/icons.data.svg.css",
-//     "/content/themes/chomp/assets/dist/grunticon/icons.data.png.css",
-//     "/content/themes/chomp/assets/dist/grunticon/icons.fallback.css"
-// ]);

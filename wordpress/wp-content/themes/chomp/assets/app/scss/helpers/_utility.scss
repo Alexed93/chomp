@@ -43,6 +43,8 @@
     margin: $base;
 }
 
+
+
 .u-push-top {
     margin-top: $base;
 }
@@ -58,6 +60,8 @@
 .u-push-top\/4 {
     margin-top: $base/4;
 }
+
+
 
 .u-push-bottom {
     margin-bottom: $base;
@@ -75,6 +79,8 @@
     margin-bottom: $base/4;
 }
 
+
+
 .u-push-right {
     margin-right: $base;
 }
@@ -82,6 +88,38 @@
 .u-pull-right {
     margin-right: -$base;
 }
+
+.u-push-right\@2 {
+    margin-right: $base*2;
+}
+
+.u-push-right\/2 {
+    margin-right: $base/2;
+}
+
+.u-push-right\/4 {
+    margin-right: $base/4;
+}
+
+
+
+.u-push-left {
+    margin-left: $base;
+}
+
+.u-pull-left {
+    margin-left: -$base;
+}
+
+.u-push-left\/2 {
+    margin-left: $base/2;
+}
+
+.u-push-left\/4 {
+    margin-left: $base/4;
+}
+
+
 
 .u-display-block {
     display: block;
@@ -94,6 +132,7 @@
 .u-display-none {
     display: none;
 }
+
 
 .u-vertical-top {
     vertical-align: top;
@@ -119,6 +158,14 @@
     padding-bottom: $base*2;
 }
 
+.u-pad-top {
+    padding-top: $base;
+}
+
+.u-pad-top\@2 {
+    padding-top: $base*2;
+}
+
 
 
 /* $. Positioning
@@ -133,6 +180,9 @@
 .u-float-none   { float: none; }
 .u-float-left   { float: left; }
 .u-float-right  { float: right; }
+
+/* Margin specific */
+.u-margin-center { margin: 0 auto; }
 
 /* Size specific */
 .u-float-right-bp4 {
@@ -154,7 +204,7 @@
 .u-size-large      { font-size: 1.3rem; }
 
 /* Weight */
-.u-weight-normal   { font-weight: $weight-normal; }
+.u-weight-light   { font-weight: $weight-light; }
 .u-weight-medium   { font-weight: $weight-medium; }
 .u-weight-bold     { font-weight: $weight-bold; }
 
