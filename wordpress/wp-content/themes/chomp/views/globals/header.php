@@ -27,9 +27,9 @@
                 <?php wp_nav_menu( array('theme_location' => 'primary', 'items_wrap' => '%3$s') ); ?>
             </ul>
 
-            <ul class="nav nav--secondary">
-                <?php wp_nav_menu( array('theme_location' => 'secondary', 'items_wrap' => '%3$s') ); ?>
-            </ul>
+            <!-- <ul class="nav nav--secondary">
+                <?php //wp_nav_menu( array('theme_location' => 'secondary', 'items_wrap' => '%3$s') ); ?>
+            </ul> -->
         </nav>
     </div>
 </header>
