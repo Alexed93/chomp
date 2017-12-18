@@ -1,8 +1,60 @@
+.icon--Alcohol { background-image: url('png/Alcohol.png'); background-repeat: no-repeat; }
+
+.icon--American { background-image: url('png/American.png'); background-repeat: no-repeat; }
+
+.icon--Chinese { background-image: url('png/Chinese.png'); background-repeat: no-repeat; }
+
+.icon--English { background-image: url('png/English.png'); background-repeat: no-repeat; }
+
+.icon--Family-Friendly { background-image: url('png/Family-Friendly.png'); background-repeat: no-repeat; }
+
+.icon--French { background-image: url('png/French.png'); background-repeat: no-repeat; }
+
+.icon--Indian { background-image: url('png/Indian.png'); background-repeat: no-repeat; }
+
+.icon--Italian { background-image: url('png/Italian.png'); background-repeat: no-repeat; }
+
+.icon--Open-Late { background-image: url('png/Open-Late.png'); background-repeat: no-repeat; }
+
+.icon--Opening { background-image: url('png/Opening.png'); background-repeat: no-repeat; }
+
+.icon--Parking { background-image: url('png/Parking.png'); background-repeat: no-repeat; }
+
+.icon--Phone { background-image: url('png/Phone.png'); background-repeat: no-repeat; }
+
+.icon--Thai { background-image: url('png/Thai.png'); background-repeat: no-repeat; }
+
+.icon--Website { background-image: url('png/Website.png'); background-repeat: no-repeat; }
+
+.icon--chevron-down-white { background-image: url('png/chevron-down-white.png'); background-repeat: no-repeat; }
+
+.icon--chevron-right-white { background-image: url('png/chevron-right-white.png'); background-repeat: no-repeat; }
+
+.icon--download { background-image: url('png/download.png'); background-repeat: no-repeat; }
+
+.icon--email--italian { background-image: url('png/email--italian.png'); background-repeat: no-repeat; }
+
+.icon--facebook--italian { background-image: url('png/facebook--italian.png'); background-repeat: no-repeat; }
+
+.icon--grid--active { background-image: url('png/grid--active.png'); background-repeat: no-repeat; }
+
+.icon--list--inactive { background-image: url('png/list--inactive.png'); background-repeat: no-repeat; }
+
 .icon--logo-mixd { background-image: url('png/logo-mixd.png'); background-repeat: no-repeat; }
+
+.icon--logo { background-image: url('png/logo.png'); background-repeat: no-repeat; }
+
+.icon--logout { background-image: url('png/logout.png'); background-repeat: no-repeat; }
 
 .icon--menu-close { background-image: url('png/menu-close.png'); background-repeat: no-repeat; }
 
 .icon--menu-open { background-image: url('png/menu-open.png'); background-repeat: no-repeat; }
 
+.icon--search { background-image: url('png/search.png'); background-repeat: no-repeat; }
+
 .icon--select { background-image: url('png/select.png'); background-repeat: no-repeat; }
+
+.icon--twitter--italian { background-image: url('png/twitter--italian.png'); background-repeat: no-repeat; }
+
+.icon--user-icon { background-image: url('png/user-icon.png'); background-repeat: no-repeat; }
 
