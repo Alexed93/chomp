@@ -16,7 +16,7 @@
  * $. Update permalinks
  * $. Allow SVG uploads
  * $. Stop core updates from admin area
- *
+ * $. Custom caps for restaurant cpt and restaurant admin role
  */
 
 
@@ -263,3 +263,24 @@ function chomp_stop_core_updates ( $a ) {
 }
 
 add_filter( 'pre_site_transient_update_core', 'chomp_stop_core_updates' );
+
+
+/**
+ * $. Caps for administrator role and restaurant cpt
+ ******************************************************************************/
+
+add_action( 'init', 'add_restaurant_caps_admin');
+
+function add_restaurant_caps_admin() {
+    $role = get_role( 'administrator' );
+
+    $role->add_cap( 'edit_restaurant' );
+    $role->add_cap( 'edit_restaurants' );
+    $role->add_cap( 'edit_others_restaurants' );
+    $role->add_cap( 'publish_restaurants' );
+    $role->add_cap( 'read_restaurant' );
+    $role->add_cap( 'read_private_restaurants' );
+    $role->add_cap( 'delete_restaurant' );
+    $role->add_cap( 'edit_published_restaurants' );
+    $role->add_cap( 'delete_published_restaurants' );
+}

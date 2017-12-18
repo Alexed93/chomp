@@ -23,7 +23,7 @@
  ******************************************************************************/
 //require_once( 'models/post-types/public.php' );
 //require_once( 'models/post-types/private.php' );
-
+require_once( 'models/post-types/restaurant.php' );
 
 
 /**
