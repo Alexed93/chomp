@@ -284,3 +284,4 @@ function add_restaurant_caps_admin() {
     $role->add_cap( 'edit_published_restaurants' );
     $role->add_cap( 'delete_published_restaurants' );
 }
+example
