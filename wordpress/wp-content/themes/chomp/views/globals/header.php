@@ -16,36 +16,38 @@
 
 <a href="#navigation" class="is-hidden">Skip to Navigation</a>
 
-<header class="header">
+<header class="header"> <!-- Header area -->
 
-    <div class="nav nav--secondary">
-        <div class="container">
+    <div class="nav nav--secondary"> <!-- Log in/out, My account -->
+        <div class="container"> <!-- Container for secondary nav -->
             <ul>
                 <li class="nav__item">
                     <span class="icon icon--small icon--user-icon"></span>
                     <a href="#" class="nav__link u-display-inline">My account</a>
-                </li>
+                </li> <!-- End my account -->
                 <li class="nav__item">
                     <span class="icon icon--small icon--logout"></span>
                     <a href="#" class="nav__link u-display-inline">Logout</a>
-                </li>
+                </li> <!-- End log in/out -->
             </ul>
-        </div>
-    </div>
+        </div> <!-- End container secondary nav -->
+    </div> <!-- End secondary nav -->
 
-    <div class="container cf">
+    <div class="container cf"> <!-- Container for primary nav -->
 
+        <!-- Main logo link -->
         <a href="index.html" class="logo header__logo">
             <span class="is-hidden"><?php bloginfo( 'name' ); ?></span>
-            <span class="icon icon--logo"></span>
+            <span class="icon icon--logo"></span> <!-- Main logo icon -->
         </a>
 
+        <!-- Mobile navigation (burger menu) -->
         <button class="toggle | js-toggle-nav | header__toggle header__toggle--nav" role="button" aria-label="Toggle navigation">
             <span class="toggle__label | is-hidden">Toggle navigation</span>
             <span class="toggle__icon toggle__icon--nav | icon icon--medium icon--menu-open"></span>
         </button>
 
-        <nav class="nav-container | header__nav" id="navigation" role="navigation">
+        <nav class="nav-container | header__nav" id="navigation" role="navigation"> <!-- Container for primary nav -->
             <ul class="nav nav--primary">
                 <?php wp_nav_menu( array('theme_location' => 'primary', 'items_wrap' => '%3$s') ); ?>
             </ul>
