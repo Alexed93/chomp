@@ -1,0 +1,117 @@
+/**
+ * Title:
+ *    Search
+ * Description:
+ *    Toggle switch
+ *    Filters
+
+
+
+/* $. Stuff
+\*----------------------------------------------------------------*/
+
+.search-area {
+	padding-top: $base;
+
+	@include respond-min($bp2) {
+		padding-top: 0;
+		clear: both;
+	}
+
+	@include respond-min($bp5) {
+		padding-top: $base;
+	}
+}
+
+.filter-area {
+	display: none;
+
+	.is-active-form & {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.filter-area form {
+	padding-bottom: $base*3;
+}
+
+.filter-toggle {
+	margin: $base*1.5 0 $base*1 0;
+
+	@include respond-min($bp3) {
+		float: left;
+		margin-left: $base*2;
+		margin-top: 0;
+		line-height: 2;
+	}
+}
+
+/* $. Toggle switch
+\*----------------------------------------------------------------*/
+// Toggle switch made using this codepen as a base https://codepen.io/mburnette/pen/LxNxNg
+
+input[type=checkbox].toggle-switch {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.toggle-switch__label {
+	width: 75px;
+	height: 35px;
+	position: relative;
+	cursor: pointer;
+	background: $grey;
+	border-radius: 25px;
+	text-indent: -9999px;
+
+	&:after {
+		content: '';
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		background: $white;
+		border-radius: 50%;
+		transition: all 0.3s ease;
+	}
+
+	@include respond-min($bp3) {
+		display: inline-block;
+		margin-left: $base/2;
+	}
+}
+
+input:checked.toggle-switch + .toggle-switch__label {
+	background: $italian;
+}
+
+input:checked.toggle-switch + .toggle-switch__label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+/* $. Filters
+\*----------------------------------------------------------------*/
+
+.options-cuisine, .options-additional {
+	@include respond-min($bp3) {
+		float: left;
+	}
+}
+
+.options-cuisine {
+	@include respond-min($bp3) {
+		max-width: 350px;
+		margin-left: 5em;
+
+		.options-cuisine__list {
+			li {
+				width: 50%;
+				float: left;
+			}
+		}
+	}
+}

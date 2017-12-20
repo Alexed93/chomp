@@ -16,11 +16,45 @@
 
 .footer {
     @extend %cf;
+    position: relative;
+    padding: $base 0;
+    background: #626262;
+    color: $white;
 }
 
-.footer__logo {
+.footer__link {
+    color: $white;
+    border-bottom: 1px solid $white;
+
+    &:hover, &:focus {
+        color: darken($white, 15%);
+        border-bottom: 1px solid darken($white, 15%);
+    }
 }
 
+/* $. Social Media
+\*----------------------------------------------------------------*/
+.social-media {
+    margin-top: $base*1.5;
+
+    @include respond-min($bp3) {
+        margin-top: 0;
+        text-align: right;
+    }
+
+    a {
+        margin-left: $base/2;
+        border-bottom: none;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        @include respond-min($bp2) {
+            margin-left: $base;
+        }
+    }
+}
 
 
 /* $. Copyright
@@ -28,4 +62,30 @@
 
 .copyright {
     @extend %cf;
+    background: $white;
+
+    a {
+        color: $color-text;
+        border-bottom: 1px solid rgba(112, 112, 112, .25);
+        transition: all .2 ease;
+
+        &:hover {
+            color: darken($color-text, 15%);
+            border-bottom: 1px solid rgba(112, 112, 112, 1);
+        }
+    }
+}
+
+.copyright__links {
+    list-style: none;
+    margin: 0;
+}
+
+.copyright__link {
+    display: inline-block;
+    margin-left: $base/5;
+
+    &:first-child {
+        margin-left: 0;
+    }
 }

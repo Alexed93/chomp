@@ -1,0 +1,91 @@
+/**
+ * Title:
+ *    Slider
+ * Description:
+ *    Slider area of summary restaurant cards (uses slick slider)
+ */
+
+.slider__container {
+	position: relative;
+
+	@include respond-min($bp2) {
+		width: 55%;
+		float: left;
+	}
+}
+
+.slider {
+
+	    visibility: hidden;
+
+}
+
+.slider.slick-initialized {
+    visibility: visible;
+
+}
+
+.slider img {
+	width: auto;
+	height: 100%;
+	max-height: 300px;
+	text-align: center;
+
+	@include respond-min($bp2) {
+		height: 100%;
+		max-height: 400px;
+	}
+
+	@include respond-min($bp3) {
+
+	}
+}
+
+.slider-nav {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	img {
+		width: 70px !important;
+		height: 100% !important;
+	}
+
+	@include respond-min($bp2) {
+		img {
+			width: auto !important;
+		}
+	}
+}
+
+.slider {
+	.slick-list {
+		.slick-track {
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+}
+
+.slider-nav {
+	.slick-list {
+		.slick-track {
+			height: 50px;
+			background: rgba(0,0,0,.5);
+
+			.slick-current {
+				opacity: .5;
+			}
+		}
+	}
+}
+
+.slick-list {
+	padding: 0 !important;
+}
+
+.slick-slide {
+}

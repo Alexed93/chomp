@@ -1,0 +1,30 @@
+/**
+ * Title:
+ *    Comments
+ * Description:
+ *    Comments
+ */
+
+.comment {
+	background: #F8F8F8;
+	clear: both;
+}
+
+.profilepicture {
+	margin-bottom: $base;
+
+	@include respond-min($bp2) {
+		max-width: 100px;
+		width: 15%;
+		height: 100%;
+		float: left;
+		margin: 0 $base 0 0;
+	}
+}
+
+.comment__text {
+	@include respond-min($bp2) {
+		width: 80%;
+		float: right;
+	}
+}

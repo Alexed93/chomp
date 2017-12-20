@@ -1,0 +1,58 @@
+/**
+ * Title:
+ *    Voucher
+ * Description:
+ *    Voucher on home page
+
+
+/* $. Voucher
+\*----------------------------------------------------------------*/
+
+.voucher {
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+    border-radius: 3px;
+}
+
+.voucher__img {
+    width: 100%;
+    height: auto;
+
+    @include respond-min($bp4) {
+        max-height: 500px;
+    }
+}
+
+.voucher__text {
+    height: auto;
+    padding: $base;
+    background: $italian;
+    color: $white;
+    border-radius: 3px;
+
+    @include respond-min($bp3) {
+        width: 40%;
+        position: absolute;
+        top: $base*2;
+        left: $base*2;
+    }
+}
+
+.deal {
+    @include respond-min($bp3) {
+        width: 65%;
+        display: inline-block;
+        float: left;
+    }
+}
+
+.qr {
+    @include respond-min($bp3) {
+        img {
+            width: 30%;
+            display: inline-block;
+            float: right;
+        }
+    }
+}

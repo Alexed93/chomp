@@ -29,7 +29,7 @@
 .icon {
     @include icon-size($icon);
     display: inline-block;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     max-width: 100%;
 }
@@ -44,7 +44,21 @@
 .icon--medium { @include icon-size($icon-medium); }
 .icon--large { @include icon-size($icon-large); }
 .icon--xlarge { @include icon-size($icon-xlarge); }
+.icon--xxlarge { @include icon-size($icon-xxlarge); }
 
 /* Logos */
 .icon--logo {
+    width: 125px;
+    height: 60px;
+    background-size: contain;
+
+    @include respond-min($bp2) {
+        width: 150px;
+        height: 75px;
+    }
+
+    @include respond-min($bp4) {
+        width: 175px;
+        height: 85px;
+    }
 }

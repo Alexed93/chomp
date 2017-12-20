@@ -16,6 +16,7 @@
 form {
     @extend %cf;
     margin: 0 0 ($base*1.5) 0;
+    position: relative;
 }
 
 fieldset {
@@ -112,4 +113,57 @@ fieldset:last-child {
 .test--no-opacity .select {
     box-shadow: none;
     border: 1px solid $grey-light;
+}
+
+/* $. Stuff
+\*----------------------------------------------------------------*/
+
+.popular__link {
+    color: $white;
+    border-bottom: none;
+
+    &:hover {
+        color: $italian;
+    }
+}
+
+/* $. Modifications
+\*----------------------------------------------------------------*/
+.form--search {
+    max-width: 500px;
+}
+
+.form-search--filter {
+    max-width: 500px;
+
+    @include respond-min($bp3) {
+        min-width: 500px;
+        float: left;
+    }
+}
+
+.form--sign-up {
+    max-width: 300px;
+}
+
+.form-search--filter {
+    .popular__link {
+        color: $color-text;
+
+        &:hover {
+            color: $italian;
+        }
+    }
+}
+
+.form--comment {
+    width: 100%;
+}
+
+.comment-entry {
+    height: 10em;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+    border: none;
 }

@@ -1,0 +1,21 @@
+/**
+ * Title:
+ *    Promo area
+ * Description:
+ *    Contains 3 featured restaurants for that month as well as the printable voucher
+ */
+
+.promo-area, .search-area {
+    background: #F8F8F8;
+}
+
+.featured {
+    color: $color-text;
+
+    @include respond-min($bp2) {
+        margin-top: -500px;
+    }
+    @include respond-min($bp4) {
+        margin-top: -450px;
+    }
+}

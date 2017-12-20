@@ -1,27 +1,65 @@
 .pagination {
-    margin-top: $base*2;
-    padding: ($base/2) 0;
-    font-size: 1.2rem;
-    border-top: 1px solid $grey-lighter;
-    border-bottom: 1px solid $grey-lighter;
+    font-size: 1rem;
 
     a, span {
         display: inline-block;
     }
 
     a {
-        margin: 0 $base/4;
         line-height: 1;
-        border-bottom: 1px solid $color-link;
+        border-bottom: none;
+        text-decoration: none;
     }
 
-    .pages {
-        margin-right: $base*2;
-        font-size: .85rem;
+    li {
+        margin: 0;
+        padding: $base/2 $base;
+        display: block;
+        text-align: center;
+        border: 1px solid $grey-light;
+
+        &:hover {
+            background: darken($white, 2%);
+            color: $italian;
+        }
+
+        @include respond-min($bp2) {
+            display: inline;
+        }
+
+        &.pagination_active {
+            background: $grey-lighter;
+        }
     }
 
     .first,
     .last {
-        border-bottom: 0;
+        border: none;
+        background: $italian;
+        border: 1px solid $italian;
+
+        a {
+            color: $white;
+        }
+
+        &:hover {
+            background: darken($italian, 10%);
+        }
+    }
+
+    .first {
+        border-radius: 3px 3px 0 0;
+
+        @include respond-min($bp2) {
+            border-radius: 3px 0 0 3px;
+        }
+    }
+
+    .last {
+        border-radius: 0 0 3px 3px;
+
+         @include respond-min($bp2) {
+            border-radius: 0 3px 3px 0;
+        }
     }
 }

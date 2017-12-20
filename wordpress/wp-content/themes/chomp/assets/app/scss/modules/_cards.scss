@@ -1,0 +1,122 @@
+/**
+ * Title:
+ *    Cards
+ * Description:
+ *    Restaurant cards e.g. Featured and search result styling
+ * Sections:
+ *    $. Setup
+ *    $. Modifications
+ */
+
+
+
+/* $. Setup
+\*----------------------------------------------------------------*/
+
+.card {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: $base;
+    background: $white;
+    // background: #F8F8F8;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
+    border-radius: 3px;
+    clear: both;
+}
+
+.card--animated {
+    opacity: 0;
+    transition: box-shadow .25s ease;
+
+    &:hover {
+        box-shadow: 0px 0px 2px 0px $italian;
+    }
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+
+    @include respond-min($bp2) {
+        width: 50%;
+        height: 100%;
+        float: left;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    @include respond-min($bp4) {
+        max-height: 225px;
+    }
+}
+
+.card__detail {
+    position: relative;
+    padding: $base $base $base*5 $base;
+    font-weight: $weight-light;
+
+    @include respond-min($bp2) {
+        // width: 50%;
+        height: 100%;
+        float: right;
+    }
+}
+
+.card__inputs {
+    width: 100%;
+    height: 2em;
+    position: absolute;
+    bottom: $base;
+    left: 0;
+    padding: 0 1em;
+    clear: both;
+}
+
+.details {
+    span {
+        margin-left: $base/4;
+    }
+}
+
+/* $. Modifications
+\*----------------------------------------------------------------*/
+
+.card--featured {
+    .card__image {
+        @include respond-min($bp2) {
+            width: 50%;
+        }
+
+        @include respond-min($bp4) {
+            float: none;
+            width: auto;
+        }
+    }
+
+    .card__detail {
+        @include respond-min($bp2) {
+            width: 50%;
+        }
+
+        @include respond-min($bp4) {
+            width: 100%;
+            float: none;
+            position: static;
+            height: auto;
+        }
+    }
+}
+
+/* $. Extra
+\*----------------------------------------------------------------*/
+
+.sorting {
+    text-align: left;
+
+    @include respond-min($bp2) {
+        text-align: right;
+    }
+}

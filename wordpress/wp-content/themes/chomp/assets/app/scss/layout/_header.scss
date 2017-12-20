@@ -28,6 +28,16 @@
 \*----------------------------------------------------------------*/
 
 .header__logo {
+	color: $white;
+	border-bottom: none;
+
+    @include respond-min($bp2) {
+
+    }
+
+    @include respond-min($bp3) {
+
+    }
 }
 
 
@@ -35,7 +45,25 @@
 \*----------------------------------------------------------------*/
 
 .header__nav {
+    display: none;
+    position: relative;
+
+    @include respond-min($bp2) {
+        display:block;
+        position: absolute;
+        right: 0;
+        bottom: 7px;
+    }
+
     .is-active-nav & {
+        display: block;
+        text-align: right;
+        background: $italian;
+
+        .nav__link {
+            color: $white;
+            border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+        }
     }
 }
 
@@ -45,7 +73,13 @@
 \*----------------------------------------------------------------*/
 
 .header__toggle {
-    @include respond-min($bp3) {
+    display: block;
+    float: right;
+    padding: 0.75em 1em 0.5em 1em;
+    background: $italian;
+
+    @include respond-min($bp2) {
+        display: none;
     }
 }
 

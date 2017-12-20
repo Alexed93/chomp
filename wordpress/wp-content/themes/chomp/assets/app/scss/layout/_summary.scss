@@ -1,0 +1,23 @@
+/**
+ * Title:
+ *    Summary area for detail pages
+ * Description:
+ *
+ */
+
+.summary {
+    margin-top: $base;
+
+    .summary-detail {
+        padding: $base;
+    }
+
+    @include respond-min($bp2) {
+        margin-top: -300px;
+
+        .summary-detail {
+            width: 45%;
+            float: right;
+        }
+    }
+}

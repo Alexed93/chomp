@@ -18,7 +18,6 @@
     display: inline-block;
     padding: ($base/2) $base;
     border: 0;
-    transition: all .15s ease-out;
 }
 
 @mixin btn( $text, $bg, $htext: $text, $hbg: darken($bg, 10%) ) {
@@ -39,9 +38,13 @@
 
 button,
 input[type="button"],
-input[type="submit"],
 .btn {
     @extend %btn;
+}
+
+.btn {
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
 }
 
 
@@ -54,7 +57,38 @@ input[type="submit"],
  */
 
 .btn--primary {
-    @include btn($white, $grey);
+    // @include btn($white, $italian);
+    position: relative;
+    padding: $base/4 $base*3 $base/4 $base;
+    color: $color-text;
+    font-weight: $weight-medium;
+    background: $white;
+
+    &:hover, &:active {
+        background: darken($white, 2%);
+        color: $italian;
+
+        .btn--icon {
+            background: darken($italian, 10%);
+        }
+    }
+
+    .btn--icon {
+        width: $base*2;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $italian;
+        border-radius: 0 3px 3px 0;
+
+        .icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
 }
 
 .btn--secondary {}
@@ -78,13 +112,19 @@ input[type="submit"],
     font-size: .8rem;
 }
 
+.btn--sorting-options {
+    height: 45px;
+    position: relative;
+    font-size: 1.2rem;
+}
+
 /**
  * Icons
  */
 
 .btn--icon {
     position: relative;
-    padding-right: $base*2.5;
+    // padding-right: $base*2.5;
 
     .icon          {}
     .icon--small   {}
@@ -93,7 +133,13 @@ input[type="submit"],
     .icon--xlarge  {}
 }
 
-
+/**
+ * Extra
+ */
+// .btn--label {
+//     padding: $base/2;
+//     display: inline-block;
+// }
 
 /**
  * Reset
@@ -104,6 +150,7 @@ input[type="submit"],
     text-shadow: none;
     box-shadow: none;
     outline: 0;
+    padding: 0;
 }
 
 /**
@@ -112,4 +159,51 @@ input[type="submit"],
  */
 .btn--reset {
     @extend %btn--reset;
+}
+
+button.sign-up-submit, button.search-submit {
+    position: absolute;
+    right: 0;
+    padding: 0;
+    background: $italian;
+    border-radius: 0 3px 3px 0;
+}
+
+button.sign-up-submit {
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+}
+
+button.search-submit {
+    width: 60px;
+    height: 60px;
+    top: 0;
+}
+
+.form-buttons {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.filter_clear, .submit {
+    width: auto;
+    display: inline-block;
+}
+
+.filter_clear {
+    &:hover {
+        color: $italian;
+    }
+}
+
+.submit {
+    transition: all .1s ease;
+
+    &:hover {
+        background: $italian;
+        color: $white;
+    }
 }

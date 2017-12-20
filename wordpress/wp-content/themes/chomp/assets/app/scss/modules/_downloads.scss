@@ -1,0 +1,27 @@
+/**
+ * Title:
+ *    Downloads
+ * Description:
+ *    Download section
+ */
+
+
+
+/* $. Stuff
+\*----------------------------------------------------------------*/
+.downloads {
+	background: #F8F8F8;
+}
+
+.download__link {
+	margin-bottom: $base*2;
+
+	@include respond-min($bp2) {
+		margin-bottom: 0;
+	}
+}
+
+.download__icon {
+	display: block;
+    margin: 0 auto;
+}

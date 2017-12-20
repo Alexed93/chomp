@@ -22,6 +22,8 @@
 @import "config/vars";
 @import "config/mixins";
 @import "config/vendors";
+@import "config/slick/slick";
+@import "config/slick/slick-theme";
 
 
 
@@ -45,6 +47,14 @@
 @import "modules/list";
 @import "modules/btn";
 @import "modules/panel";
+@import "modules/hero";
+@import "modules/input";
+@import "modules/cards";
+@import "modules/voucher";
+@import "modules/slider";
+@import "modules/downloads";
+@import "modules/map";
+@import "modules/comments";
 
 
 
@@ -55,6 +65,7 @@
 @import "interface/nav";
 @import "interface/breadcrumb";
 @import "interface/pagination";
+@import "interface/search";
 
 
 
@@ -67,6 +78,8 @@
 @import "layout/footer";
 @import "layout/header";
 @import "layout/sidebar";
+@import "layout/promo";
+@import "layout/summary";
 
 
 

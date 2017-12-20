@@ -1,0 +1,22 @@
+/**
+ * Title:
+ *    Google map
+ * Description:
+ *    Google map area
+ */
+
+
+
+/* $. Stuff
+\*----------------------------------------------------------------*/
+.gmap {
+	width: 100%;
+	height: 400px;
+
+	@include respond-min($bp2) {
+
+	}
+}
+#map {
+        height: 400px;
+      }

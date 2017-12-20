@@ -47,7 +47,7 @@ $gr-item-align-y: top;                      // Initial vertical alignment of the
 /* $. Imports
 \*----------------------------------------------------------------*/
 
-@import "./node_modules/node-normalize-scss/normalize";
+@import "./node_modules/node.normalize.scss/normalize";
 @import "./node_modules/groot-sass/groot";
 
 
@@ -89,12 +89,10 @@ $gr-item-align-y: top;                      // Initial vertical alignment of the
         .grid__item {
             display: flex;
 
-            > * {
-                display: flex;
-                padding-bottom: $base;
-                width: 100%;
-            }
+            // > * {
+            //     display: flex;
+            //     width: 100%;
+            // }
         }
     }
-
 }
