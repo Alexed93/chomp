@@ -22,6 +22,7 @@ get_header();
 <main>
 
     <div class="hero hero--home | u-push-top"> <!-- Hero start -->
+
         <div class="container container--small"> <!-- Hero container start -->
 
             <h1 class="u-align-center u-push-bottom/2">Let's go out
@@ -50,10 +51,13 @@ get_header();
             </form> <!-- Search form end -->
 
         </div> <!-- Hero container end -->
+
     </div> <!-- Hero end -->
 
     <div class="promo-area u-pad-bottom@2"> <!-- Promoted restaurants start -->
+
         <div class="container"> <!-- Promoted restaurants container start -->
+
             <div class="featured test--flexbox cf"> <!-- Promoted restaurants flexbox start -->
 
                 <h1 class="beta u-pad-top sub-heading">Top <span class="u-weight-medium">Italian</span> picks for <span class="u-weight-medium">October 2017</span></h1> <!-- Dynamic depending on date and cuisine of the month -->
@@ -117,10 +121,13 @@ get_header();
                 <a href="#" class="delta u-weight-light u-display-inline u-push-top sub-link">Print this deal</a>
 
             </div> <!-- Promoted restaurants flexbox end -->
+
         </div> <!-- Promoted restaurants container end -->
+
     </div> <!-- Promoted restaurants end -->
 
     <div class="container additional-restaurants cf"> <!-- Additional restaurants start -->
+
         <h1 class="beta u-push-top sub-heading--inverted u-weight-medium">Other popular restaruants in Leeds</h1>
 
         <div class="results test--flexbox"> <!-- Additional restaurants results start -->
