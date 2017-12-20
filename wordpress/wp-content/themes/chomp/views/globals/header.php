@@ -18,18 +18,22 @@
 
 <header class="header"> <!-- Header area -->
 
+    <!-- Secondary nav -->
     <div class="nav nav--secondary"> <!-- Log in/out, My account -->
         <div class="container"> <!-- Container for secondary nav -->
+
             <ul>
                 <li class="nav__item">
                     <span class="icon icon--small icon--user-icon"></span>
                     <a href="#" class="nav__link u-display-inline">My account</a>
                 </li> <!-- End my account -->
+
                 <li class="nav__item">
                     <span class="icon icon--small icon--logout"></span>
                     <a href="#" class="nav__link u-display-inline">Logout</a>
                 </li> <!-- End log in/out -->
             </ul>
+
         </div> <!-- End container secondary nav -->
     </div> <!-- End secondary nav -->
 
@@ -47,12 +51,13 @@
             <span class="toggle__icon toggle__icon--nav | icon icon--medium icon--menu-open"></span>
         </button>
 
+        <!-- Primary nav -->
         <nav class="nav-container | header__nav" id="navigation" role="navigation"> <!-- Container for primary nav -->
             <ul class="nav nav--primary">
                 <?php wp_nav_menu( array('theme_location' => 'primary', 'items_wrap' => '%3$s') ); ?>
             </ul>
         </nav>
 
-    </div>
+    </div> <!-- End container primary nav and logo -->
 
 </header>
