@@ -17,6 +17,22 @@
 <a href="#navigation" class="is-hidden">Skip to Navigation</a>
 
 <header class="header">
+
+    <div class="nav nav--secondary">
+        <div class="container">
+            <ul>
+                <li class="nav__item">
+                    <span class="icon icon--small icon--user-icon"></span>
+                    <a href="#" class="nav__link u-display-inline">My account</a>
+                </li>
+                <li class="nav__item">
+                    <span class="icon icon--small icon--logout"></span>
+                    <a href="#" class="nav__link u-display-inline">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="container cf">
 
         <a href="index.html" class="logo header__logo">

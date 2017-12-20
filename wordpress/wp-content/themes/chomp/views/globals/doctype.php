@@ -29,6 +29,9 @@
     <!-- Favicons -->
     <?php get_template_part( 'views/globals/favicons' ); ?>
 
+    <!-- @font-face declarations -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/css/print.css" media="print">
     <noscript><link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/grunticon/icons.fallback.css" rel="stylesheet"></noscript>
