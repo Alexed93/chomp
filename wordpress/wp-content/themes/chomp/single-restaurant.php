@@ -200,7 +200,7 @@ get_header();
 					</div>
 					<!-- Restaurant trip-advisor end -->
 
-					<?php get_template_part("views/globals/share-nav.php"); ?> <!-- Social media sharing buttons -->
+					<?php get_template_part( 'views/globals/share-nav' ); ?> <!-- Social media sharing buttons -->
 
             	</div> <!-- Restaurant sidebar end -->
 
