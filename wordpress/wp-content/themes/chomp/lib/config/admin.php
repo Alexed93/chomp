@@ -35,7 +35,7 @@ add_filter( 'show_admin_bar', '__return_false' );
 
 function chomp_remove_menu_pages () {
      remove_menu_page( 'link-manager.php' );
-     remove_menu_page( 'edit-comments.php' );
+     // remove_menu_page( 'edit-comments.php' );
 }
 
 add_action( 'admin_menu', 'chomp_remove_menu_pages' );
@@ -57,7 +57,7 @@ function chomp_unregister_widgets () {
     unregister_widget( 'WP_Widget_Tag_Cloud' );
     unregister_widget( 'WP_Widget_RSS' );
     unregister_widget( 'WP_Widget_Meta' );
-    unregister_widget( 'WP_Widget_Recent_Comments' );
+    // unregister_widget( 'WP_Widget_Recent_Comments' );
     unregister_widget( 'WP_Nav_Menu_Widget' );
     unregister_widget( 'bcn_widget' );
     unregister_widget( 'GFWidget' );
@@ -84,7 +84,7 @@ function chomp_post_type_columns ( $col ) {
         $col['id'] = 'Post ID';
     endif;
 
-    unset( $col['comments'], $col['author'], $col['tags'] );
+    // unset( $col['comments'], $col['author'], $col['tags'] );
 
     if( isset($_GET['post_type']) && $_GET['post_type'] == 'page' ):
         unset( $col['date'] );
@@ -155,12 +155,12 @@ add_action( 'init', 'chomp_remove_emoji' );
  ******************************************************************************/
 
 function chomp_update_post_type_features() {
-    remove_post_type_support( 'post', 'comments' );
+    // remove_post_type_support( 'post', 'comments' );
     remove_post_type_support( 'post', 'thumbnail' );
     remove_post_type_support( 'post', 'trackbacks' );
     remove_post_type_support( 'post', 'custom-fields' );
 
-    remove_post_type_support( 'page', 'comments' );
+    // remove_post_type_support( 'page', 'comments' );
     remove_post_type_support( 'page', 'thumbnail' );
     remove_post_type_support( 'page', 'trackbacks' );
     remove_post_type_support( 'page', 'custom-fields' );
