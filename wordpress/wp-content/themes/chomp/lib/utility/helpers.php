@@ -117,3 +117,20 @@ function chomp_file_cache_busting ($url) {
     }
     add_action( 'init', 'chomp_unregister_tags' );
 
+
+
+ /**
+  * Add API key for Google Map
+  *
+ */
+
+    function my_acf_google_map_api( $api ){
+
+        $api['key'] = 'AIzaSyBuKfOxCwyIJPbuMive0j5Y48_t4RmYCVg';
+
+        return $api;
+
+    }
+
+    add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
