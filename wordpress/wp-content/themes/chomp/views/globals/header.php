@@ -60,4 +60,15 @@
 
     </div> <!-- End container primary nav and logo -->
 
+    <!-- Pagination -->
+    <div class="container"> <!-- Pagination container start -->
+
+        <div class="breadcrumbs"> <!-- Pagination breadcrumbs start -->
+
+            <a href="index.html">Home</a> > Inspire Me
+
+        </div> <!-- Pagination breadcrumbs end -->
+
+    </div> <!-- Pagination container end -->
+
 </header>
