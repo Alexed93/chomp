@@ -52,8 +52,9 @@ function chomp_restaurants () {
             )
         )
     );
+
+    register_taxonomy_for_object_type( 'category', 'restaurant' );
+
 }
 
 add_action('init', 'chomp_restaurants');
-
-
