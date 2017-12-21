@@ -34,7 +34,7 @@ function chomp_restaurants () {
             'menu_position' => 5,
             'menu_icon' => 'dashicons-carrot',
             'query_var' => true,
-            'rewrite' => array( 'slug' => 'Restaurants', 'with_front' => false ),
+            'rewrite' => array( 'slug' => 'restaurants', 'with_front' => false ),
             'supports' => array( 'title', 'page-attributes', 'editor', 'excerpt', 'revisions' ),
             'labels' => array(
                 'name' => __( 'Restaurants' ),
