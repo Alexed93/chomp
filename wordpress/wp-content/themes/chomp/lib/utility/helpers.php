@@ -107,3 +107,13 @@ function chomp_file_cache_busting ($url) {
 
 
 
+/**
+ * Hide categories taxonomy for restaurants CPT
+ *
+*/
+
+    function chomp_unregister_tags() {
+        unregister_taxonomy_for_object_type( 'category', 'restaurant' );
+    }
+    add_action( 'init', 'chomp_unregister_tags' );
+
