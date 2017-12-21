@@ -31,3 +31,4 @@ require_once( 'models/post-types/restaurant.php' );
  ******************************************************************************/
 
 //require_once( 'models/taxonomies/example.php' );
+require_once( 'models/taxonomies/cuisine.php' );
