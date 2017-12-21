@@ -54,6 +54,14 @@
 
 .icon--select { background-image: url('png/select.png'); background-repeat: no-repeat; }
 
+.icon--social-fb { background-image: url('png/social-fb.png'); background-repeat: no-repeat; }
+
+.icon--social-gp { background-image: url('png/social-gp.png'); background-repeat: no-repeat; }
+
+.icon--social-mail { background-image: url('png/social-mail.png'); background-repeat: no-repeat; }
+
+.icon--social-tw { background-image: url('png/social-tw.png'); background-repeat: no-repeat; }
+
 .icon--twitter--italian { background-image: url('png/twitter--italian.png'); background-repeat: no-repeat; }
 
 .icon--user-icon { background-image: url('png/user-icon.png'); background-repeat: no-repeat; }
