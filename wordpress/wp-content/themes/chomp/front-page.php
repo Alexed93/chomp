@@ -19,9 +19,14 @@ get_header();
 
 // Check the time of day and generate the correct message
 // With help from https://stackoverflow.com/questions/8652502/run-code-depending-on-the-time-of-day
-$hour = date('H', time());
-$day_term = "";
 date_default_timezone_set('UTC');
+
+$hour = date('H', time());
+$month = date('F', time());
+$year = date('Y', time());
+$monthYear = $month." ".$year;
+
+$day_term = "";
 
 if( $hour > 6 && $hour <= 11) {
   $day_term = "this morning";
@@ -35,6 +40,13 @@ else if($hour > 17 && $hour <= 23) {
 else {
 }
 
+// Get featured cuisine
+$featured_cuisines = get_field( 'featured_cuisine');
+if( $featured_cuisines ){
+    $featured_cuisine = $featured_cuisines->name;
+}
+
+
 ?>
 
 <main>
@@ -43,8 +55,10 @@ else {
 
         <div class="container container--small"> <!-- Hero container start -->
 
-            <h1 class="u-align-center u-push-bottom/2">Let's go out
-                <span class="u-weight-medium"><?php echo $day_term; ?></span>
+            <h1 class="u-align-center u-push-bottom/2">Lets go out
+                <span class="u-weight-medium">
+                    <?php echo $day_term; ?>
+                </span>
             </h1> <!-- Dynamic depending on time of day e.g. today/tonight -->
 
             <form class="u-align-center u-push-bottom u-margin-center form form--search" action=""> <!-- Search form start -->
@@ -78,7 +92,7 @@ else {
 
             <div class="featured test--flexbox cf"> <!-- Promoted restaurants flexbox start -->
 
-                <h1 class="beta u-pad-top sub-heading">Top <span class="u-weight-medium">Italian</span> picks for <span class="u-weight-medium">October 2017</span></h1> <!-- Dynamic depending on date and cuisine of the month -->
+                <h1 class="beta u-pad-top sub-heading">Top <span class="u-weight-medium"><?php echo $featured_cuisine; ?></span> picks for <span class="u-weight-medium"><?php echo $monthYear; ?></span></h1> <!-- Dynamic depending on date and cuisine of the month -->
 
                 <div class="grid grid--flex"> <!-- Promoted restaurants grid start -->
 
