@@ -17,6 +17,24 @@
 // Get the header
 get_header();
 
+// Check the time of day and generate the correct message
+// With help from https://stackoverflow.com/questions/8652502/run-code-depending-on-the-time-of-day
+$hour = date('H', time());
+$day_term = "";
+date_default_timezone_set('UTC');
+
+if( $hour > 6 && $hour <= 11) {
+  $day_term = "this morning";
+}
+else if($hour > 11 && $hour <= 17) {
+  $day_term = "this afternoon";
+}
+else if($hour > 17 && $hour <= 23) {
+  $day_term = "tonight";
+}
+else {
+}
+
 ?>
 
 <main>
@@ -26,7 +44,7 @@ get_header();
         <div class="container container--small"> <!-- Hero container start -->
 
             <h1 class="u-align-center u-push-bottom/2">Let's go out
-                <span class="u-weight-medium">tonight</span>
+                <span class="u-weight-medium"><?php echo $day_term; ?></span>
             </h1> <!-- Dynamic depending on time of day e.g. today/tonight -->
 
             <form class="u-align-center u-push-bottom u-margin-center form form--search" action=""> <!-- Search form start -->
