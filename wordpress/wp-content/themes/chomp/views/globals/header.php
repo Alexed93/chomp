@@ -40,7 +40,7 @@
     <div class="container cf"> <!-- Container for primary nav -->
 
         <!-- Main logo link -->
-        <a href="index.html" class="logo header__logo">
+        <a href="/wordpress" class="logo header__logo">
             <span class="is-hidden"><?php bloginfo( 'name' ); ?></span>
             <span class="icon icon--logo"></span> <!-- Main logo icon -->
         </a>
