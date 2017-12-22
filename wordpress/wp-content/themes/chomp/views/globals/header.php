@@ -19,25 +19,25 @@
 <header class="header"> <!-- Header area -->
 
     <!-- Secondary nav -->
-    <div class="nav nav--secondary"> <!-- Log in/out, My account -->
-        <div class="container"> <!-- Container for secondary nav -->
+    <!-- <div class="nav nav--secondary"> --> <!-- Log in/out, My account -->
+        <!-- <div class="container"> --> <!-- Container for secondary nav -->
 
-            <ul>
-                <li class="nav__item">
+            <!-- <ul> -->
+                <!-- <li class="nav__item">
                     <span class="icon icon--small icon--user-icon"></span>
                     <a href="#" class="nav__link u-display-inline">My account</a>
-                </li> <!-- End my account -->
+                 </li>--> <!-- End my account -->
 
-                <li class="nav__item">
+                <!-- <li class="nav__item">
                     <span class="icon icon--small icon--logout"></span>
                     <a href="#" class="nav__link u-display-inline">Logout</a>
-                </li> <!-- End log in/out -->
-            </ul>
+                </li> --> <!-- End log in/out -->
+            <!-- </ul> -->
 
-        </div> <!-- End container secondary nav -->
-    </div> <!-- End secondary nav -->
+        <!-- </div> --> <!-- End container secondary nav -->
+    <!-- </div> --> <!-- End secondary nav -->
 
-    <div class="container cf"> <!-- Container for primary nav -->
+    <div class="container cf u-push-top"> <!-- Container for primary nav -->
 
         <!-- Main logo link -->
         <a href="/wordpress" class="logo header__logo">
