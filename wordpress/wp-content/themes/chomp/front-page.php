@@ -46,12 +46,17 @@ if( $featured_cuisines ){
     $featured_cuisine = $featured_cuisines->name;
 }
 
+// Hero image
+$hero_image = get_field('hero_image');
+if( $hero_image ){
+    $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
+}
 
 ?>
 
 <main>
 
-    <div class="hero hero--home | u-push-top"> <!-- Hero start -->
+    <div class="hero hero--home | u-push-top" <?php if($hero_image_url): ?> style="background-image: url('<?php echo $hero_image_url; ?>');" <?php endif; ?>> <!-- Hero start -->
 
         <div class="container container--small"> <!-- Hero container start -->
 
@@ -92,7 +97,10 @@ if( $featured_cuisines ){
 
             <div class="featured test--flexbox cf"> <!-- Promoted restaurants flexbox start -->
 
-                <h1 class="beta u-pad-top sub-heading">Top <span class="u-weight-medium"><?php echo $featured_cuisine; ?></span> picks for <span class="u-weight-medium"><?php echo $monthYear; ?></span></h1> <!-- Dynamic depending on date and cuisine of the month -->
+                <h1 class="beta u-pad-top sub-heading">Top
+                    <span class="u-weight-medium"><?php echo $featured_cuisine; ?></span>
+                    picks for <span class="u-weight-medium"><?php echo $monthYear; ?></span>
+                </h1> <!-- Dynamic depending on date and cuisine of the month -->
 
                 <div class="grid grid--flex"> <!-- Promoted restaurants grid start -->
 

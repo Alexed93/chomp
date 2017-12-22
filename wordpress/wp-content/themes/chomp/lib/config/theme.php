@@ -141,7 +141,7 @@ if ( get_option("large_crop") === false ) {
  * https://developer.wordpress.org/reference/functions/add_image_size/ for more info.
  */
 
-//add_image_size('banner', 429, 280, true);
+add_image_size('hero', 1900, 800, false);
 
 
 

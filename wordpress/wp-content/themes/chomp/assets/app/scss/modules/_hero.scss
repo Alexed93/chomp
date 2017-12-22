@@ -47,7 +47,7 @@
 
 .hero--home {
     padding: 3em 0;
-    background-image: url("../imgs/homepage.jpg");
+    // background-image: url("../imgs/homepage.jpg");
 
     @include respond-min($bp2) {
         min-height: 800px;
@@ -63,7 +63,7 @@
 }
 
 .hero--index {
-    background-image: url("../imgs/index.jpg");
+    // background-image: url("../imgs/index.jpg");
 
     @include respond-min($bp2) {
         min-height: 350px;
@@ -86,7 +86,7 @@
 
 .hero--detail {
     padding: 3em 0;
-    background-image: url("../imgs/detail.jpg");
+    // background-image: url("../imgs/detail.jpg");
 
     @include respond-min($bp2) {
         min-height: 600px;
