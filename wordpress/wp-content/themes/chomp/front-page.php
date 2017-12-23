@@ -159,19 +159,19 @@ $featured_restaurants = get_field('featured_restaurants');
                                         // $parking = $restaurant_features['parking'];
 
                                         if(in_array('alcohol', $restaurant_features)):
-                                            $feature_icon = "Alcohol";
+                                            $feature_icon['alcohol'] = "Alcohol";
                                         endif;
 
                                         if(in_array('family_friendly', $restaurant_features)):
-                                            $feature_icon = "Family-Friendly";
+                                            $feature_icon['family_friendly'] = "Family-Friendly";
                                         endif;
 
                                         if(in_array('open_late', $restaurant_features)):
-                                            $feature_icon = "Open-Late";
+                                            $feature_icon['open_late'] = "Open-Late";
                                         endif;
 
                                         if(in_array('parking', $restaurant_features)):
-                                            $feature_icon = "Parking";
+                                            $feature_icon['parking'] = "Parking";
                                         endif;
                                     ?>
 
@@ -179,7 +179,7 @@ $featured_restaurants = get_field('featured_restaurants');
                                         <span class="icon icon--medium icon--Italian"></span>
                                         <?php if($restaurant_features): ?>
                                             <?php foreach($restaurant_features as $restaurant_feature): ?>
-                                                <span class="icon icon--medium icon--<?php echo $feature_icon; ?>"></span>
+                                                <span class="icon icon--medium icon--<?php echo $feature_icon[$restaurant_feature]; ?>"></span>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
 
