@@ -235,7 +235,7 @@ $featured_restaurants = get_field('featured_restaurants');
                     <?php endif; ?>
 
                 <!-- Print monthly voucher button -->
-                <a id="js-voucher-print" class="delta u-weight-light u-display-inline u-push-top sub-link">Print this deal</a>
+                <a id="js-voucher-print" style="cursor: pointer;" class="delta u-weight-light u-display-inline u-push-top sub-link">Print this deal</a>
 
             </div> <!-- Promoted restaurants flexbox end -->
 

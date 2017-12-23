@@ -93,7 +93,6 @@
      $('#js-voucher-print').on('click', function() {
          // 1. Toggle the filter area on and off
          $('.voucher').printThis({
-            // printContainer: true,
             pageTitle: "This month's voucher from Chomp"
          });
      });
