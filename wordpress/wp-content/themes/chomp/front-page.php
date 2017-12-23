@@ -121,7 +121,7 @@ $featured_restaurants = get_field('featured_restaurants');
                                 endif;
 
                                 // Get link
-                                $restaurant_link = get_page_link($featured_restaurant->ID);
+                                $restaurant_link = get_page_link($featured_restaurant);
 
                                 // Build address
                                 $address_line = get_field('restaurant_address_line', $featured_restaurant->ID);
@@ -146,17 +146,12 @@ $featured_restaurants = get_field('featured_restaurants');
                                 <div class="card__inputs"> <!-- Featured card specific icons start -->
 
                                     <?php
+                                        // Get cuisine
+                                        $restaurant_cuisine = get_the_terms( $featured_restaurant->ID, 'cuisine' );
+                                        $restaurant_cuisine_name = $restaurant_cuisine[0]->name;
+
                                         // Get features
                                         $restaurant_features = get_field('restaurant_features', $featured_restaurant->ID);
-
-                                        // // Alcohol
-                                        // $alcohol = $restaurant_features['alcohol'];
-                                        // // Family friendly
-                                        // $family_friendly = $restaurant_features['family_friendly'];
-                                        // // Open late
-                                        // $open_late = $restaurant_features['open_late'];
-                                        // // Parking
-                                        // $parking = $restaurant_features['parking'];
 
                                         if(in_array('alcohol', $restaurant_features)):
                                             $feature_icon['alcohol'] = "Alcohol";
@@ -176,16 +171,15 @@ $featured_restaurants = get_field('featured_restaurants');
                                     ?>
 
                                     <div class="details u-float-left"> <!-- Featured card specific icons container start -->
-                                        <span class="icon icon--medium icon--Italian"></span>
+
+                                        <span class="icon icon--medium icon--<?php echo $restaurant_cuisine_name; ?>"></span>
+
                                         <?php if($restaurant_features): ?>
                                             <?php foreach($restaurant_features as $restaurant_feature): ?>
                                                 <span class="icon icon--medium icon--<?php echo $feature_icon[$restaurant_feature]; ?>"></span>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
 
-                                        <!-- <span class="icon icon--medium icon--Family-Friendly"></span>
-                                        <span class="icon icon--medium icon--Open-Late"></span>
-                                        <span class="icon icon--medium icon--Parking"></span> -->
                                     </div> <!-- Featured card specific icons container end -->
 
                                     <a href="<?php echo $restaurant_link; ?>" class="btn btn--primary cf u-float-right"> <!-- Featured card view button start -->
