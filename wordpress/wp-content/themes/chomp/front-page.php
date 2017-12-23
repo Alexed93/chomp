@@ -205,19 +205,37 @@ $featured_restaurants = get_field('featured_restaurants');
 
                 <!-- <a href="#" class="delta u-weight-light u-display-inline u-push-top sub-link">View all previous top picks</a> -->
 
+                    <?php
+                        $voucher_qr = get_field('voucher_qr_code');
+                        if( $voucher_qr ):
+
+                            // Voucher QR
+                            $qr_image = $voucher_qr['sizes']['medium'];
+
+                            // Voucher image
+                            $voucher_image = get_field( 'voucher_image' );
+                            $image = $voucher_image['sizes']['large'];
+                            $alt = $voucher_image['alt'];
+
+                            // Voucher text
+                            $voucher_text = get_field( 'voucher_text' );
+                    ?>
+
                     <div class="voucher u-push-top@2 u-push-bottom u-display-inline"> <!-- Monthly voucher start -->
-                        <img src="assets/dist/imgs/voucher.png" alt="Voucher" class="voucher__img"> <!-- Monthly voucher image start -->
+                        <img src="<?php echo $image; ?>" alt="<?php echo $alt; ?>" title="<?php echo $alt; ?>" class="voucher__img"><!-- Monthly voucher image start -->
                         <div class="voucher__text"> <!-- Monthly voucher text start -->
-                            <h3 class="zeta u-push-bottom/2">Deal of the month:</h3> <!-- Monthly voucher title -->
+                            <h3 class="zeta u-push-bottom/2">Voucher of the month:</h3> <!-- Monthly voucher title -->
                             <div class="qr cf">
-                                <h2 class="gamma u-push-bottom/2 u-weight-medium deal">25% off your total bill at Trattoria Il Forno</h2>
-                                <img src="assets/dist/imgs/qr.png" alt="QR Code to scan"> <!-- Monthly voucher QR image -->
+                                <h2 class="gamma u-push-bottom/2 u-weight-medium deal"><?php echo $voucher_text; ?></h2> <!-- Monthly voucher ACF text -->
+                                <img src="<?php echo $qr_image; ?>" alt="QR Code for this months voucher" title="QR Code for this months voucher"> <!-- Monthly voucher QR image -->
                             </div>
                         </div> <!-- Monthly voucher text end -->
                     </div> <!-- Monthly voucher end -->
 
+                    <?php endif; ?>
+
                 <!-- Print monthly voucher button -->
-                <a href="#" class="delta u-weight-light u-display-inline u-push-top sub-link">Print this deal</a>
+                <a id="js-voucher-print" class="delta u-weight-light u-display-inline u-push-top sub-link">Print this deal</a>
 
             </div> <!-- Promoted restaurants flexbox end -->
 
