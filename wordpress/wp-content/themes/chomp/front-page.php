@@ -17,6 +17,12 @@
 // Get the header
 get_header();
 
+// Hero image
+$hero_image = get_field('hero_image');
+if( $hero_image ){
+    $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
+}
+
 // Check the time of day and generate the correct message
 // With help from https://stackoverflow.com/questions/8652502/run-code-depending-on-the-time-of-day
 date_default_timezone_set('UTC');
@@ -46,11 +52,8 @@ if( $featured_cuisines ){
     $featured_cuisine = $featured_cuisines->name;
 }
 
-// Hero image
-$hero_image = get_field('hero_image');
-if( $hero_image ){
-    $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
-}
+// Get featured restaurants
+$featured_restaurants = get_field('featured_restaurants');
 
 ?>
 
@@ -104,30 +107,88 @@ if( $hero_image ){
 
                 <div class="grid grid--flex"> <!-- Promoted restaurants grid start -->
 
+                    <?php if( $featured_restaurants ): ?>
+                        <?php foreach ( $featured_restaurants as $featured_restaurant ): ?>
+                            <?php
+                                // Get thumbnail
+                                $restaurant_thumbnail = get_field('restaurant_thumbnail', $featured_restaurant->ID);
+
+                                if( $restaurant_thumbnail ):
+                                    $thumbnail = $restaurant_thumbnail['sizes']['large'];
+                                    $alt = $restaurant_thumbnail['alt'];
+                                else:
+                                    $thumbnail = get_stylesheet_directory_uri() . "/assets/dist/img/generic-placeholder.png";
+                                endif;
+
+                                // Get link
+                                $restaurant_link = get_page_link($featured_restaurant->ID);
+
+                                // Build address
+                                $address_line = get_field('restaurant_address_line', $featured_restaurant->ID);
+                                $postcode = get_field('restaurant_postcode', $featured_restaurant->ID);
+                                $address = $address_line." ".$postcode;
+                            ?>
+
                     <div class="grid__item grid__item--4-12-bp4"> <!-- Featured card grid item start -->
 
                         <div class="card card--featured"> <!-- Featured card start -->
 
                             <div class="card__image"> <!-- Featured card image start -->
-                                <img src="assets/dist/imgs/restaurants/Zucco.jpg" alt="Zucco">
+                                <img src="<?php echo $thumbnail; ?>" alt="<?php echo $alt; ?>" title="<?php echo $alt; ?>">
                             </div> <!-- Featured card image end -->
 
                             <div class="card__detail"> <!-- Featured card detail start -->
 
-                                <h1 class="delta u-weight-medium u-push-bottom/2">Zucco</h1> <!-- Featured card detail title -->
-                                <h2 class="epsilon u-weight-medium u-push-bottom/2">603 Meanwood Road, LS6 4AY</h2> <!-- Featured card address  -->
-                                <p class="u-zero-bottom">The menu changes regularly depending on what ingredients we can source from our suppliers on the day, however some items we are not allowed to change for fear of upsetting our regulars.</p> <!-- Featured card detail intro -->
+                                <h1 class="delta u-weight-medium u-push-bottom/2"><?php echo get_the_title($featured_restaurant->ID); ?></h1> <!-- Featured card detail title -->
+                                <h2 class="epsilon u-weight-medium u-push-bottom/2"><?php echo $address; ?></h2> <!-- Featured card address  -->
+                                <p class="u-push-bottom"><?php echo wp_trim_words(get_the_excerpt($featured_restaurant->ID), 25, "..."); ?></p> <!-- Featured card detail intro -->
 
                                 <div class="card__inputs"> <!-- Featured card specific icons start -->
 
+                                    <?php
+                                        // Get features
+                                        $restaurant_features = get_field('restaurant_features', $featured_restaurant->ID);
+
+                                        // // Alcohol
+                                        // $alcohol = $restaurant_features['alcohol'];
+                                        // // Family friendly
+                                        // $family_friendly = $restaurant_features['family_friendly'];
+                                        // // Open late
+                                        // $open_late = $restaurant_features['open_late'];
+                                        // // Parking
+                                        // $parking = $restaurant_features['parking'];
+
+                                        if(in_array('alcohol', $restaurant_features)):
+                                            $feature_icon = "Alcohol";
+                                        endif;
+
+                                        if(in_array('family_friendly', $restaurant_features)):
+                                            $feature_icon = "Family-Friendly";
+                                        endif;
+
+                                        if(in_array('open_late', $restaurant_features)):
+                                            $feature_icon = "Open-Late";
+                                        endif;
+
+                                        if(in_array('parking', $restaurant_features)):
+                                            $feature_icon = "Parking";
+                                        endif;
+                                    ?>
+
                                     <div class="details u-float-left"> <!-- Featured card specific icons container start -->
                                         <span class="icon icon--medium icon--Italian"></span>
-                                        <span class="icon icon--medium icon--Family-Friendly"></span>
+                                        <?php if($restaurant_features): ?>
+                                            <?php foreach($restaurant_features as $restaurant_feature): ?>
+                                                <span class="icon icon--medium icon--<?php echo $feature_icon; ?>"></span>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+
+                                        <!-- <span class="icon icon--medium icon--Family-Friendly"></span>
                                         <span class="icon icon--medium icon--Open-Late"></span>
-                                        <span class="icon icon--medium icon--Parking"></span>
+                                        <span class="icon icon--medium icon--Parking"></span> -->
                                     </div> <!-- Featured card specific icons container end -->
 
-                                    <a href="#" class="btn btn--primary cf u-float-right"> <!-- Featured card view button start -->
+                                    <a href="<?php echo $restaurant_link; ?>" class="btn btn--primary cf u-float-right"> <!-- Featured card view button start -->
                                         <span class="btn--label">View</span>
                                         <span class="btn--icon">
                                             <span class="icon icon--small icon--chevron-right-white"></span>
@@ -142,9 +203,13 @@ if( $hero_image ){
 
                     </div> <!-- Featured card grid item end -->
 
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+
                 </div> <!-- Promoted restaurants grid end -->
 
-                <!-- <a href="#" class="delta u-weight-light u-display-inline u-push-top sub-link">View all previous top picks</a> --> -->
+                <!-- <a href="#" class="delta u-weight-light u-display-inline u-push-top sub-link">View all previous top picks</a> -->
 
                     <div class="voucher u-push-top@2 u-push-bottom u-display-inline"> <!-- Monthly voucher start -->
                         <img src="assets/dist/imgs/voucher.png" alt="Voucher" class="voucher__img"> <!-- Monthly voucher image start -->
