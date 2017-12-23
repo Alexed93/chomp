@@ -3,7 +3,8 @@
   "version": "1.4.1",
   "dependencies": {
     "jquery": "~1.12.4",
-    "node.normalize.scss": "~3.0.3"
+    "node.normalize.scss": "~3.0.3",
+    "print-this": "^1.12.1"
   },
   "devDependencies": {
     "autoprefixer": "~7.1.4",

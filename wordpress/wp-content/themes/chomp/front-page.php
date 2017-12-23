@@ -222,7 +222,7 @@ $featured_restaurants = get_field('featured_restaurants');
                     ?>
 
                     <div class="voucher u-push-top@2 u-push-bottom u-display-inline"> <!-- Monthly voucher start -->
-                        <img src="<?php echo $image; ?>" alt="<?php echo $alt; ?>" title="<?php echo $alt; ?>" class="voucher__img"><!-- Monthly voucher image start -->
+                        <img style="-webkit-print-color-adjust: exact;" src="<?php echo $image; ?>" alt="<?php echo $alt; ?>" title="<?php echo $alt; ?>" class="voucher__img"><!-- Monthly voucher image start -->
                         <div class="voucher__text"> <!-- Monthly voucher text start -->
                             <h3 class="zeta u-push-bottom/2">Voucher of the month:</h3> <!-- Monthly voucher title -->
                             <div class="qr cf">

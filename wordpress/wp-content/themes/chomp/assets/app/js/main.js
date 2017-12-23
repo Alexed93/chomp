@@ -90,8 +90,13 @@
     /**
      * PrintThis
      */
-     // Code from here https://stackoverflow.com/questions/16867887/how-can-i-sequentially-fade-in-several-divs
-
+     $('#js-voucher-print').on('click', function() {
+         // 1. Toggle the filter area on and off
+         $('.voucher').printThis({
+            // printContainer: true,
+            pageTitle: "This month's voucher from Chomp"
+         });
+     });
 
 })(jQuery);
 
