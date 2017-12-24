@@ -10,7 +10,25 @@
  *
  */
 
+// Get Fields
+$telephone = get_field('contact_telephone', 13);
+$fax = get_field('contact_fax', 13);
+$email = get_field('contact_email', 13);
 
+$formatted_fax = chomp_format_tel($fax);
+$formatted_telephone = chomp_format_tel($telephone);
+
+$address_1 = get_field('contact_address_line_1', 13);
+$address_2 = get_field('contact_address_line_2', 13);
+$address = '';
+$postcode = get_field('contact_address_postcode', 13);
+
+if($address_1 && $address_2) {
+    $address = $address_1." ".$address_2;
+}
+
+$twitter = get_field('chomp_twitter', 13);
+$facebook = get_field('chomp_facebook', 13);
 
 ?>
 
@@ -30,25 +48,37 @@
         		    </form> <!-- Newsletter signup form end -->
         		</div> <!-- Newsletter signup end -->
 
+                <?php if($address && $postcode): ?>
 				<div class="grid__item grid__item--2-12-bp3"> <!-- Address start -->
 				    <h3 class="zeta u-weight-medium u-zero-bottom">Write to us:</h3>
 				    <p class="u-weight-light">Chomp HQ<br>
-				    49 Hilton Rd, Leeds<br>
-				    LS8 4HA</p>
+				    <?php echo $address; ?><br>
+				    <?php echo $postcode; ?></p>
 				</div> <!-- Address end -->
+                <?php endif; ?>
 
+                <?php if($formatted_telephone): ?>
 				<div class="grid__item grid__item--2-12-bp3"> <!-- Contact start -->
 				    <h3 class="zeta u-weight-medium u-zero-bottom">Call us:</h3>
-				    <a href="tel:01234 891234" class="u-weight-light footer__link">01234 891234</a> <!-- Call us link -->
+				    <a href="tel:<?php echo $formatted_telephone; ?>" class="u-weight-light footer__link"><?php echo $telephone; ?></a> <!-- Call us link -->
+                    <?php if($formatted_fax): ?>
 				    <h3 class="zeta u-weight-medium u-zero-bottom u-push-top">Fax us:</h3>
-				    <a href="tel:01234 891234" class="u-weight-light footer__link">01234 891234</a> <!-- Fax us link -->
+				    <a href="tel:<?php echo $formatted_fax; ?>" class="u-weight-light footer__link"><?php echo $fax; ?></a> <!-- Fax us link -->
+                    <?php endif; ?>
 				</div> <!-- Contact end -->
+                <?php endif; ?>
 
 				<div class="grid__item grid__item--3-12-bp3"> <!-- Social Media start -->
 				    <div class="social-media">
-				        <a href="#" class="icon icon--large icon--twitter--italian"></a> <!-- Twitter -->
-				        <a href="#" class="icon icon--large icon--facebook--italian u-push-left@2"></a> <!-- Facebook -->
-				        <a href="#" class="icon icon--large icon--email--italian u-push-left@2"></a> <!-- Email -->
+                        <?php if($twitter): ?>
+				        <a href="<?php echo $twitter; ?>" class="icon icon--large icon--twitter--italian"></a> <!-- Twitter -->
+                        <?php endif; ?>
+                        <?php if($facebook): ?>
+				        <a href="<?php echo $facebook; ?>" class="icon icon--large icon--facebook--italian u-push-left@2"></a> <!-- Facebook -->
+                        <?php endif; ?>
+                        <?php if($email): ?>
+				        <a href="mailto:<?php echo $email; ?>" class="icon icon--large icon--email--italian u-push-left@2"></a> <!-- Email -->
+                        <?php endif; ?>
 				    </div>
 				</div> <!-- Social Media end -->
 
