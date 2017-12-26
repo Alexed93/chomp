@@ -60,27 +60,29 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 
 	<div class="container cf card summary u-push-bottom@2"> <!-- Restaurant summary card container start -->
 
-		<?php if($images): ?>
 		<div class="slider__container"> <!-- Slick slider container start -->
 
+			<?php if($images): ?>
+
 			<div class="slider slider-for"> <!-- Slick slider start -->
-			<?php  foreach ($images as $image) : ?>
+			<?php foreach ($images as $image) : ?>
                 <img src="<?php echo $image['sizes']['gallery']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
             <?php endforeach; ?>
 			</div> <!-- Slick slider end -->
 
 			<div class="slider-nav"> <!-- Slick slider navigation start -->
-				<?php  foreach ($images as $image) : ?>
+				<?php foreach ($images as $image) : ?>
 	                <img src="<?php echo $image['sizes']['gallery_thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
 	            <?php endforeach; ?>
 			</div> <!-- Slick slider navigation end -->
 
+			<?php else: ?>
+
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/imgs/placeholder_restaurant.svg" alt="There are no images of this restaurant available." /> <!-- Slick slider image -->
+
+			<?php endif; ?>
+
 		</div> <!-- Slick slider container end -->
-		<?php else: ?>
-		<div class="slider__container">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/imgs/placeholder_restaurant.svg" alt="There are no images of this restaurant available." /> <!-- Slick slider image -->
-		</div>
-		<?php endif; ?>
 
 		<div class="summary-detail"> <!-- Summary card detail start -->
 
