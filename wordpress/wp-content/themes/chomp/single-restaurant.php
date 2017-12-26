@@ -20,6 +20,23 @@ if( $hero_image ){
     $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
 }
 
+// Get terms
+$restaurant_cuisine = get_the_terms( get_the_ID(), 'cuisine' );
+$restaurant_cuisine_name = $restaurant_cuisine[0]->name;
+
+// Build address line
+$address_line = get_field('restaurant_address_line');
+$postcode = get_field('restaurant_postcode');
+if( $address_line && $postcode ):
+    $address = $address_line.", ".$postcode;
+endif;
+
+// Get Fields
+$telephone = get_field('restaurant_telephone');
+$website = get_field('restaurant_website');
+
+$formatted_telephone = chomp_format_tel($telephone);
+
 ?>
 
 <main>
@@ -28,10 +45,10 @@ if( $hero_image ){
 
 	    <div class="container container--small"> <!-- Hero container start -->
 
-	        <h1 class="u-align-center u-push-bottom/2 beta">Zen Rendezvous</h1> <!-- Name change depending on post -->
+	        <h1 class="u-align-center u-push-bottom/2 beta"><?php echo the_title(); ?></h1> <!-- Name change depending on post -->
 
-	        <h2 class="u-align-center u-push-bottom/2 gamma u-weight-medium">Chinese
-	            <span class="u-weight-light u-style-italic">restaurant at</span> 10-12 The Green, LS20 9BT
+	        <h2 class="u-align-center u-push-bottom/2 gamma u-weight-medium"><?php echo $restaurant_cuisine_name; ?>
+	            <span class="u-weight-light u-style-italic">restaurant at</span> <?php echo $address; ?>
 	        </h2> <!-- Dynamic depending on address -->
 
 	    </div> <!-- Hero container end -->
@@ -55,24 +72,29 @@ if( $hero_image ){
 		<div class="summary-detail"> <!-- Summary card detail start -->
 
 			<h1 class="delta u-push-bottom/2">Summary of
-				<span class="u-weight-medium">Zen Rendezvous</span> <!-- Dynamic based on restaurant name -->
+				<span class="u-weight-medium"><?php echo the_title(); ?></span> <!-- Dynamic based on restaurant name -->
 			</h1>
 
+			<?php if($telephone): ?>
 			<!-- Restaurant detail - phone number - start -->
 			<div class="detail__section detail__section--phone u-push-bottom">
 			    <span class="icon icon--medium icon--Phone u-float-left u-push-right"></span>
 			    <h2 class="u-weight-medium epsilon u-zero-bottom">Phone number:</h2>
-			    <a href="tel:01132 439090" class="epsilon u-weight-light">01132 439090</a>
+			    <a href="tel:<?php echo $formatted_telephone; ?>" class="epsilon u-weight-light"><?php echo $telephone; ?></a>
 			</div>
 			<!-- Restaurant detail - phone number - end -->
+			<?php endif; ?>
 
+			<?php if($website): ?>
 			<!-- Restaurant detail - website - start -->
 			<div class="detail__section detail__section--web u-push-bottom">
 			    <span class="icon icon--medium icon--Website u-float-left u-push-right"></span>
 			    <h2 class="u-weight-medium epsilon u-zero-bottom">Website:</h2>
-			    <a href="http://www.zenrendezvous.com/" class="epsilon u-weight-light">http://www.zenrendezvous.com/</a>
+			    <a href="<?php echo $website; ?>" class="epsilon u-weight-light"><?php echo $website; ?></a>
 			</div>
 			<!-- Restaurant detail - website - end -->
+			<?php endif; ?>
+
 
 			<!-- Restaurant detail - opening hours - start -->
 			<div class="detail__section detail__section--opening u-push-bottom">
@@ -85,6 +107,8 @@ if( $hero_image ){
 			    </ul>
 			</div>
 			<!-- Restaurant detail - opening hours - end -->
+
+
 
 			<!-- Restaurant detail - features - start -->
 			<div class="details u-push-top">
