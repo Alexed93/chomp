@@ -55,27 +55,29 @@
     });
 
 
-    // /**
-    //  * Slick stuff
-    //  */
-    // $('.slider-for').slick({
-    //     autoplay: false,
-    //     arrows: false,
-    //     mobileFirst: true,
-    //     draggable: false,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-nav',
-    //     variableWidth: true
-    // });
+    /**
+     * Slick stuff
+     */
+    $('.slider-for').slick({
+        autoplay: false,
+        arrows: false,
+        mobileFirst: true,
+        draggable: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.slider-nav',
+        infinite: false,
+        variableWidth: true
+    });
 
-    // $('.slider-nav').slick({
-    //     slidesToShow: 5,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-for',
-    //     centerMode: true,
-    //     focusOnSelect: true
-    // });
+    $('.slider-nav').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        centerMode: true,
+        infinite: false,
+        focusOnSelect: true
+    });
 
 
     /**

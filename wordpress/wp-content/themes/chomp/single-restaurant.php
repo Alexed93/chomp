@@ -20,7 +20,7 @@ if( $hero_image ){
     $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
 }
 
-// Get terms
+// Get cuisine
 $restaurant_cuisine = get_the_terms( get_the_ID(), 'cuisine' );
 $restaurant_cuisine_name = $restaurant_cuisine[0]->name;
 
@@ -31,11 +31,14 @@ if( $address_line && $postcode ):
     $address = $address_line.", ".$postcode;
 endif;
 
-// Get Fields
+// Get contact fields
 $telephone = get_field('restaurant_telephone');
 $website = get_field('restaurant_website');
 
 $formatted_telephone = chomp_format_tel($telephone);
+
+// Get slider images
+$images = filterValidImages('restaurant_gallery_image', 3);
 
 ?>
 
@@ -57,17 +60,27 @@ $formatted_telephone = chomp_format_tel($telephone);
 
 	<div class="container cf card summary u-push-bottom@2"> <!-- Restaurant summary card container start -->
 
+		<?php if($images): ?>
 		<div class="slider__container"> <!-- Slick slider container start -->
 
 			<div class="slider slider-for"> <!-- Slick slider start -->
-				<img src="assets/dist/imgs/restaurants/zenrendezvous.jpg" alt="Zen Rendezvous Image 1"> <!-- Slick slider image -->
+			<?php  foreach ($images as $image) : ?>
+                <img src="<?php echo $image['sizes']['gallery']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
+            <?php endforeach; ?>
 			</div> <!-- Slick slider end -->
 
 			<div class="slider-nav"> <!-- Slick slider navigation start -->
-				<img src="assets/dist/imgs/restaurants/zenrendezvous.jpg" alt="Zen Rendezvous Image 1"> <!-- Slick slider image for slider navigation -->
+				<?php  foreach ($images as $image) : ?>
+	                <img src="<?php echo $image['sizes']['gallery_thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
+	            <?php endforeach; ?>
 			</div> <!-- Slick slider navigation end -->
 
 		</div> <!-- Slick slider container end -->
+		<?php else: ?>
+		<div class="slider__container">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/imgs/placeholder_restaurant.svg" alt="There are no images of this restaurant available." /> <!-- Slick slider image -->
+		</div>
+		<?php endif; ?>
 
 		<div class="summary-detail"> <!-- Summary card detail start -->
 

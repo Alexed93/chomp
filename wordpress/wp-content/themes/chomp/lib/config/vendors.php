@@ -73,3 +73,23 @@ function chomp_tinymce_specify_formats($init) {
 }
 
 add_filter('tiny_mce_before_init', 'chomp_tinymce_specify_formats' );
+
+
+
+/**
+ * $. Check for images in ACF field
+ ******************************************************************************/
+function filterValidImages($fieldPrefix, $fieldCount) {
+/*
+* We could do more checks, but this works fine for one time prod use
+*/
+$images = [];
+    for($i = 1; $i <= $fieldCount; $i++) {
+        $fieldName = $fieldPrefix . '_' . $i;
+        if(!empty(get_field($fieldName))) {
+            array_push($images, get_field($fieldName));
+        }
+    }
+
+    return $images;
+}

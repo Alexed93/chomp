@@ -114,10 +114,10 @@ $featured_restaurants = get_field('featured_restaurants');
                                 $restaurant_thumbnail = get_field('restaurant_thumbnail', $featured_restaurant->ID);
 
                                 if( $restaurant_thumbnail ):
-                                    $thumbnail = $restaurant_thumbnail['sizes']['large'];
+                                    $thumbnail = $restaurant_thumbnail['sizes']['featured_restaurant'];
                                     $alt = $restaurant_thumbnail['alt'];
                                 else:
-                                    $thumbnail = get_stylesheet_directory_uri() . "/assets/dist/img/generic-placeholder.png";
+                                    $thumbnail = get_stylesheet_directory_uri() . "/assets/dist/imgs/placeholder_restaurant.svg";
                                 endif;
 
                                 // Get link
