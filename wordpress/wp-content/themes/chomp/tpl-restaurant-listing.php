@@ -193,37 +193,7 @@ get_header();
 
             <div class="grid grid--flex results--grid"> <!-- Search results grid start -->
 
-                <div class="grid__item grid__item--6-12-bp2"> <!-- Search results grid item start -->
-
-                   <div class="card card--animated"> <!-- Search results card start -->
-
-                        <div class="card__detail"> <!-- Search results card text start -->
-                            <h1 class="delta u-weight-medium u-push-bottom/2">The Man Behind the Curtain</h1>
-                            <h2 class="epsilon u-weight-medium u-push-bottom/2">68-78 Vicar Lane, LS1 7JH</h2>
-                            <p class="u-zero-bottom">Our Permanent collection is served as a set tasting menu of between 10 and 14 courses, for tables of up to 5 people.</p>
-
-                            <div class="card__inputs"> <!-- Search result card specific icons start -->
-
-                                <div class="details u-float-left"> <!-- Search result card specific icons container start -->
-                                    <span class="icon icon--medium icon--English"></span>
-                                    <span class="icon icon--medium icon--Parking"></span>
-                                    <span class="icon icon--medium icon--Alcohol"></span>
-                                </div> <!-- Search result card specific icons container end -->
-
-                                <a href="#" class="btn btn--primary cf u-float-right"> <!-- Search result card view button start -->
-                                    <span class="btn--label">View</span>
-                                    <span class="btn--icon">
-                                        <span class="icon icon--small icon--chevron-right-white"></span>
-                                    </span>
-                                </a> <!-- Search result card view button end -->
-
-                            </div> <!-- Search result card specific icons end -->
-
-                        </div> <!-- Search result card detail end -->
-
-                    </div> <!-- Search result card end -->
-
-                </div> <!-- Search result card grid item end -->
+                <?php get_template_part( 'views/cards/loop' ); ?>
 
             </div> <!-- Search results grid end -->
 
