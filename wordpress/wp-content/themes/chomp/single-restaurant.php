@@ -14,11 +14,17 @@
 // Get the header
 get_header();
 
+// Hero image
+$hero_image = get_field('hero_image');
+if( $hero_image ){
+    $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
+}
+
 ?>
 
 <main>
 
-	<div class="hero hero--detail | u-push-top"> <!-- Hero start -->
+	<div class="hero hero--detail | u-push-top" <?php if($hero_image_url): ?> style="background-image: url('<?php echo $hero_image_url; ?>');" <?php endif; ?>> <!-- Hero start -->
 
 	    <div class="container container--small"> <!-- Hero container start -->
 
