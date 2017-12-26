@@ -112,7 +112,6 @@ function chomp_fill_id_column ( $col, $id ) {
 }
 
 add_action( 'manage_posts_custom_column', 'chomp_fill_id_column', 10, 2 );
-add_action( 'manage_pages_custom_column', 'chomp_fill_id_column', 10, 2 );
 
 
 
@@ -159,11 +158,6 @@ function chomp_update_post_type_features() {
     remove_post_type_support( 'post', 'thumbnail' );
     remove_post_type_support( 'post', 'trackbacks' );
     remove_post_type_support( 'post', 'custom-fields' );
-
-    // remove_post_type_support( 'page', 'comments' );
-    remove_post_type_support( 'page', 'thumbnail' );
-    remove_post_type_support( 'page', 'trackbacks' );
-    remove_post_type_support( 'page', 'custom-fields' );
 
     add_post_type_support( 'page', 'excerpt' );
 }
