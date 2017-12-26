@@ -78,7 +78,7 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 
 			<?php else: ?>
 
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/imgs/placeholder_restaurant.svg" alt="There are no images of this restaurant available." /> <!-- Slick slider image -->
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/imgs/placeholder_restaurant.svg" alt="There are no images of this restaurant available." /> <!-- Slick slider image -->
 
 			<?php endif; ?>
 
@@ -110,16 +110,54 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 			<!-- Restaurant detail - website - end -->
 			<?php endif; ?>
 
-
 			<!-- Restaurant detail - opening hours - start -->
 			<div class="detail__section detail__section--opening u-push-bottom">
 			    <span class="icon icon--medium icon--Opening u-float-left u-push-right"></span>
 			    <h2 class="u-weight-medium epsilon u-zero-bottom">Opening hours:</h2>
+
+				<?php
+					// Get hours
+					$monday 	= get_field( 'restaurant_monday' );
+					$tuesday 	= get_field( 'restaurant_tuesday' );
+					$wednesday 	= get_field( 'restaurant_monday' );
+					$thursday 	= get_field( 'restaurant_thursday' );
+					$friday 	= get_field( 'restaurant_friday' );
+					$saturday 	= get_field( 'restaurant_saturday' );
+					$sunday 	= get_field( 'restaurant_sunday' );
+				?>
+
 			    <ul class="list--unset opening-hours__list u-display-inline">
-			        <li class="opening-hours-list__item">Monday-Friday: 17:00-22:00</li>
-			        <li class="opening-hours-list__item">Saturday: 16:30-22:30</li>
-			        <li class="opening-hours-list__item">Sunday: Closed</li>
+
+			        <li class="opening-hours-list__item">Monday:
+						<?php echo empty($monday) ? "Closed" : $monday; ?>
+			        </li>
+
+			        <li class="opening-hours-list__item">Tuesday:
+						<?php echo empty($tuesday) ? "Closed" : $tuesday; ?>
+			        </li>
+
+			        <li class="opening-hours-list__item">Wednesday:
+						<?php echo empty($wednesday) ? "Closed" : $wednesday; ?>
+			        </li>
+
+			        <li class="opening-hours-list__item">Thursday:
+						<?php echo empty($thursday) ? "Closed" : $thursday; ?>
+			        </li>
+
+			        <li class="opening-hours-list__item">Friday:
+						<?php echo empty($friday) ? "Closed" : $friday; ?>
+			        </li>
+
+			        <li class="opening-hours-list__item">Saturday:
+						<?php echo empty($saturday) ? "Closed" : $saturday; ?>
+			        </li>
+
+			        <li class="opening-hours-list__item">Sunday:
+						<?php echo empty($sunday) ? "Closed" : $sunday; ?>
+			        </li>
+
 			    </ul>
+
 			</div>
 			<!-- Restaurant detail - opening hours - end -->
 

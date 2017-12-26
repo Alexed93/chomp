@@ -142,7 +142,7 @@ if ( get_option("large_crop") === false ) {
  */
 
 add_image_size('hero', 1900, 800, false);
-add_image_size('gallery', 700, 450, true);
+add_image_size('gallery', 700, 550, false);
 add_image_size('gallery_thumbnail', 100, 50, true);
 add_image_size('featured_restaurant', 350, 250, true);
 
