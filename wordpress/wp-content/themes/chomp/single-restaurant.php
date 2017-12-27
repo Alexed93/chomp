@@ -43,6 +43,9 @@ $images = filterValidACF('restaurant_gallery_image', 6);
 // Get downloads
 $downloads = filterValidACF('restaurant_downloadable_file', 6);
 
+// Get map
+$map = get_field('restaurant_google_map');
+
 ?>
 
 <main>
@@ -231,9 +234,9 @@ $downloads = filterValidACF('restaurant_downloadable_file', 6);
 				<?php endif; ?>
 
 				<!-- Restaurant content area -->
-				<?php the_content(); ?>
-
-
+				<?php if( !empty(the_content()) ): ?>
+					<?php the_content(); ?>
+				<?php endif; ?>
 
 				<!-- Downloads section start -->
 				<?php if($downloads): ?>
@@ -250,12 +253,17 @@ $downloads = filterValidACF('restaurant_downloadable_file', 6);
 					</div> <!-- Restaurant download end -->
 				<?php endforeach; ?>
 				</div> <!-- Restaurant downloads area end -->
+
 				<?php endif; ?>
 				<!-- Downloads section end -->
 
+				<?php if( !empty($map) ): ?>
 				<h1 class="beta u-push-bottom/2">Where to find us</h1>
-				<h2 class="delta u-push-bottom">10-12 The Green Guiseley, Leeds, LS20 9BT</h2> <!-- Restaurant address -->
-				<div id="map" class="u-push-bottom@2"></div> <!-- Restaurant Google Map -->
+				<h2 class="delta u-push-bottom"><?php echo $address; ?></h2> <!-- Restaurant address -->
+				<div class="acf-map u-push-bottom@2">
+					<div class="marker" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>"></div> <!-- Restaurant Google Map -->
+				</div>
+				<?php endif; ?>
 
 				<h1 class="beta u-push-bottom/2">Comments</h1>
 				<h2 class="delta u-push-bottom">Read about what other Chompers thought, or add your own comment</h2>

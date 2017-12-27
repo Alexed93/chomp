@@ -112,10 +112,10 @@ function chomp_file_cache_busting ($url) {
  *
 */
 
-    function chomp_unregister_tags() {
-        unregister_taxonomy_for_object_type( 'category', 'restaurant' );
-    }
-    add_action( 'init', 'chomp_unregister_tags' );
+function chomp_unregister_tags() {
+    unregister_taxonomy_for_object_type( 'category', 'restaurant' );
+}
+add_action( 'init', 'chomp_unregister_tags' );
 
 
 
@@ -124,34 +124,32 @@ function chomp_file_cache_busting ($url) {
   *
  */
 
-    function my_acf_google_map_api( $api ){
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyC2P8-neUAbMuvh0X-FOFo3NkZmgw-PFRo';
+return $api;
 
-        $api['key'] = 'AIzaSyBuKfOxCwyIJPbuMive0j5Y48_t4RmYCVg';
+}
 
-        return $api;
-
-    }
-
-    add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 
-    /**
+/**
 
-     * Create properly formatted tel: links
+ * Create properly formatted tel: links
 
-     * $input = <p>(01423) 598 008</p>
+ * $input = <p>(01423) 598 008</p>
 
-     * $output = 01423598008
+ * $output = 01423598008
 
-     */
+ */
 
-    function chomp_format_tel($text){
+function chomp_format_tel($text){
 
-        $exp = "/[^0-9]/";
+    $exp = "/[^0-9]/";
 
-        $text = preg_replace($exp, '', strip_tags($text));
+    $text = preg_replace($exp, '', strip_tags($text));
 
-        return $text;
+    return $text;
 
-    }
+}
