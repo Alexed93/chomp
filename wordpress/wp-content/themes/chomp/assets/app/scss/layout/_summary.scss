@@ -17,7 +17,11 @@
 
         .summary-detail {
             width: 45%;
-            float: right;
+            height: 100%;
+            // float: right; Float ignored so child takes 100% of height
+            position: absolute;
+            right: 0;
+            top: 0;
         }
     }
 }
