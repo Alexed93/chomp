@@ -127,35 +127,46 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 				?>
 
 			    <ul class="list--unset opening-hours__list u-display-inline">
+					<?php $restaurant_hours_check = get_field('restaurant_hours_check'); ?>
 
-			        <li class="opening-hours-list__item">Monday:
-						<?php echo empty($monday) ? "Closed" : $monday; ?>
-			        </li>
+					<!-- Monday to Friday checkbox -->
+					<?php if( $restaurant_hours_check ): ?>
+						<li class="opening-hours-list__item">Monday-Friday: <?php the_field('restaurant_montofri'); ?></li>
+					<?php endif; ?>
 
-			        <li class="opening-hours-list__item">Tuesday:
-						<?php echo empty($tuesday) ? "Closed" : $tuesday; ?>
-			        </li>
+					<?php if( !$restaurant_hours_check ): ?>
+						<?php if($monday): ?>
+				        	<li class="opening-hours-list__item">Monday: <?php echo $monday; ?></li>
+						<?php endif; ?>
 
-			        <li class="opening-hours-list__item">Wednesday:
-						<?php echo empty($wednesday) ? "Closed" : $wednesday; ?>
-			        </li>
+				        <?php if($tuesday): ?>
+				        	<li class="opening-hours-list__item">Tuesday: <?php echo $tuesday; ?></li>
+						<?php endif; ?>
 
-			        <li class="opening-hours-list__item">Thursday:
-						<?php echo empty($thursday) ? "Closed" : $thursday; ?>
-			        </li>
+						<?php if($wednesday): ?>
+				        	<li class="opening-hours-list__item">Wednesday: <?php echo $wednesday; ?></li>
+						<?php endif; ?>
 
-			        <li class="opening-hours-list__item">Friday:
-						<?php echo empty($friday) ? "Closed" : $friday; ?>
-			        </li>
+						<?php if($thursday): ?>
+				        	<li class="opening-hours-list__item">Thursday: <?php echo $thursday; ?></li>
+						<?php endif; ?>
 
-			        <li class="opening-hours-list__item">Saturday:
-						<?php echo empty($saturday) ? "Closed" : $saturday; ?>
-			        </li>
+						<?php if($friday): ?>
+				        	<li class="opening-hours-list__item">Friday: <?php echo $friday; ?></li>
+						<?php endif; ?>
+					<?php endif; ?>
 
-			        <li class="opening-hours-list__item">Sunday:
-						<?php echo empty($sunday) ? "Closed" : $sunday; ?>
-			        </li>
+					<?php if($saturday): ?>
+			        	<li class="opening-hours-list__item">Saturday: <?php echo $saturday; ?></li>
+		        	<?php else: ?>
+		        		<li class="opening-hours-list__item">Saturday: Closed</li>
+					<?php endif; ?>
 
+					<?php if($sunday): ?>
+			        	<li class="opening-hours-list__item">Sunday: <?php echo $sunday; ?></li>
+		        	<?php else: ?>
+		        		<li class="opening-hours-list__item">Sunday: Closed</li>
+					<?php endif; ?>
 			    </ul>
 
 			</div>
