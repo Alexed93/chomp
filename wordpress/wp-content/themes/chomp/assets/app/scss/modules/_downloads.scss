@@ -14,14 +14,20 @@
 }
 
 .download__link {
+	max-width: 200px;
 	margin-bottom: $base*2;
+	vertical-align: top;
 
 	@include respond-min($bp2) {
 		margin-bottom: 0;
+		text-align: center;
 	}
 }
 
 .download__icon {
 	display: block;
-    margin: 0 auto;
+
+    @include respond-min($bp2) {
+    	margin: 0 auto;
+    }
 }

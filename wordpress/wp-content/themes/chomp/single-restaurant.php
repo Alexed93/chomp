@@ -38,7 +38,10 @@ $website = get_field('restaurant_website');
 $formatted_telephone = chomp_format_tel($telephone);
 
 // Get slider images
-$images = filterValidImages('restaurant_gallery_image', 3);
+$images = filterValidACF('restaurant_gallery_image', 6);
+
+// Get downloads
+$downloads = filterValidACF('restaurant_downloadable_file', 6);
 
 ?>
 
@@ -220,7 +223,7 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 
 	    <div class="grid"> <!-- Content area grid start -->
 
-	        <div class="grid__item grid__item--9-12-bp3"> <!-- Content area start -->
+	        <div class="grid__item grid__item--9-12-bp4"> <!-- Content area start -->
 
 				<h1 class="beta u-push-bottom/2">A bit about us</h1>
 				<?php if( get_field('restaurant_subtitle') ): ?>
@@ -230,21 +233,25 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 				<!-- Restaurant content area -->
 				<?php the_content(); ?>
 
+
+
+				<!-- Downloads section start -->
+				<?php if($downloads): ?>
 				<h1 class="beta u-push-bottom/2 u-push-top">Downloads</h1>
 				<h2 class="delta u-push-bottom">View what’s on offer</h2>
 
 				<div class="downloads u-pad u-display-inline u-push-bottom@2"> <!-- Restaurant downloads area start -->
-
-					<div class="download__link u-align-center u-display-inline u-push-right@2"> <!-- Restaurant download start -->
-
-					    <a href="assets/dist/downloads/file-example.pdf"> <!-- Restaurant download file -->
-					        <span class="icon icon--xlarge icon--download u-zero-bottom download__icon"></span> <!-- Restaurant download icon -->
-					        A La Cart <!-- Restaurant download title -->
-					    </a>
-
+				<?php foreach ($downloads as $download) : ?>
+					<div class="download__link u-display-inline u-push-right@2"> <!-- Restaurant download start -->
+						<a href="<?php echo $download['url']; ?>"> <!-- Restaurant download file -->
+						    <span class="icon icon--xlarge icon--download u-push-bottom/2 download__icon"></span> <!-- Restaurant download icon -->
+						    <p class="u-zero-bottom"><?php echo $download['title']; ?></p> <!-- Restaurant download title -->
+						</a>
 					</div> <!-- Restaurant download end -->
-
+				<?php endforeach; ?>
 				</div> <!-- Restaurant downloads area end -->
+				<?php endif; ?>
+				<!-- Downloads section end -->
 
 				<h1 class="beta u-push-bottom/2">Where to find us</h1>
 				<h2 class="delta u-push-bottom">10-12 The Green Guiseley, Leeds, LS20 9BT</h2> <!-- Restaurant address -->
@@ -301,7 +308,7 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 
         	</div> <!-- Content area end -->
 
-        	<div class="grid__item grid__item--3-12-bp3 cf"> <!-- Restaurant sidebar grid start -->
+        	<div class="grid__item grid__item--3-12-bp4 cf"> <!-- Restaurant sidebar grid start -->
 
                 <div class="sidebar cf"> <!-- Restaurant sidebar start -->
 
