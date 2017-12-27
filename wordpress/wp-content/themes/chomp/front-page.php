@@ -44,6 +44,7 @@ else if($hour > 17 && $hour <= 23) {
   $day_term = "tonight";
 }
 else {
+    $day_term = "soon";
 }
 
 // Get featured cuisine
