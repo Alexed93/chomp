@@ -20,10 +20,10 @@
         .summary-detail {
             width: 45%;
             height: 100%;
-            // float: right; Float ignored so child takes 100% of height
-            position: absolute;
-            right: 0;
-            top: 0;
+            float: right;
+            // position: absolute;
+            // right: 0;
+            // top: 0;
         }
     }
 }

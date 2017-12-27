@@ -80,11 +80,11 @@
         margin-left: $base/4;
     }
 
-    @include respond-min($bp2) {
-        position: absolute;
-        bottom: 1em;
-        left: 1em;
-    }
+    // @include respond-min($bp2) {
+    //     position: absolute;
+    //     bottom: 1em;
+    //     left: 1em;
+    // }
 }
 
 /* $. Modifications
