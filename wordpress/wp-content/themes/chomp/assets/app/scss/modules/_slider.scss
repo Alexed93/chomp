@@ -37,27 +37,32 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	background: rgba(31,31,31, 1);
 
-	img {
-		width: 70px !important;
-		height: 100% !important;
-	}
+	// img {
+	// 	width: 70px !important;
+	// 	height: auto !important;
+	// }
 
-	@include respond-min($bp2) {
-		img {
-			width: auto !important;
-		}
-	}
+	// @include respond-min($bp2) {
+	// 	img {
+	// 		width: 90px !important;
+	// 	}
+	// }
 }
 
 .slider-nav {
 	.slick-list {
 		.slick-track {
-			height: 50px;
-			background: rgba(0,0,0,.5);
+			background: rgba(0,0,0, .25);
 
 			.slick-current {
 				opacity: .5;
+			}
+
+			.slick-slide {
+				width: 70px;
+				height: auto;
 			}
 		}
 	}
