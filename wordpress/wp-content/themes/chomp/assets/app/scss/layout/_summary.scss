@@ -14,7 +14,9 @@
 
     @include respond-min($bp2) {
         margin-top: -300px;
+    }
 
+    @include respond-min($bp3) {
         .summary-detail {
             width: 45%;
             height: 100%;
