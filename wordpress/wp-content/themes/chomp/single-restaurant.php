@@ -124,16 +124,18 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 					$friday 	= get_field( 'restaurant_friday' );
 					$saturday 	= get_field( 'restaurant_saturday' );
 					$sunday 	= get_field( 'restaurant_sunday' );
+
+					$restaurant_hours_check = get_field('restaurant_hours_check');
 				?>
 
-			    <ul class="list--unset opening-hours__list u-display-inline">
-					<?php $restaurant_hours_check = get_field('restaurant_hours_check'); ?>
+			    <ul class="list--unset opening-hours__list u-display-inline"> <!-- Restaurant detail - opening hours list - start -->
 
-					<!-- Monday to Friday checkbox -->
-					<?php if( $restaurant_hours_check ): ?>
+					<!-- If Monday to Friday checkbox is checked and has a value-->
+					<?php if( $restaurant_hours_check && get_field('restaurant_montofri') ): ?>
 						<li class="opening-hours-list__item">Monday-Friday: <?php the_field('restaurant_montofri'); ?></li>
 					<?php endif; ?>
 
+					<!-- If Monday to Friday checkbox is not checked -->
 					<?php if( !$restaurant_hours_check ): ?>
 						<?php if($monday): ?>
 				        	<li class="opening-hours-list__item">Monday: <?php echo $monday; ?></li>
@@ -167,19 +169,46 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 		        	<?php else: ?>
 		        		<li class="opening-hours-list__item">Sunday: Closed</li>
 					<?php endif; ?>
-			    </ul>
+
+			    </ul> <!-- Restaurant detail - opening hours list - end -->
 
 			</div>
 			<!-- Restaurant detail - opening hours - end -->
 
+			<?php
+			// Get cuisine
+			$restaurant_cuisine = get_the_terms( get_the_ID(), 'cuisine' );
+			$restaurant_cuisine_name = $restaurant_cuisine[0]->name;
 
+			// Get features
+			$restaurant_features = get_field('restaurant_features');
+
+			if(in_array('alcohol', $restaurant_features)):
+			    $feature_icon['alcohol'] = "Alcohol";
+			endif;
+
+			if(in_array('family_friendly', $restaurant_features)):
+			    $feature_icon['family_friendly'] = "Family-Friendly";
+			endif;
+
+			if(in_array('open_late', $restaurant_features)):
+			    $feature_icon['open_late'] = "Open-Late";
+			endif;
+
+			if(in_array('parking', $restaurant_features)):
+			    $feature_icon['parking'] = "Parking";
+			endif;
+
+			?>
 
 			<!-- Restaurant detail - features - start -->
 			<div class="details u-push-top">
-			    <span class="icon icon--medium icon--Chinese"></span>
-			    <span class="icon icon--medium icon--Parking"></span>
-			    <span class="icon icon--medium icon--Alcohol"></span>
-			    <span class="icon icon--medium icon--Open-Late"></span>
+			    <span class="icon icon--medium icon--<?php echo $restaurant_cuisine_name; ?>"></span>
+				<?php if($restaurant_features): ?>
+				    <?php foreach($restaurant_features as $restaurant_feature): ?>
+				        <span class="icon icon--medium icon--<?php echo $feature_icon[$restaurant_feature]; ?>"></span>
+				    <?php endforeach; ?>
+				<?php endif; ?>
 			</div>
 			<!-- Restaurant detail - features - end -->
 
