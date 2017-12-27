@@ -265,78 +265,66 @@ $map = get_field('restaurant_google_map');
 				</div>
 				<?php endif; ?>
 
-				<h1 class="beta u-push-bottom/2">Comments</h1>
-				<h2 class="delta u-push-bottom">Read about what other Chompers thought, or add your own comment</h2>
-
-				<div class="comments"> <!-- Restaurant comments start -->
-
-					<form class="form form--comment" action=""> <!-- Restaurant create comment start -->
-					    <textarea class="comment-entry u-push-bottom/2" placeholder="What did you think?"></textarea>
-					    <input type="submit" value="Post" class="submit btn u-push-right">
-					    <input type="reset" value="Clear" class="filter_clear btn btn--reset u-style-underline u-weight-medium">
-					</form> <!-- Restaurant create comment end -->
-
-					<div class="u-pad comment cf u-push-bottom"> <!-- Restaurant comment start -->
-					    <img src="assets/dist/imgs/noprofile.svg" alt="Missing profile picture" class="profilepicture">
-					    <div class="comment__text">
-					        <h3 class="delta u-weight-medium u-push-bottom/2">Alex Edwards</h3>
-					        <p>this place is amazing!!!!!! best chinese ever, wish it was cheaper tho lol</p>
-					    </div>
-					</div> <!-- Restaurant create comment end -->
-
-					<div class="pagination u-push-top@2 u-push-bottom@2"> <!-- Pagination start -->
-
-					    <ul class="list--unset list--inline"> <!-- Pagination list start -->
-
-					        <li class="first">
-					            <a href="#" class="">Previous page</a>
-					        </li>
-
-					        <li class="pagination_active">
-					            <a href="#" class="">1</a>
-					        </li>
-
-					        <li class="">
-					            <a href="#" class="">2</a>
-					        </li>
-
-					        <li class="">
-					            <a href="#" class="">3</a>
-					        </li>
-
-					        <li class="last">
-					            <a href="#" class=" ">Next page</a>
-					        </li>
-
-					    </ul> <!-- Pagination list end -->
-
-					</div> <!-- Pagination end -->
-
-				</div> <!-- Restaurant comments end -->
-
         	</div> <!-- Content area end -->
 
         	<div class="grid__item grid__item--3-12-bp4 cf"> <!-- Restaurant sidebar grid start -->
 
-                <div class="sidebar cf"> <!-- Restaurant sidebar start -->
-
-					<!-- Restaurant trip-advisor start -->
-					<div class="trip-advisor u-push-bottom TA_selfserveprop" id="TA_selfserveprop33">
-					    <ul id="EcKBw4i4jI" class="TA_links qAfZLFtOfs">
-					        <li id="oyuDA9S9q" class="I7ExMxaf0XT">
-					            <a target="_blank" href="https://www.tripadvisor.co.uk/">
-					                <img src="https://www.tripadvisor.co.uk/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/>
-					            </a>
-					        </li>
-					    </ul>
-					</div>
-					<!-- Restaurant trip-advisor end -->
-
-					<?php get_template_part( 'views/globals/share-nav' ); ?> <!-- Social media sharing buttons -->
-
-            	</div> <!-- Restaurant sidebar end -->
+				<?php get_sidebar('restaurant'); ?>
 
         	</div> <!-- Restaurant sidebar grid end -->
+
+        	<div class="grid__item grid__item--9-12-bp4"> <!-- Comments grid item start -->
+
+        		<h1 class="beta u-push-bottom/2">Comments</h1>
+        		<h2 class="delta u-push-bottom">Read about what other Chompers thought, or add your own comment</h2>
+
+        		<div class="comments"> <!-- Restaurant comments start -->
+
+        			<form class="form form--comment" action=""> <!-- Restaurant create comment start -->
+        			    <textarea class="comment-entry u-push-bottom/2" placeholder="What did you think?"></textarea>
+        			    <input type="submit" value="Post" class="submit btn u-push-right">
+        			    <input type="reset" value="Clear" class="filter_clear btn btn--reset u-style-underline u-weight-medium">
+        			</form> <!-- Restaurant create comment end -->
+
+        			<div class="u-pad comment cf u-push-bottom"> <!-- Restaurant comment start -->
+        			    <img src="assets/dist/imgs/noprofile.svg" alt="Missing profile picture" class="profilepicture">
+        			    <div class="comment__text">
+        			        <h3 class="delta u-weight-medium u-push-bottom/2">Alex Edwards</h3>
+        			        <p>this place is amazing!!!!!! best chinese ever, wish it was cheaper tho lol</p>
+        			    </div>
+        			</div> <!-- Restaurant create comment end -->
+
+        			<div class="pagination u-push-top@2 u-push-bottom@2"> <!-- Pagination start -->
+
+        			    <ul class="list--unset list--inline"> <!-- Pagination list start -->
+
+        			        <li class="first">
+        			            <a href="#" class="">Previous page</a>
+        			        </li>
+
+        			        <li class="pagination_active">
+        			            <a href="#" class="">1</a>
+        			        </li>
+
+        			        <li class="">
+        			            <a href="#" class="">2</a>
+        			        </li>
+
+        			        <li class="">
+        			            <a href="#" class="">3</a>
+        			        </li>
+
+        			        <li class="last">
+        			            <a href="#" class=" ">Next page</a>
+        			        </li>
+
+        			    </ul> <!-- Pagination list end -->
+
+        			</div> <!-- Pagination end -->
+
+        		</div> <!-- Restaurant comments end -->
+
+        	</div> <!-- Comments grid item end -->
 
     	</div> <!-- Content area grid end -->
 
