@@ -223,18 +223,12 @@ $images = filterValidImages('restaurant_gallery_image', 3);
 	        <div class="grid__item grid__item--9-12-bp3"> <!-- Content area start -->
 
 				<h1 class="beta u-push-bottom/2">A bit about us</h1>
-				<h2 class="delta u-push-bottom/2">A Family Run Award Winning Chinese Restaurant.</h2> <!-- Restaurant sub-title -->
+				<?php if( get_field('restaurant_subtitle') ): ?>
+					<h2 class="delta u-push-bottom/2 u-push-right@2"><?php the_field('restaurant_subtitle'); ?></h2> <!-- Restaurant sub-title -->
+				<?php endif; ?>
 
-				<!-- Restaurant content field -->
-				<p>Zen Rendezvous is a multi award winning contemporary oriental restaurant with rave reviews from national media including appearances on Channel 4’s ‘Gordon Ramsey’s F Word – Best Local UK Restaurant’.</p>
-
-				<p>The restaurant boasts an extensive menu which features dishes from the East suiting all tastes. Our comprehensive wine list complements all our exquisite flavours.</p>
-
-				<p>A family business originally established in 1991, Zen Rendezvous was previously known as Jade Unicorn before its transformation in 2000. Over the years, Zen has pushed the boundaries of traditional oriental restaurants by providing a blend of classic and modern decor and introduced more diverse dishes. This has led to Zen becoming an award winning restaurant.</p>
-
-				<p>We pride ourselves on providing diners with a memorable eating experience from the moment they step foot through the door. Be it a romantic dinner, a business dinner or just a family gathering we will ensure that you enjoy every moment within our restaurant.</p>
-
-				<p>Zen looks forward to your company.</p>
+				<!-- Restaurant content area -->
+				<?php the_content(); ?>
 
 				<h1 class="beta u-push-bottom/2 u-push-top">Downloads</h1>
 				<h2 class="delta u-push-bottom">View what’s on offer</h2>

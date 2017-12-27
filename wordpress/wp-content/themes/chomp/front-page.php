@@ -48,7 +48,7 @@ else {
 }
 
 // Get featured cuisine
-$featured_cuisines = get_field( 'featured_cuisine');
+$featured_cuisines = get_field('featured_cuisine');
 if( $featured_cuisines ){
     $featured_cuisine = $featured_cuisines->name;
 }
