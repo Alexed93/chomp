@@ -8,27 +8,27 @@
 
         if($excludes):
             $featured_restaurant = array();
+
             foreach ($excludes as $excluded):
                 $featured_restaurant[] = $excluded->ID;
             endforeach;
-        endif;
 
-        // Get remaining restaurants
-        $restaurants = chomp_get_restaurants(
-            6,
-            $orderby = 'menu_order',
-            $order = 'ASC',
-            $excludes = $featured_restaurant
-        );
+            // Get remaining restaurants
+            $restaurants = chomp_get_restaurants(
+                $count = 6,
+                $orderby = 'menu_order',
+                $order = 'ASC',
+                $excludes = $featured_restaurant
+            );
+        endif;
 
     else:
 
         // Get remaining restaurants
         $restaurants = chomp_get_restaurants(
-            -1,
+            $count = 6,
             $orderby = 'menu_order',
-            $order = 'ASC',
-            $excludes = $featured_restaurant
+            $order = 'ASC'
         );
 
     endif;
@@ -107,8 +107,8 @@
     </div> <!-- Additional restaurant card grid item end -->
 
     <?php endwhile; ?>
+    <?php include(locate_template('views/globals/pagination.php')); ?>
 
-    <?php get_template_part('views/globals/pagination'); ?>
     <?php wp_reset_postdata(); ?>
 
     <?php else: ?>
