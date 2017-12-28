@@ -81,7 +81,6 @@
 
                 <div class="card__inputs"> <!-- Additional restaurant card specific icons start -->
 
-
                     <div class="details u-float-left"> <!-- Additional restaurant card specific icons container start -->
                         <span class="icon icon--medium icon--<?php echo $restaurant_cuisine_name; ?>"></span>
                         <?php if($restaurant_features): ?>
