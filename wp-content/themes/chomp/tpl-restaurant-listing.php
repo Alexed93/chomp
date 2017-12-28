@@ -199,7 +199,7 @@ if( $hero_image ){
 
             <div class="grid grid--flex results--grid"> <!-- Search results grid start -->
 
-                <?php get_template_part( 'views/cards/loop' ); ?>
+                <?php get_template_part( 'views/cards/restaurant-loop' ); ?>
 
             </div> <!-- Search results grid end -->
 

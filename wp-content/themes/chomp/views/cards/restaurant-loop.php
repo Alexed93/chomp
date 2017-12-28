@@ -16,8 +16,6 @@
             // Get remaining restaurants
             $restaurants = chomp_get_restaurants(
                 $count = 6,
-                $orderby = 'menu_order',
-                $order = 'ASC',
                 $excludes = $featured_restaurant
             );
         endif;
@@ -26,9 +24,7 @@
 
         // Get remaining restaurants
         $restaurants = chomp_get_restaurants(
-            $count = 6,
-            $orderby = 'menu_order',
-            $order = 'ASC'
+            $count = 6
         );
 
     endif;
@@ -105,13 +101,9 @@
 
     </div> <!-- Additional restaurant card grid item end -->
 
+
     <?php endwhile; ?>
-    <?php include(locate_template('views/globals/pagination.php')); ?>
-
-    <?php wp_reset_postdata(); ?>
-
+        <?php get_template_part('views/globals/pagination'); ?>
     <?php else: ?>
-
         <?php get_template_part('views/errors/404-posts'); ?>
-
-<?php endif; ?>
+<?php endif; wp_reset_query(); ?>
