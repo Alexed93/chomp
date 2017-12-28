@@ -62,7 +62,7 @@
 
     <!-- Breadcrumbs -->
     <?php if(!is_front_page() && !is_404()) : ?>
-    <div class="container">
+    <div class="container u-push-top/2">
         <?php get_template_part('views/globals/breadcrumbs'); ?>
     </div>
     <?php endif; ?>
