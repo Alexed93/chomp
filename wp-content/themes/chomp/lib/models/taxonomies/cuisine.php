@@ -35,7 +35,7 @@ function chomp_taxonomy_cuisine () {
             'show_ui' => true,
             'hierarchical' => true,
             'query_var' => true,
-            'rewrite' => array( 'slug' => 'Cuisines', 'with_front' => false ),
+            'rewrite' => array( 'slug' => 'cuisines', 'with_front' => false ),
         )
     );
 }
