@@ -60,15 +60,11 @@
 
     </div> <!-- End container primary nav and logo -->
 
-    <!-- Pagination -->
-    <div class="container"> <!-- Pagination container start -->
-
-        <div class="breadcrumbs"> <!-- Pagination breadcrumbs start -->
-
-            <a href="index.html">Home</a> > Inspire Me
-
-        </div> <!-- Pagination breadcrumbs end -->
-
-    </div> <!-- Pagination container end -->
+    <!-- Breadcrumbs -->
+    <?php if(!is_front_page() && !is_404()) : ?>
+    <div class="container">
+        <?php get_template_part('views/globals/breadcrumbs'); ?>
+    </div>
+    <?php endif; ?>
 
 </header>
