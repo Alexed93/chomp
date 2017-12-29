@@ -180,7 +180,7 @@ $featured_restaurants = get_field('featured_restaurants');
                                         <?php if($restaurant_features): ?>
                                             <?php foreach($restaurant_features as $restaurant_feature): ?>
                                                 <span class="icon icon--medium icon--<?php echo $feature_icon[$restaurant_feature]; ?>"></span>
-                                            <?php endforeach; ?>
+                                            <?php endforeach; wp_reset_postdata(); ?>
                                         <?php endif; ?>
 
                                     </div> <!-- Featured card specific icons container end -->

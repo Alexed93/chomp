@@ -37,7 +37,6 @@ function chomp_get_restaurants ($count = -1, $orderby = 'menu_order', $order = '
         $args["offset"] = $offset;
     }
 
-
     // Create new instance of WP_Query class.
     $output = new WP_Query( $args );
     // Return the results

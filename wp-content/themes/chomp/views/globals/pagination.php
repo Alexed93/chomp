@@ -1,3 +1,7 @@
+<!-- Problem: It's finding the correct amount of $found_posts,
+$ppp and calculating $total_pages just fine -
+the 'offset' keeps restarting and showing posts from previous/next pages -->
+
 <?php
     global $wp_query;
     // Results pagination offset
@@ -6,8 +10,6 @@
     $ppp = $wp_query->query_vars["posts_per_page"];
     $total_pages = $wp_query->max_num_pages;
 ?>
-
-<?php var_dump($ppp); ?>
 
 <?php if ( $total_pages > 1 ) : ?>
 
