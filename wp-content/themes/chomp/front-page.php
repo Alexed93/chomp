@@ -202,7 +202,7 @@ $featured_restaurants = get_field('featured_restaurants');
 
                     <?php endforeach; ?>
                     <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
+                <?php wp_reset_query(); endif; ?>
 
                 </div> <!-- Promoted restaurants grid end -->
 

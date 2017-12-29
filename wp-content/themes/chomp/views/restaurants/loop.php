@@ -29,7 +29,12 @@
 
         else:
             // Get remaining restaurants
-            $restaurants = chomp_get_restaurants($count = 6, $orderby = 'menu_order', $order = 'ASC', $excludes = '' );
+            $restaurants = chomp_get_restaurants(
+                $count = 6,
+                $orderby = 'menu_order',
+                $order = 'ASC',
+                $excludes = ''
+            );
         endif;
 
     ?>
