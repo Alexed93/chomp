@@ -6,46 +6,49 @@
         $excludes = '';
         $featured_restaurant = '';
 
-        if( is_front_page() ) :
-            // Get the IDs of the 3 restuarants marked as "featured"
-            $excludes = get_field('featured_restaurants');
+            if( is_front_page() ) :
+                // Get the IDs of the 3 restuarants marked as "featured"
+                $excludes = get_field('featured_restaurants');
 
-            if($excludes):
+                if($excludes):
 
-                $featured_restaurant = array();
-                foreach ($excludes as $excluded):
-                    $featured_restaurant[] = $excluded->ID;
-                endforeach;
+                    $featured_restaurant = array();
+                    foreach ($excludes as $excluded):
+                        $featured_restaurant[] = $excluded->ID;
+                    endforeach;
 
+                    // Get remaining restaurants
+                    $restaurants = chomp_get_restaurants(
+                        $count = 6,
+                        $orderby = 'menu_order',
+                        $order = 'ASC',
+                        $excludes = $featured_restaurant
+                    );
+
+                endif;
+
+            else:
                 // Get remaining restaurants
                 $restaurants = chomp_get_restaurants(
                     $count = 6,
                     $orderby = 'menu_order',
                     $order = 'ASC',
-                    $excludes = $featured_restaurant
+                    $excludes = ''
                 );
 
             endif;
-
-        else:
-            // Get remaining restaurants
-            $restaurants = chomp_get_restaurants(
-                $count = 6,
-                $orderby = 'menu_order',
-                $order = 'ASC',
-                $excludes = ''
-            );
-        endif;
 
     ?>
 
     <div class="grid grid--flex results--grid"> <!-- Restaurants grid start -->
 
         <?php if ( $restaurants->have_posts() ) : ?>
+
             <?php while ( $restaurants->have_posts() ) : $restaurants->the_post(); ?>
                 <?php get_template_part('views/restaurants/index'); ?>
             <?php endwhile; ?>
 
+            <!-- Pagination -->
             <?php if( !is_front_page() ) : ?>
                 <?php $wp_query = $restaurants; get_template_part( 'views/globals/pagination' ); wp_reset_query(); ?>
             <?php endif; ?>

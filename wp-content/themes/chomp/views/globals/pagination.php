@@ -13,25 +13,27 @@ the 'offset' keeps restarting and showing posts from previous/next pages -->
 
 <?php if ( $total_pages > 1 ) : ?>
 
-    <div class="pagination">
+<div class="grid__item grid__item--12-12-bp2">
+    <div class="pagination u-push-top u-push-bottom">
         <?php if ($offset): ?>
             <!-- Previous Results Page -->
-            <a href="<?php echo esc_url( add_query_arg( 'offset', $offset-$ppp ) ); ?>" class="prev">Previous</a>
+            <a href="<?php echo esc_url( add_query_arg( 'offset', $offset-$ppp ) ); ?>" class="first">Previous</a>
         <?php endif; ?>
 
         <!-- Pagination -->
-        <ol class="pages">
+        <ol class="pages list--unset list--inline u-display-inline">
             <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-                <li>
-                    <a href="<?php echo esc_url( add_query_arg( 'offset', ($i*$ppp)-$ppp ) ); ?>" class="<?php echo ((($i*$ppp)-$ppp) == $offset ? "disabled" : ""); ?>"><?php echo $i; ?></a>
+                <li class="<?php echo ((($i*$ppp)-$ppp) == $offset ? "disabled" : ""); ?>">
+                    <a href="<?php echo esc_url( add_query_arg( 'offset', ($i*$ppp)-$ppp ) ); ?>"><?php echo $i; ?></a>
                 </li>
             <?php endfor; ?>
         </ol>
 
         <?php if ($found_posts-$offset > $ppp): ?>
             <!-- Next Results Page -->
-            <a href="<?php echo esc_url( add_query_arg( 'offset', $offset+$ppp ) ); ?>" class="next">Next</a>
+            <a href="<?php echo esc_url( add_query_arg( 'offset', $offset+$ppp ) ); ?>" class="last">Next</a>
         <?php endif; ?>
     </div>
+</div>
 
 <?php endif; ?>

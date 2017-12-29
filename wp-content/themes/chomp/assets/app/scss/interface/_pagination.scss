@@ -1,65 +1,43 @@
 .pagination {
     font-size: 1rem;
-
-    a, span {
-        display: inline-block;
-    }
+    display: inline-block;
 
     a {
         line-height: 1;
         border-bottom: none;
+        // border-radius: 3px;
         text-decoration: none;
+        color: $white;
     }
 
     li {
+        display: inline;
         margin: 0;
         padding: $base/2 $base;
-        display: block;
         text-align: center;
-        border: 1px solid $grey-light;
+        border: 1px solid $white;
+        background: $italian;
 
         &:hover {
-            background: darken($white, 2%);
-            color: $italian;
-        }
-
-        @include respond-min($bp2) {
-            display: inline;
-        }
-
-        &.pagination_active {
-            background: $grey-lighter;
+            background: darken($italian, 13%);
         }
     }
 
     .first,
     .last {
-        border: none;
         background: $italian;
-        border: 1px solid $italian;
-
-        a {
-            color: $white;
-        }
+        padding: .5em 1em;
 
         &:hover {
-            background: darken($italian, 10%);
+            background: darken($italian, 13%);
         }
     }
 
-    .first {
-        border-radius: 3px 3px 0 0;
+    .disabled {
+        background: $grey-light;
 
-        @include respond-min($bp2) {
-            border-radius: 3px 0 0 3px;
-        }
-    }
-
-    .last {
-        border-radius: 0 0 3px 3px;
-
-         @include respond-min($bp2) {
-            border-radius: 0 3px 3px 0;
+        &:hover {
+            background: $grey-light;
         }
     }
 }
