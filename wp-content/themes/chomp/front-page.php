@@ -250,16 +250,7 @@ $featured_restaurants = get_field('featured_restaurants');
 
         <h1 class="beta u-push-top sub-heading--inverted u-weight-medium">Other popular restaruants in Leeds</h1>
 
-        <div class="results test--flexbox"> <!-- Additional restaurants results start -->
-            <div class="grid grid--flex results--grid"> <!-- Additional restaurants results grid start -->
-
-                <?php get_template_part( 'views/restaurants/list' ); ?>
-
-            </div> <!-- Additional restaurants grid end -->
-
-        <a href="<?php echo get_page_link(20); ?>" class="delta u-weight-light u-display-inline u-push-top u-push-bottom@2 sub-link">View more restaurants</a>
-
-        </div> <!-- Additional restaurants results end -->
+        <?php get_template_part('views/restaurants/loop'); ?> <!-- Additional restaurants results -->
 
     </div> <!-- Additional restaurants end -->
 

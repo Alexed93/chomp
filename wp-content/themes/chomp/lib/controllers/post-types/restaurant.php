@@ -28,6 +28,16 @@ function chomp_get_restaurants ($count = -1, $orderby = 'menu_order', $order = '
         'order'          => $order,
         'post__not_in'   => $excludes
     );
+
+    $offset = (isset($_GET["offset"])
+        ? (int) sanitize_text_field($_GET["offset"])
+        : (int) false
+    );
+    if ( $offset ) {
+        $args["offset"] = $offset;
+    }
+
+
     // Create new instance of WP_Query class.
     $output = new WP_Query( $args );
     // Return the results

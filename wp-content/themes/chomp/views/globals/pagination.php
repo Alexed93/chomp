@@ -1,51 +1,35 @@
-<?php if( !is_front_page() ) : ?>
+<?php
+    global $wp_query;
+    // Results pagination offset
+    $offset = isset( $_GET["offset"] ) ? sanitize_text_field( $_GET["offset"] ) : 0;
+    $found_posts = $wp_query->found_posts;
+    $ppp = $wp_query->query_vars["posts_per_page"];
+    $total_pages = $wp_query->max_num_pages;
+?>
 
-    <?php
-        $ppp = '6';
-        $restaurants = chomp_get_restaurants($ppp);
-        $filter_output = $restaurants;
-        $found_posts = $filter_output->found_posts;
-        $total_pages = ceil($found_posts / $ppp);
-        $page = (isset($_GET['filter_page'])) ? $_GET['filter_page'] : '1';
-    ?>
+<?php var_dump($ppp); ?>
 
-    <?php if ( $total_pages > 1 ) : ?>
+<?php if ( $total_pages > 1 ) : ?>
 
-        <nav class="pagination">
-            <div class="wp-pagenavi">
+    <div class="pagination">
+        <?php if ($offset): ?>
+            <!-- Previous Results Page -->
+            <a href="<?php echo esc_url( add_query_arg( 'offset', $offset-$ppp ) ); ?>" class="prev">Previous</a>
+        <?php endif; ?>
 
-                <!-- Previous Results Page -->
-                <?php if ($page != 1): ?>
-                    <a href="<?php echo esc_url( add_query_arg( 'filter_page', $page-1 ) ); ?>" class="previouspostslink">
-                        <i class="btn__icon btn__icon--arrow | icon icon--arrow-left-white"></i>
-                        <span class="btn__inner">Previous</span>
-                    </a>
-                <?php endif; ?>
+        <!-- Pagination -->
+        <ol class="pages">
+            <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
+                <li>
+                    <a href="<?php echo esc_url( add_query_arg( 'offset', ($i*$ppp)-$ppp ) ); ?>" class="<?php echo ((($i*$ppp)-$ppp) == $offset ? "disabled" : ""); ?>"><?php echo $i; ?></a>
+                </li>
+            <?php endfor; ?>
+        </ol>
 
-                <!-- Pagination -->
-                <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-                    <?php if($page == $i): ?>
-                        <span class="current">
-                            <span class="btn__inner"><?php echo $i; ?></span>
-                        </span>
-                    <?php else: ?>
-                        <a href="<?php echo esc_url( add_query_arg( 'filter_page', $i ) ); ?>" class="page larger">
-                            <span class="btn__inner"><?php echo $i; ?></span>
-                        </a>
-                    <?php endif; ?>
-                <?php endfor; ?>
-
-                <!-- Next Results Page -->
-                <?php if ($page < $total_pages): ?>
-                    <a href="<?php echo esc_url( add_query_arg( 'filter_page', $page+1 ) ); ?>" class="nextpostslink">
-                        <span class="btn__inner">Next</span>
-                        <i class="btn__icon btn__icon--arrow | icon icon--arrow-right-white"></i>
-                    </a>
-                <?php endif; ?>
-
-            </div>
-        </nav>
-
-    <?php endif; ?>
+        <?php if ($found_posts-$offset > $ppp): ?>
+            <!-- Next Results Page -->
+            <a href="<?php echo esc_url( add_query_arg( 'offset', $offset+$ppp ) ); ?>" class="next">Next</a>
+        <?php endif; ?>
+    </div>
 
 <?php endif; ?>
