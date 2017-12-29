@@ -253,7 +253,7 @@ $featured_restaurants = get_field('featured_restaurants');
         <div class="results test--flexbox"> <!-- Additional restaurants results start -->
             <div class="grid grid--flex results--grid"> <!-- Additional restaurants results grid start -->
 
-            <?php get_template_part( 'views/cards/restaurant-loop' ); ?>
+                <?php get_template_part( 'views/restaurants/list' ); ?>
 
             </div> <!-- Additional restaurants grid end -->
 
