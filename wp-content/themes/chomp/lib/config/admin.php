@@ -154,7 +154,7 @@ add_action( 'init', 'chomp_remove_emoji' );
  ******************************************************************************/
 
 function chomp_update_post_type_features() {
-    // remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'post', 'comments' );
     remove_post_type_support( 'post', 'thumbnail' );
     remove_post_type_support( 'post', 'trackbacks' );
     remove_post_type_support( 'post', 'custom-fields' );

@@ -1,6 +1,4 @@
-<!-- Problem: It's finding the correct amount of $found_posts,
-$ppp and calculating $total_pages just fine -
-the 'offset' keeps restarting and showing posts from previous/next pages -->
+<!-- Problem: The 'offset' keeps restarting and showing posts from previous/next pages -->
 
 <?php
     global $wp_query;
