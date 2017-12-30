@@ -19,21 +19,23 @@
  * @param  int     $count   Number of posts you'd like to bring through.
  * @return object           WP_Query instance
  */
-function chomp_get_restaurants ($count = -1, $orderby = 'menu_order', $order = 'ASC', $excludes = [] ) {
+function chomp_get_restaurants($excludes = [] ) {
     // Define arguments for query.
     $args = array(
-        'post_type'      => 'restaurant',
-        'posts_per_page' => $count,
-        'orderby'        => $orderby,
-        'order'          => $order,
-        'post__not_in'   => $excludes
+        'post_type' => 'restaurant',
+        'post_status' => 'publish',
+        'posts_per_page' => 6,
+        'post__not_in'   => $excludes,
+        'offset' => 0,
     );
 
-    // Create new instance of WP_Query class.
-    $output = new WP_Query( $args );
-    // Return the results
-    return $output;
+    $offset = isset( $_GET["offset"] ) ? sanitize_text_field( $_GET["offset"] ) : 0;
+    if ( $offset ) {
+        $args['offset'] = $offset;
+    }
+    return new WP_Query( $args );
 }
+
 /**
  * $. Setters
  ******************************************************************************/
