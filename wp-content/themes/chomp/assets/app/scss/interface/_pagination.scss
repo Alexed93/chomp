@@ -7,7 +7,7 @@
         border-bottom: none;
         // border-radius: 3px;
         text-decoration: none;
-        color: $white;
+        color: $italian;
     }
 
     li {
@@ -15,29 +15,34 @@
         margin: 0;
         padding: $base/2 $base;
         text-align: center;
-        border: 1px solid $white;
-        background: $italian;
+        // border: 1px solid $italian;
+        background: $grey-lighter;
 
         &:hover {
-            background: darken($italian, 13%);
+            background: $grey-light;
         }
     }
 
     .first,
     .last {
-        background: $italian;
         padding: .5em 1em;
+        background: $grey-lighter;
+        color: $italian;
 
         &:hover {
-            background: darken($italian, 13%);
+            background: $grey-light;
         }
     }
 
     .disabled {
-        background: $grey-light;
+        background: $italian;
+
+        a {
+            color: $white;
+        }
 
         &:hover {
-            background: $grey-light;
+            background: $italian;
         }
     }
 }
