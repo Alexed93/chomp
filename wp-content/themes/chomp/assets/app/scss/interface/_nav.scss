@@ -41,11 +41,6 @@ $color-nav: $color-link;
 .nav__item {
     margin-bottom: 0;
 
-    &.is-current .nav__link {
-        color: $italian;
-        border-bottom: 1px solid $italian;
-    }
-
     @include respond-min($bp2) {
         display: inline-block;
 
