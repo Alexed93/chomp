@@ -100,7 +100,7 @@ $featured_restaurants = get_field('featured_restaurants');
 
                 <h1 class="beta u-pad-top sub-heading">Top
                     <span class="u-weight-medium"><?php echo $featured_cuisine; ?></span>
-                    picks for <span class="u-weight-medium"><?php echo $monthYear; ?></span>
+                    restaurants for <span class="u-weight-medium"><?php echo $monthYear; ?></span>
                 </h1> <!-- Dynamic depending on date and cuisine of the month -->
 
                 <div class="grid grid--flex"> <!-- Promoted restaurants grid start -->
