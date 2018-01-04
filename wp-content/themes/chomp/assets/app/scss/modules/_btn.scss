@@ -162,9 +162,9 @@ input[type="button"],
 }
 
 button.sign-up-submit, button.search-submit {
+    padding: 0;
     position: absolute;
     right: 0;
-    padding: 0;
     background: $italian;
     border-radius: 0 3px 3px 0;
 }
@@ -179,13 +179,19 @@ button.search-submit {
     width: 60px;
     height: 60px;
     top: 0;
+
+    @include respond-min($bp2) {
+        position: sticky;
+        margin-left: -5px;
+    }
 }
 
 .form-buttons {
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    clear: both;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
 }
 
 .filter_clear, .submit {

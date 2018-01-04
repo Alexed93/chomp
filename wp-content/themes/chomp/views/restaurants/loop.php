@@ -19,14 +19,18 @@
 
                     // Get remaining restaurants
                     $restaurants = chomp_get_restaurants(
-                        $excludes = $featured_restaurant
+                        $excludes = $featured_restaurant,
+                        $text = ''
                     );
 
                 endif;
 
             else:
+
                 // Get remaining restaurants
                 $restaurants = chomp_get_restaurants(
+                    $excludes = '',
+                    $text = ''
                 );
 
             endif;

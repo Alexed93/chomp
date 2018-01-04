@@ -137,8 +137,8 @@ fieldset:last-child {
     max-width: 500px;
 
     @include respond-min($bp3) {
-        min-width: 500px;
-        float: left;
+        max-width: none;
+        width: 725px;
     }
 }
 

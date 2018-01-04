@@ -70,13 +70,13 @@ $featured_restaurants = get_field('featured_restaurants');
                 </span>
             </h1> <!-- Dynamic depending on time of day e.g. today/tonight -->
 
-            <form class="u-align-center u-push-bottom u-margin-center form form--search" action=""> <!-- Search form start -->
+            <form class="u-align-center u-push-bottom u-margin-center form form--search" action="/search" method="get"> <!-- Search form start -->
 
                 <label for="search" class="is-hidden">Search for a restaurant</label>
                 <input type="text" name="search" placeholder="What do you fancy?" class="search">
 
                 <!-- Search button start -->
-                <button type="button" class="search-submit">
+                <button type="submit" class="search-submit">
                     <span class="icon icon--small icon--search"></span>
                     <span class="is-hidden">Search</span>
                 </button>

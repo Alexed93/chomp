@@ -52,17 +52,17 @@ if( $hero_image ){
 
             <div class="search-options cf"> <!-- Search options start -->
 
-                <div class="search-area"> <!-- Search area start -->
+                <div class="search-area cf"> <!-- Search area start -->
 
                     <h3 class="u-push-bottom/2 u-weight-medium">Search again</h3>
 
-                    <form class="u-push-bottom form form-search--filter" action=""> <!-- Search form start -->
+                    <form class="u-push-bottom form form-search--filter" action="/search" method="get"> <!-- Search form start -->
 
                         <label for="search" class="is-hidden">Search for a restaurant</label>
                         <input type="text" name="search" placeholder="What do you fancy?" class="search">
 
                         <!-- Search button start -->
-                        <button type="button" class="search-submit">
+                        <button type="submit " class="search-submit">
                             <span class="icon icon--small icon--search"></span>
                             <span class="is-hidden">Search</span>
                         </button>
@@ -74,8 +74,6 @@ if( $hero_image ){
                             <a href="#" class="u-style-underline u-style-italic | popular__link">Italian,</a>
                             <a href="#" class="u-style-underline u-style-italic | popular__link">Indian</a>...
                         </div> <!-- Popular searches examples end -->
-
-                    </form> <!-- Search form end -->
 
                     <div class="filter-toggle"> <!-- Search filters toggle start -->
 
@@ -89,15 +87,13 @@ if( $hero_image ){
 
             </div> <!-- Search options end -->
 
-            <div class="filter-area u-push-top"> <!-- Search filters start -->
-
-                <form action=""> <!-- Search filters form start -->
-
+            <div class="filter-area u-push-top cf"> <!-- Search filters start -->
+                <div class="cf">
                     <div class="options-additional"> <!-- Search filters (Features) form options area start -->
 
                         <h3 class="u-weight-medium u-push-bottom/2">Filter it down</h3>
 
-                        <ul class="options-additional__list"> <!-- Search filters (Features) form options start -->
+                        <ul class="list--unset options-additional__list"> <!-- Search filters (Features) form options start -->
 
                             <li class=""> <!-- Family Friendly -->
                                 <input type="checkbox" class="checkbox" id="option1" value="family">
@@ -127,7 +123,7 @@ if( $hero_image ){
 
                         <h3 class="u-weight-medium u-push-bottom/2">Try something else</h3>
 
-                        <ul class="options-cuisine__list cf"> <!-- Search filters (Cuisine) form options start -->
+                        <ul class="options-cuisine__list list--unset cf"> <!-- Search filters (Cuisine) form options start -->
 
                             <li class=""> <!-- Chinese -->
                                 <input type="checkbox" class="checkbox" id="cuisine1" value="chinese">
@@ -167,15 +163,15 @@ if( $hero_image ){
                         </ul> <!-- Search filters (Cuisine) form options end -->
 
                     </div> <!-- Search filters (Cuisine) form options area end -->
+                </div>
+                <div class="form-buttons u-push-top"> <!-- Search filters form buttons start -->
 
-                    <div class="form-buttons"> <!-- Search filters form buttons start -->
+                    <input type="submit" value="Search" class="submit btn u-push-right"> <!-- Search -->
+                    <input type="reset" value="Reset filters" class="filter_clear btn btn--reset u-style-underline u-weight-medium"> <!-- Clear/Reset -->
 
-                        <input type="submit" value="Search" class="submit btn u-push-right"> <!-- Search -->
-                        <input type="reset" value="Reset filters" class="filter_clear btn btn--reset u-style-underline u-weight-medium"> <!-- Clear/Reset -->
+                </div> <!-- Search filters form buttons end -->
 
-                    </div> <!-- Search filters form buttons end -->
-
-                </form> <!-- Search filters toggle form end -->
+                </form> <!-- Search form end -->
 
             </div> <!-- Search filters end -->
 
