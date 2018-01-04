@@ -69,11 +69,8 @@ if( $hero_image ){
                         <!-- Search button end -->
 
                         <!-- Popular searches examples start -->
-                        <div class="popular u-align-left u-push-top/2">Popular searches:
-                            <a href="#" class="u-style-underline u-style-italic | popular__link">Leeds,</a>
-                            <a href="#" class="u-style-underline u-style-italic | popular__link">Italian,</a>
-                            <a href="#" class="u-style-underline u-style-italic | popular__link">Indian</a>...
-                        </div> <!-- Popular searches examples end -->
+                        <?php get_template_part('views/globals/popular-searches'); ?>
+                        <!-- Popular searches examples end -->
 
                     <div class="filter-toggle"> <!-- Search filters toggle start -->
 
