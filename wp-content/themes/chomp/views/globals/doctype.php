@@ -47,4 +47,44 @@
     <!-- wp_head -->
     <?php wp_head(); ?>
 </head>
-<body class="debug">
+
+<?php
+
+// Get featured cuisine
+$featured_cuisines = get_field('featured_cuisine');
+$site_colour = "";
+
+if( $featured_cuisines ){
+    $featured_cuisine = $featured_cuisines->name;
+
+    switch ($featured_cuisine) {
+        case "Italian":
+            $site_colour = "site_colour--italian";
+            break;
+        case "Thai":
+            $site_colour = "site_colour--italian";
+            break;
+        case "Indian":
+            $site_colour = "site_colour--indian";
+            break;
+        case "American":
+            $site_colour = "site_colour--american";
+            break;
+        case "French":
+            $site_colour = "site_colour--french";
+            break;
+        case "English":
+            $site_colour = "site_colour--english";
+            break;
+        case "Chinese":
+            $site_colour = "site_colour--chinese";
+            break;
+        default:
+            var_dump("it's borked");
+    }
+}
+
+
+?>
+
+<body class="debug <?php echo $site_colour; ?>">
