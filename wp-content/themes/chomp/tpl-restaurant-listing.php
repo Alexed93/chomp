@@ -190,6 +190,7 @@ if ( isset($_GET['search']) && !empty($_GET['search']) ) {
 
                     </div> <!-- Search filters (Cuisine) form options area end -->
                 </div>
+
                 <div class="form-buttons u-push-top"> <!-- Search filters form buttons start -->
 
                     <input type="submit" value="Search" class="submit btn u-push-right"> <!-- Search -->
