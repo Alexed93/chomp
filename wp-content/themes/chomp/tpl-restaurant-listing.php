@@ -47,8 +47,6 @@ if ( isset($_GET['search']) && !empty($_GET['search']) ) {
 
         <div class="container container--small"> <!-- Hero container start -->
 
-
-
                 <?php if( $total_posts ): ?>
 
                     <h1 class="u-align-center u-push-bottom/2 alpha">Showing
@@ -208,16 +206,6 @@ if ( isset($_GET['search']) && !empty($_GET['search']) ) {
     </div> <!-- Search area end -->
 
     <div class="container cf"> <!-- Search results container start -->
-
-        <div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
-
-            <select class="btn btn--sorting-options"> <!-- Search results sorting options start -->
-                <option value="relevance">Sort by relevance</option> <!-- Relevance -->
-                <option value="name">Sort by name</option> <!-- Name -->
-                <option value="options">Sort by features</option> <!-- Features -->
-            </select> <!-- Search results sorting options end  -->
-
-        </div> <!-- Search results sorting end -->
 
         <?php get_template_part('views/restaurants/loop'); ?>
 
