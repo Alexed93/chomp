@@ -67,7 +67,7 @@
 
     @include respond-min($bp2) {
         min-height: 350px;
-        padding-top: 5em;
+        padding-top: 6em;
 
         &:before {
             min-height: 350px;

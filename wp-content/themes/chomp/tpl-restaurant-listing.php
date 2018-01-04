@@ -26,6 +26,19 @@ if( $hero_image ){
     $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
 }
 
+$total_posts = '';
+
+if ( isset($_GET['search']) && !empty($_GET['search']) ) {
+// Get remaining restaurants from search text
+    $text = $_GET['search'];
+    $restaurants = chomp_get_restaurants(
+        $excludes = '',
+        $text
+    );
+
+    $total_posts = chomp_total_posts($restaurants);
+}
+
 ?>
 
 <main>
@@ -34,13 +47,31 @@ if( $hero_image ){
 
         <div class="container container--small"> <!-- Hero container start -->
 
-            <h1 class="u-align-center u-push-bottom/2 beta">Showing
-                <span class="u-weight-medium">73</span> results for:
+
+
+                <?php if( $total_posts ): ?>
+
+                    <h1 class="u-align-center u-push-bottom/2 alpha">Showing
+                        <span class="u-weight-medium">
+                            <?php echo $total_posts; ?>
+                        </span> total results for
+                        <span class="u-weight-medium">
+                            <?php echo "”" . esc_html($restaurants->query_vars['s'], 1) . "”"; ?>
+                        </span>
+                    </h1>
+
+                <?php else: ?>
+
+                        <h1 class="u-align-center u-push-bottom/2 alpha--big">Showing all restaurants </h1>
+
+                <?php endif; ?>
+
             </h1> <!-- Dynamic depending on how many results -->
 
-            <h2 class="u-align-center u-push-bottom/2 gamma u-weight-medium">Chinese
+            <!-- <h2 class="u-align-center u-push-bottom/2 gamma u-weight-medium">Chinese
                 <span class="u-weight-light">restaurants with</span> Family Friendly
-            </h2> <!-- Dynamic depending on filter type -->
+            </h2>  -->
+            <!-- Dynamic depending on filter type -->
 
         </div> <!-- Hero container end -->
 

@@ -135,21 +135,24 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 /**
-
- * Create properly formatted tel: links
-
- * $input = <p>(01423) 598 008</p>
-
- * $output = 01423598008
-
- */
+    * Create properly formatted tel: links
+    * $input = <p>(01423) 598 008</p>
+    * $output = 01423598008
+*/
 
 function chomp_format_tel($text){
-
     $exp = "/[^0-9]/";
-
     $text = preg_replace($exp, '', strip_tags($text));
-
     return $text;
-
 }
+
+
+
+/**
+    * Get total amount of posts found
+*/
+
+function chomp_total_posts($query) {
+    return $query->found_posts;
+}
+
