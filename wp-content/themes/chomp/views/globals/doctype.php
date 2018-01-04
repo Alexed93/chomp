@@ -54,6 +54,8 @@
 $featured_cuisines = get_field('featured_cuisine');
 $site_colour = "";
 
+var_dump($featured_cuisines);
+
 if( $featured_cuisines ){
     $featured_cuisine = $featured_cuisines->name;
 

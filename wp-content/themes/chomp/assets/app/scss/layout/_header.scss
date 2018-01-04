@@ -58,7 +58,7 @@
     .is-active-nav & {
         display: block;
         text-align: right;
-        background: $italian;
+        background: $primary;
 
         .nav__link {
             color: $white;
@@ -76,7 +76,7 @@
     display: block;
     float: right;
     padding: 0.75em 1em 0.5em 1em;
-    background: $italian;
+    background: $primary;
 
     @include respond-min($bp2) {
         display: none;

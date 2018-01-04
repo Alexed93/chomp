@@ -79,8 +79,10 @@ $indian:     #F2A109;
 $english:    #AB733D;
 $chinese:    #9338BA;
 
-$color-link: $italian;
-$color-link-hover: darken($italian, 15%);
+$primary: #000;
+
+$color-link: $primary;
+$color-link-hover: darken($primary, 15%);
 
 /* $. Typography
 \*----------------------------------------------------------------*/

@@ -85,7 +85,7 @@ input[type=checkbox].toggle-switch {
 }
 
 input:checked.toggle-switch + .toggle-switch__label {
-	background: $italian;
+	background: $primary;
 }
 
 input:checked.toggle-switch + .toggle-switch__label:after {

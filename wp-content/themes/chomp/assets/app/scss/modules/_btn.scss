@@ -57,7 +57,7 @@ input[type="button"],
  */
 
 .btn--primary {
-    // @include btn($white, $italian);
+    // @include btn($white, $primary);
     position: relative;
     padding: $base/4 $base*3 $base/4 $base;
     color: $color-text;
@@ -66,10 +66,10 @@ input[type="button"],
 
     &:hover, &:active {
         background: darken($white, 2%);
-        color: $italian;
+        color: $primary;
 
         .btn--icon {
-            background: darken($italian, 10%);
+            background: darken($primary, 10%);
         }
     }
 
@@ -79,7 +79,7 @@ input[type="button"],
         position: absolute;
         top: 0;
         right: 0;
-        background: $italian;
+        background: $primary;
         border-radius: 0 3px 3px 0;
 
         .icon {
@@ -165,7 +165,7 @@ button.sign-up-submit, button.search-submit {
     padding: 0;
     position: absolute;
     right: 0;
-    background: $italian;
+    background: $primary;
     border-radius: 0 3px 3px 0;
 }
 
@@ -201,7 +201,7 @@ button.search-submit {
 
 .filter_clear {
     &:hover {
-        color: $italian;
+        color: $primary;
     }
 }
 
@@ -209,7 +209,7 @@ button.search-submit {
     transition: all .1s ease;
 
     &:hover {
-        background: $italian;
+        background: $primary;
         color: $white;
     }
 }
