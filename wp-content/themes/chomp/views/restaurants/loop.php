@@ -6,34 +6,43 @@
         $excludes = '';
         $featured_restaurant = '';
 
-            if( is_front_page() ) :
-                // Get the IDs of the 3 restuarants marked as "featured"
-                $excludes = get_field('featured_restaurants');
+        if( is_front_page() ) {
+            // Get the IDs of the 3 restuarants marked as "featured"
+            $excludes = get_field('featured_restaurants');
 
-                if($excludes):
+            if($excludes):
 
-                    $featured_restaurant = array();
-                    foreach ($excludes as $excluded):
-                        $featured_restaurant[] = $excluded->ID;
-                    endforeach;
-
-                    // Get remaining restaurants
-                    $restaurants = chomp_get_restaurants(
-                        $excludes = $featured_restaurant,
-                        $text = ''
-                    );
-
-                endif;
-
-            else:
+                $featured_restaurant = array();
+                foreach ($excludes as $excluded):
+                    $featured_restaurant[] = $excluded->ID;
+                endforeach;
 
                 // Get remaining restaurants
                 $restaurants = chomp_get_restaurants(
-                    $excludes = '',
+                    $excludes = $featured_restaurant,
                     $text = ''
                 );
 
             endif;
+
+        } elseif ( isset($_GET['search']) && !empty($_GET['search']) ) {
+
+            // Get remaining restaurants from search text
+            $text = $_GET['search'];
+            $restaurants = chomp_get_restaurants(
+                $excludes = '',
+                $text
+            );
+
+        } else {
+
+            // Get remaining restaurants
+            $restaurants = chomp_get_restaurants(
+                $excludes = '',
+                $text = ''
+            );
+
+        }
 
     ?>
 

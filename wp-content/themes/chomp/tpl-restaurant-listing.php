@@ -56,7 +56,7 @@ if( $hero_image ){
 
                     <h3 class="u-push-bottom/2 u-weight-medium">Search again</h3>
 
-                    <form class="u-push-bottom form form-search--filter" action="/search" method="get"> <!-- Search form start -->
+                    <form class="u-push-bottom form form-search--filter" action="#" method="get"> <!-- Search form start -->
 
                         <label for="search" class="is-hidden">Search for a restaurant</label>
                         <input type="text" name="search" placeholder="What do you fancy?" class="search">
