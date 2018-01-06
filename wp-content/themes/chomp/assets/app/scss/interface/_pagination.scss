@@ -5,9 +5,7 @@
     a {
         line-height: 1;
         border-bottom: none;
-        // border-radius: 3px;
         text-decoration: none;
-        color: $italian;
     }
 
     li {
@@ -15,7 +13,6 @@
         margin: 0;
         padding: $base/2 $base;
         text-align: center;
-        // border: 1px solid $italian;
         background: $grey-lighter;
 
         &:hover {
@@ -27,7 +24,6 @@
     .last {
         padding: .5em 1em;
         background: $grey-lighter;
-        color: $italian;
 
         &:hover {
             background: $grey-light;
@@ -35,14 +31,8 @@
     }
 
     .disabled {
-        background: $italian;
-
         a {
             color: $white;
-        }
-
-        &:hover {
-            background: $italian;
         }
     }
 }

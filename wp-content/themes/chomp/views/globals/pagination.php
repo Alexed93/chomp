@@ -1,5 +1,3 @@
-<!-- Problem: The 'offset' keeps restarting and showing posts from previous/next pages -->
-
 <?php
     global $wp_query;
     // Results pagination offset

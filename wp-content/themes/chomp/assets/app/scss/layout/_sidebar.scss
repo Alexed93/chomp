@@ -45,6 +45,7 @@
 
 .facebook {
 	margin-bottom: 1em;
+
 	@include respond-min($bp3) {
 		margin-bottom: 0;
 		margin-left: 1em;

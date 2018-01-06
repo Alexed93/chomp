@@ -84,10 +84,6 @@ input[type=checkbox].toggle-switch {
 	}
 }
 
-input:checked.toggle-switch + .toggle-switch__label {
-	background: $italian;
-}
-
 input:checked.toggle-switch + .toggle-switch__label:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);

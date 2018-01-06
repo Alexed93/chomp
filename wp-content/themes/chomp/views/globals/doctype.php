@@ -47,4 +47,22 @@
     <!-- wp_head -->
     <?php wp_head(); ?>
 </head>
-<body class="debug">
+
+<?php
+
+// Get featured cuisine
+$featured_cuisines = get_field('featured_cuisine', 7);
+$site_logo = 'icon--logo--';
+$site_color = 'site_color--';
+
+if (null !== $featured_cuisines) :
+    $site_color .= $featured_cuisines->name;
+    $site_logo .= $featured_cuisines->name;
+else:
+    $site_color .= 'default';
+    $site_logo .= 'default';
+endif;
+
+?>
+
+<body class="debug <?php echo $site_color; ?>">

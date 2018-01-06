@@ -10,7 +10,15 @@
  *
  */
 
+// Get featured cuisine
+$featured_cuisines = get_field('featured_cuisine', 7);
+$site_logo = 'icon--logo--';
 
+if (null !== $featured_cuisines) :
+    $site_logo .= $featured_cuisines->name;
+else:
+    $site_logo .= 'default';
+endif;
 
 ?>
 
@@ -42,7 +50,7 @@
         <!-- Main logo link -->
         <a href="/" class="logo header__logo">
             <span class="is-hidden"><?php bloginfo( 'name' ); ?></span>
-            <span class="icon icon--logo"></span> <!-- Main logo icon -->
+            <span class="icon icon--logo <?php echo $site_logo; ?>"></span> <!-- Main logo icon -->
         </a>
 
         <!-- Mobile navigation (burger menu) -->

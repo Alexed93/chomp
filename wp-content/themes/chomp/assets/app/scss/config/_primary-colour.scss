@@ -1,0 +1,1116 @@
+/**
+ * Title:
+ *    Primary colour
+ * Description:
+ *    Changes the primary colour for each instance $primary is used based on
+ *    the featured cuisine chosen
+ */
+
+
+
+/* $. Variables
+\*----------------------------------------------------------------*/
+
+/* Chomp */
+$Italian:    #F82B2B;
+$American:   #1B99FF;
+$Thai:       #51A100;
+$Indian:     #F2A109;
+$English:    #AB733D;
+$Chinese:    #9338BA;
+$French:     #3B60B8;
+
+
+
+/* $. Links
+\*----------------------------------------------------------------*/
+
+.site_color--French a {
+    color: $French;
+    border-bottom: 1px solid mix(white, $French, 50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($French, 15%);
+        border-bottom-color: darken($French, 15%);
+    }
+}
+
+
+.site_color--Italian a {
+    color: $Italian;
+    border-bottom: 1px solid mix(white, $Italian, 50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Italian, 15%);
+        border-bottom-color: darken($Italian, 15%);
+    }
+}
+
+
+.site_color--English a {
+    color: $English;
+    border-bottom: 1px solid mix(white, $English, 50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($English, 15%);
+        border-bottom-color: darken($English, 15%);
+    }
+}
+
+
+.site_color--Thai a {
+    color: $Thai;
+    border-bottom: 1px solid mix(white, $Thai, 50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Thai, 15%);
+        border-bottom-color: darken($Thai, 15%);
+    }
+}
+
+
+.site_color--American a {
+    color: $American;
+    border-bottom: 1px solid mix(white, $American, 50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($American, 15%);
+        border-bottom-color: darken($American, 15%);
+    }
+}
+
+
+.site_color--Chinese a {
+    color: $Chinese;
+    border-bottom: 1px solid mix(white, $Chinese, 50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Chinese, 15%);
+        border-bottom-color: darken($Chinese, 15%);
+    }
+}
+
+
+.site_color--Indian a {
+    color: $Indian;
+    border-bottom: 1px solid mix(white, $Indian, 50%);
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Indian, 15%);
+        border-bottom-color: darken($Indian, 15%);
+    }
+}
+
+/* $. Forms area
+\*----------------------------------------------------------------*/
+
+.site_color--French .popular__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($French, 25%);
+    }
+}
+
+.site_color--French .form-search--filter .popular__link {
+    color: $French;
+}
+
+.site_color--French .form-search--filter .popular__link:hover {
+    color: darken($French, 25%);
+}
+
+
+.site_color--Italian .popular__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Italian, 25%);
+    }
+}
+
+.site_color--Italian .form-search--filter .popular__link {
+    color: $Italian;
+}
+
+.site_color--Italian .form-search--filter .popular__link:hover {
+    color: darken($Italian, 25%);
+}
+
+
+.site_color--American .popular__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($American, 25%);
+    }
+}
+
+.site_color--American .form-search--filter .popular__link {
+    color: $American;
+}
+
+.site_color--American .form-search--filter .popular__link:hover {
+    color: darken($American, 25%);
+}
+
+
+.site_color--Thai .popular__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Thai, 25%);
+    }
+}
+
+.site_color--Thai .form-search--filter .popular__link {
+    color: $Thai;
+}
+
+.site_color--Thai .form-search--filter .popular__link:hover {
+    color: darken($Thai, 25%);
+}
+
+
+.site_color--English .popular__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($English, 25%);
+    }
+}
+
+.site_color--English .form-search--filter .popular__link {
+    color: $English;
+}
+
+.site_color--English .form-search--filter .popular__link:hover {
+    color: darken($English, 25%);
+}
+
+
+.site_color--Chinese .popular__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Chinese, 25%);
+    }
+}
+
+.site_color--Chinese .form-search--filter .popular__link {
+    color: $Chinese;
+}
+
+.site_color--Chinese .form-search--filter .popular__link:hover {
+    color: darken($Chinese, 25%);
+}
+
+
+.site_color--Indian .popular__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Indian, 25%);
+    }
+}
+
+.site_color--Indian .form-search--filter .popular__link {
+    color: $Indian;
+}
+
+.site_color--Indian .form-search--filter .popular__link:hover {
+    color: darken($Indian, 25%);
+}
+
+/* $. States
+\*----------------------------------------------------------------*/
+
+.site_color--French .is-current,
+.site_color--French .is-current a {
+    color: $French;
+    border-bottom: 1px solid $French;
+}
+
+
+.site_color--Italian .is-current,
+.site_color--Italian .is-current a {
+    color: $Italian;
+    border-bottom: 1px solid $Italian;
+}
+
+
+.site_color--American .is-current,
+.site_color--American .is-current a {
+    color: $American;
+    border-bottom: 1px solid $American;
+}
+
+
+.site_color--Thai .is-current,
+.site_color--Thai .is-current a {
+    color: $Thai;
+    border-bottom: 1px solid $Thai;
+}
+
+
+.site_color--Chinese .is-current,
+.site_color--Chinese .is-current a {
+    color: $Chinese;
+    border-bottom: 1px solid $Chinese;
+}
+
+
+.site_color--Indian .is-current,
+.site_color--Indian .is-current a {
+    color: $Indian;
+    border-bottom: 1px solid $Indian;
+}
+
+
+.site_color--English .is-current,
+.site_color--English .is-current a {
+    color: $English;
+    border-bottom: 1px solid $English;
+}
+
+/* $. Breadcrumbs
+\*----------------------------------------------------------------*/
+
+.site_color--French .breadcrumbs a {
+    color: $French;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($French, 15%);
+    }
+}
+
+
+.site_color--Italian .breadcrumbs a {
+    color: $Italian;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Italian, 15%);
+    }
+}
+
+
+.site_color--American .breadcrumbs a {
+    color: $American;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($American, 15%);
+    }
+}
+
+
+.site_color--Thai .breadcrumbs a {
+    color: $Thai;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Thai, 15%);
+    }
+}
+
+
+.site_color--English .breadcrumbs a {
+    color: $English;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($English, 15%);
+    }
+}
+
+
+.site_color--Indian .breadcrumbs a {
+    color: $Indian;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Indian, 15%);
+    }
+}
+
+
+.site_color--Chinese .breadcrumbs a {
+    color: $Chinese;
+    &:hover,
+    &:focus,
+    &:active {
+        color: darken($Chinese, 15%);
+    }
+}
+
+/* $. Navigation
+\*----------------------------------------------------------------*/
+
+.site_color--French .is-active-nav {
+    background: $French;
+}
+
+.site_color--French .nav__link {
+    color: $color-text;
+    border-bottom: 1px solid lighten($color-text, 15%);
+
+    &:hover, &:focus {
+        color: $French;
+        border-bottom: 1px solid lighten($French, 15%);
+    }
+}
+
+.site_color--French .header__toggle, .site_color--French .header__nav {
+    background: $French;
+}
+
+.site_color--French .header__nav {
+    @include respond-min($bp2) {
+        background: none;
+    }
+}
+
+
+.site_color--Italian .is-active-nav {
+    background: $Italian;
+}
+
+.site_color--Italian .nav__link {
+    color: $color-text;
+    border-bottom: 1px solid lighten($color-text, 15%);
+
+    &:hover, &:focus {
+        color: $Italian;
+        border-bottom: 1px solid lighten($Italian, 15%);
+    }
+}
+
+.site_color--Italian .header__toggle, .site_color--Italian .header__nav {
+    background: $Italian;
+}
+
+.site_color--Italian .header__nav {
+    @include respond-min($bp2) {
+        background: none;
+    }
+}
+
+
+.site_color--American .is-active-nav {
+    background: $American;
+}
+
+.site_color--American .nav__link {
+    color: $color-text;
+    border-bottom: 1px solid lighten($color-text, 15%);
+
+    &:hover, &:focus {
+        color: $American;
+        border-bottom: 1px solid lighten($American, 15%);
+    }
+}
+
+.site_color--American .header__toggle, .site_color--American .header__nav {
+    background: $American;
+}
+
+.site_color--American .header__nav {
+    @include respond-min($bp2) {
+        background: none;
+    }
+}
+
+
+.site_color--Thai .is-active-nav {
+    background: $Thai;
+}
+
+.site_color--Thai .nav__link {
+    color: $color-text;
+    border-bottom: 1px solid lighten($color-text, 15%);
+
+    &:hover, &:focus {
+        color: $Thai;
+        border-bottom: 1px solid lighten($Thai, 15%);
+    }
+}
+
+.site_color--Thai .header__toggle, .site_color--Thai .header__nav {
+    background: $Thai;
+}
+
+.site_color--Thai .header__nav {
+    @include respond-min($bp2) {
+        background: none;
+    }
+}
+
+
+.site_color--English .is-active-nav {
+    background: $English;
+}
+
+.site_color--English .nav__link {
+    color: $color-text;
+    border-bottom: 1px solid lighten($color-text, 15%);
+
+    &:hover, &:focus {
+        color: $English;
+        border-bottom: 1px solid lighten($English, 15%);
+    }
+}
+
+.site_color--English .header__toggle, .site_color--English .header__nav {
+    background: $English;
+}
+
+.site_color--English .header__nav {
+    @include respond-min($bp2) {
+        background: none;
+    }
+}
+
+
+.site_color--Chinese .is-active-nav {
+    background: $Chinese;
+}
+
+.site_color--Chinese .nav__link {
+    color: $color-text;
+    border-bottom: 1px solid lighten($color-text, 15%);
+
+    &:hover, &:focus {
+        color: $Chinese;
+        border-bottom: 1px solid lighten($Chinese, 15%);
+    }
+}
+
+.site_color--Chinese .header__toggle, .site_color--Chinese .header__nav {
+    background: $Chinese;
+}
+
+.site_color--Chinese .header__nav {
+    @include respond-min($bp2) {
+        background: none;
+    }
+}
+
+
+.site_color--Indian .is-active-nav {
+    background: $Indian;
+}
+
+.site_color--Indian .nav__link {
+    color: $color-text;
+    border-bottom: 1px solid lighten($color-text, 15%);
+
+    &:hover, &:focus {
+        color: $Indian;
+        border-bottom: 1px solid lighten($Indian, 15%);
+    }
+}
+
+.site_color--Indian .header__toggle, .site_color--Indian .header__nav {
+    background: $Indian;
+}
+
+.site_color--Indian .header__nav {
+    @include respond-min($bp2) {
+        background: none;
+    }
+}
+
+/* $. Pagination
+\*----------------------------------------------------------------*/
+
+.site_color--French .pagination {
+    a {
+        color: $French;
+    }
+
+    .first,
+    .last {
+        color: $French;
+    }
+
+    .disabled {
+        background: $French;
+
+        &:hover {
+            background: $French;
+        }
+    }
+}
+
+
+.site_color--Italian .pagination {
+    a {
+        color: $Italian;
+    }
+
+    .first,
+    .last {
+        color: $Italian;
+    }
+
+    .disabled {
+        background: $Italian;
+
+        &:hover {
+            background: $Italian;
+        }
+    }
+}
+
+
+.site_color--American .pagination {
+    a {
+        color: $American;
+    }
+
+    .first,
+    .last {
+        color: $American;
+    }
+
+    .disabled {
+        background: $American;
+
+        &:hover {
+            background: $American;
+        }
+    }
+}
+
+
+.site_color--Thai .pagination {
+    a {
+        color: $Thai;
+    }
+
+    .first,
+    .last {
+        color: $Thai;
+    }
+
+    .disabled {
+        background: $Thai;
+
+        &:hover {
+            background: $Thai;
+        }
+    }
+}
+
+
+.site_color--English .pagination {
+    a {
+        color: $English;
+    }
+
+    .first,
+    .last {
+        color: $English;
+    }
+
+    .disabled {
+        background: $English;
+
+        &:hover {
+            background: $English;
+        }
+    }
+}
+
+
+.site_color--Chinese .pagination {
+    a {
+        color: $Chinese;
+    }
+
+    .first,
+    .last {
+        color: $Chinese;
+    }
+
+    .disabled {
+        background: $Chinese;
+
+        &:hover {
+            background: $Chinese;
+        }
+    }
+}
+
+
+.site_color--Indian .pagination {
+    a {
+        color: $Indian;
+    }
+
+    .first,
+    .last {
+        color: $Indian;
+    }
+
+    .disabled {
+        background: $Indian;
+
+        &:hover {
+            background: $Indian;
+        }
+    }
+}
+
+/* $. Search - Toggle switch
+\*----------------------------------------------------------------*/
+
+.site_color--French input:checked.toggle-switch + .toggle-switch__label {
+    background: $French;
+}
+
+
+.site_color--Italian input:checked.toggle-switch + .toggle-switch__label {
+    background: $Italian;
+}
+
+
+.site_color--American input:checked.toggle-switch + .toggle-switch__label {
+    background: $American;
+}
+
+
+.site_color--Thai input:checked.toggle-switch + .toggle-switch__label {
+    background: $Thai;
+}
+
+
+.site_color--Chinese input:checked.toggle-switch + .toggle-switch__label {
+    background: $Chinese;
+}
+
+
+.site_color--English input:checked.toggle-switch + .toggle-switch__label {
+    background: $English;
+}
+
+
+.site_color--Indian input:checked.toggle-switch + .toggle-switch__label {
+    background: $Indian;
+}
+
+/* $. Buttons
+\*----------------------------------------------------------------*/
+
+.site_color--French .btn--primary {
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: $French;
+        border-bottom: none;
+
+        .btn--icon {
+            background: darken($French, 10%);
+        }
+    }
+
+    .btn--icon {
+        background: $French;
+    }
+}
+
+.site_color--French button.sign-up-submit, .site_color--French button.search-submit {
+    background: $French;
+}
+
+.site_color--French .filter_clear {
+    &:hover {
+        color: $French;
+    }
+}
+
+.site_color--French .submit {
+    &:hover {
+        background: $French;
+    }
+}
+
+
+.site_color--Italian .btn--primary {
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: $Italian;
+        border-bottom: none;
+
+        .btn--icon {
+            background: darken($Italian, 10%);
+        }
+    }
+
+    .btn--icon {
+        background: $Italian;
+    }
+}
+
+.site_color--Italian button.sign-up-submit, .site_color--Italian button.search-submit {
+    background: $Italian;
+}
+
+.site_color--Italian .filter_clear {
+    &:hover {
+        color: $Italian;
+    }
+}
+
+.site_color--Italian .submit {
+    &:hover {
+        background: $Italian;
+    }
+}
+
+
+.site_color--American .btn--primary {
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: $American;
+        border-bottom: none;
+
+        .btn--icon {
+            background: darken($American, 10%);
+        }
+    }
+
+    .btn--icon {
+        background: $American;
+    }
+}
+
+.site_color--American button.sign-up-submit, .site_color--American button.search-submit {
+    background: $American;
+}
+
+.site_color--American .filter_clear {
+    &:hover {
+        color: $American;
+    }
+}
+
+.site_color--American .submit {
+    &:hover {
+        background: $American;
+    }
+}
+
+
+.site_color--Thai .btn--primary {
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: $Thai;
+        border-bottom: none;
+
+        .btn--icon {
+            background: darken($Thai, 10%);
+        }
+    }
+
+    .btn--icon {
+        background: $Thai;
+    }
+}
+
+.site_color--Thai button.sign-up-submit, .site_color--Thai button.search-submit {
+    background: $Thai;
+}
+
+.site_color--Thai .filter_clear {
+    &:hover {
+        color: $Thai;
+    }
+}
+
+.site_color--Thai .submit {
+    &:hover {
+        background: $Thai;
+    }
+}
+
+
+.site_color--English .btn--primary {
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: $English;
+        border-bottom: none;
+
+        .btn--icon {
+            background: darken($English, 10%);
+        }
+    }
+
+    .btn--icon {
+        background: $English;
+    }
+}
+
+.site_color--English button.sign-up-submit, .site_color--English button.search-submit {
+    background: $English;
+}
+
+.site_color--English .filter_clear {
+    &:hover {
+        color: $English;
+    }
+}
+
+.site_color--English .submit {
+    &:hover {
+        background: $English;
+    }
+}
+
+
+.site_color--Chinese .btn--primary {
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: $Chinese;
+        border-bottom: none;
+
+        .btn--icon {
+            background: darken($Chinese, 10%);
+        }
+    }
+
+    .btn--icon {
+        background: $Chinese;
+    }
+}
+
+.site_color--Chinese button.sign-up-submit, .site_color--Chinese button.search-submit {
+    background: $Chinese;
+}
+
+.site_color--Chinese .filter_clear {
+    &:hover {
+        color: $Chinese;
+    }
+}
+
+.site_color--Chinese .submit {
+    &:hover {
+        background: $Chinese;
+    }
+}
+
+
+.site_color--Indian .btn--primary {
+    border-bottom: none;
+
+    &:hover, &:active {
+        color: $Indian;
+        border-bottom: none;
+
+        .btn--icon {
+            background: darken($Indian, 10%);
+        }
+    }
+
+    .btn--icon {
+        background: $Indian;
+    }
+}
+
+.site_color--Indian button.sign-up-submit, .site_color--Indian button.search-submit {
+    background: $Indian;
+}
+
+.site_color--Indian .filter_clear {
+    &:hover {
+        color: $Indian;
+    }
+}
+
+.site_color--Indian .submit {
+    &:hover {
+        background: $Indian;
+    }
+}
+
+/* $. Cards
+\*----------------------------------------------------------------*/
+
+.site_color--French .card--animated:hover {
+    box-shadow: 0px 0px 2px 0px $French;
+}
+
+
+.site_color--Italian .card--animated:hover {
+    box-shadow: 0px 0px 2px 0px $Italian;
+}
+
+
+.site_color--American .card--animated:hover {
+    box-shadow: 0px 0px 2px 0px $American;
+}
+
+
+.site_color--Thai .card--animated:hover {
+    box-shadow: 0px 0px 2px 0px $Thai;
+}
+
+
+.site_color--Chinese .card--animated:hover {
+    box-shadow: 0px 0px 2px 0px $Chinese;
+}
+
+
+.site_color--Indian .card--animated:hover {
+    box-shadow: 0px 0px 2px 0px $Indian;
+}
+
+
+.site_color--English .card--animated:hover {
+    box-shadow: 0px 0px 2px 0px $English;
+}
+
+/* $. Voucher
+\*----------------------------------------------------------------*/
+
+.site_color--French .voucher__text {
+    background: $French;
+}
+
+
+.site_color--Italian .voucher__text {
+    background: $Italian;
+}
+
+
+.site_color--American .voucher__text {
+    background: $American;
+}
+
+
+.site_color--Thai .voucher__text {
+    background: $Thai;
+}
+
+
+.site_color--English .voucher__text {
+    background: $English;
+}
+
+
+.site_color--Chinese .voucher__text {
+    background: $Chinese;
+}
+
+
+.site_color--Indian .voucher__text {
+    background: $Indian;
+}
+
+/* $. Footer
+\*----------------------------------------------------------------*/
+
+.site_color--French .footer__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($French, 25%);
+        border-bottom: none;
+    }
+}
+
+
+.site_color--Italian .footer__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Italian, 25%);
+        border-bottom: none;
+    }
+}
+
+
+.site_color--American .footer__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($American, 25%);
+        border-bottom: none;
+    }
+}
+
+
+.site_color--Thai .footer__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Thai, 25%);
+        border-bottom: none;
+    }
+}
+
+
+.site_color--English .footer__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($English, 25%);
+        border-bottom: none;
+    }
+}
+
+
+.site_color--Chinese .footer__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Chinese, 25%);
+        border-bottom: none;
+    }
+}
+
+
+.site_color--Indian .footer__link {
+    color: #fff;
+    border-bottom: none;
+
+    &:hover {
+        color: lighten($Indian, 25%);
+        border-bottom: none;
+    }
+}
