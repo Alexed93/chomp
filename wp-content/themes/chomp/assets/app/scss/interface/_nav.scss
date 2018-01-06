@@ -17,7 +17,6 @@
 /* $. Variables
 \*----------------------------------------------------------------*/
 
-$color-nav: $color-link;
 
 
 
@@ -60,11 +59,6 @@ $color-nav: $color-link;
 
     @include respond-min($bp2) {
         padding: 0;
-    }
-
-    &:hover, &:focus {
-        color: $primary;
-        border-bottom: 1px solid $primary;
     }
 }
 

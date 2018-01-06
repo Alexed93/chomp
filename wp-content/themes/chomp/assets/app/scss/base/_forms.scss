@@ -8,8 +8,6 @@
  *    $. Placeholders
  */
 
-
-
 /* $. Basics
 \*----------------------------------------------------------------*/
 
@@ -121,10 +119,6 @@ fieldset:last-child {
 .popular__link {
     color: $white;
     border-bottom: none;
-
-    &:hover {
-        color: $primary;
-    }
 }
 
 /* $. Modifications
@@ -149,10 +143,6 @@ fieldset:last-child {
 .form-search--filter {
     .popular__link {
         color: $color-text;
-
-        &:hover {
-            color: $primary;
-        }
     }
 }
 

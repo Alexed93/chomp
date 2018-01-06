@@ -10,6 +10,25 @@
  *
  */
 
+// Get featured cuisine
+$featured_cuisines = get_field('featured_cuisine', 7);
+$twitter_icon = 'icon--twitter--';
+$facebook_icon = 'icon--facebook--';
+$email_icon = 'icon--email--';
+$site_color = 'site_color--';
+
+if (null !== $featured_cuisines) :
+    $site_color .= $featured_cuisines->name;
+    $twitter_icon .= $featured_cuisines->name;
+    $facebook_icon .= $featured_cuisines->name;
+    $email_icon .= $featured_cuisines->name;
+else:
+    $site_color .= 'default';
+    $twitter_icon .= 'default';
+    $facebook_icon .= 'default';
+    $email_icon .= 'default';
+endif;
+
 // Get Fields
 $telephone = get_field('contact_telephone', 13);
 $fax = get_field('contact_fax', 13);
@@ -33,6 +52,7 @@ $facebook = get_field('chomp_facebook', 13);
 ?>
 
 <footer>
+
     <div class="footer u-push-top/2"> <!-- Footer start -->
         <div class="container"> <!-- Footer container start -->
         	<div class="grid zeta"> <!-- Footer grid start -->
@@ -71,13 +91,13 @@ $facebook = get_field('chomp_facebook', 13);
 				<div class="grid__item grid__item--3-12-bp3"> <!-- Social Media start -->
 				    <div class="social-media">
                         <?php if($twitter): ?>
-				        <a href="<?php echo $twitter; ?>" class="icon icon--large icon--twitter--italian"></a> <!-- Twitter -->
+				        <a href="<?php echo $twitter; ?>" class="icon icon--large <?php echo $twitter_icon; ?>"></a> <!-- Twitter -->
                         <?php endif; ?>
                         <?php if($facebook): ?>
-				        <a href="<?php echo $facebook; ?>" class="icon icon--large icon--facebook--italian u-push-left@2"></a> <!-- Facebook -->
+				        <a href="<?php echo $facebook; ?>" class="icon icon--large <?php echo $facebook_icon; ?> u-push-left@2"></a> <!-- Facebook -->
                         <?php endif; ?>
                         <?php if($email): ?>
-				        <a href="mailto:<?php echo $email; ?>" class="icon icon--large icon--email--italian u-push-left@2"></a> <!-- Email -->
+				        <a href="mailto:<?php echo $email; ?>" class="icon icon--large <?php echo $email_icon; ?> u-push-left@2"></a> <!-- Email -->
                         <?php endif; ?>
 				    </div>
 				</div> <!-- Social Media end -->

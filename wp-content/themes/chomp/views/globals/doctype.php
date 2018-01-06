@@ -51,42 +51,18 @@
 <?php
 
 // Get featured cuisine
-$featured_cuisines = get_field('featured_cuisine');
-$site_colour = "";
+$featured_cuisines = get_field('featured_cuisine', 7);
+$site_logo = 'icon--logo--';
+$site_color = 'site_color--';
 
-var_dump($featured_cuisines);
-
-if( $featured_cuisines ){
-    $featured_cuisine = $featured_cuisines->name;
-
-    switch ($featured_cuisine) {
-        case "Italian":
-            $site_colour = "site_colour--italian";
-            break;
-        case "Thai":
-            $site_colour = "site_colour--italian";
-            break;
-        case "Indian":
-            $site_colour = "site_colour--indian";
-            break;
-        case "American":
-            $site_colour = "site_colour--american";
-            break;
-        case "French":
-            $site_colour = "site_colour--french";
-            break;
-        case "English":
-            $site_colour = "site_colour--english";
-            break;
-        case "Chinese":
-            $site_colour = "site_colour--chinese";
-            break;
-        default:
-            var_dump("it's borked");
-    }
-}
-
+if (null !== $featured_cuisines) :
+    $site_color .= $featured_cuisines->name;
+    $site_logo .= $featured_cuisines->name;
+else:
+    $site_color .= 'default';
+    $site_logo .= 'default';
+endif;
 
 ?>
 
-<body class="debug <?php echo $site_colour; ?>">
+<body class="debug <?php echo $site_color; ?>">

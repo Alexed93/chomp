@@ -53,6 +53,15 @@ if( $featured_cuisines ){
     $featured_cuisine = $featured_cuisines->name;
 }
 
+$site_logo = 'icon--logo--';
+$site_color = 'site_color--';
+
+if (null !== $featured_cuisines) :
+    $site_color .= $featured_cuisines->name;
+else:
+    $site_color .= 'default';
+endif;
+
 // Get featured restaurants
 $featured_restaurants = get_field('featured_restaurants');
 
@@ -70,7 +79,7 @@ $featured_restaurants = get_field('featured_restaurants');
                 </span>
             </h1> <!-- Dynamic depending on time of day e.g. today/tonight -->
 
-            <form class="u-align-center u-push-bottom u-margin-center form form--search" action="/restaurants/" method="get"> <!-- Search form start -->
+            <form class="u-align-center u-push-bottom u-margin-center form form--search <?php echo $site_color; ?> " action="/restaurants/" method="get"> <!-- Search form start -->
 
                 <label for="search" class="is-hidden">Search for a restaurant</label>
                 <input type="text" name="search" placeholder="What do you fancy?" class="search">

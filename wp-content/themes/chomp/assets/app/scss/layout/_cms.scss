@@ -13,35 +13,35 @@
 /* $. Gravity Forms
 \*----------------------------------------------------------------*/
 
-.gform_fields {
-    margin-bottom: 0;
-}
+// .gform_fields {
+//     margin-bottom: 0;
+// }
 
-.gfield {
-}
+// .gfield {
+// }
 
-.gfield_required {
-    display: inline-block;
-    margin-left: $base/4;
-    font-size: .85rem;
-    color: $color-link;
-}
+// .gfield_required {
+//     display: inline-block;
+//     margin-left: $base/4;
+//     font-size: .85rem;
+//     color: $color-link;
+// }
 
-.validation_message {
-    margin-top: -$base/2;
-    margin-bottom: $base;
-    font-size: .85rem;
-    color: $grey;
+// .validation_message {
+//     margin-top: -$base/2;
+//     margin-bottom: $base;
+//     font-size: .85rem;
+//     color: $grey;
 
-    .ginput_container_textarea + & {
-        margin-top: -$base;
-    }
-}
+//     .ginput_container_textarea + & {
+//         margin-top: -$base;
+//     }
+// }
 
-.gform_validation_container {
-    display: none;
-    user-select: none;
-}
+// .gform_validation_container {
+//     display: none;
+//     user-select: none;
+// }
 
 
 
