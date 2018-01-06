@@ -1,26 +1,52 @@
 <div class="results test--flexbox"> <!-- Restaurants results start -->
 
     <?php
-            // Get remaining restaurants
-            $restaurants = chomp_get_restaurants(
-                $excludes = '',
-                $text = ''
-            );
+        if ( have_posts() ): while ( have_posts() ): the_post();
+
+            $excludes = '';
+            $featured_restaurant = '';
+
+            if( is_front_page() ) {
+
+                // Get the IDs of the 3 restuarants marked as "featured"
+                $excludes = get_field('featured_restaurants');
+
+                if($excludes):
+
+                    $featured_restaurant = array();
+
+                    foreach ($excludes as $excluded):
+                        $featured_restaurant[] = $excluded->ID;
+                    endforeach;
+
+                    // Get remaining restaurants
+                    $restaurants = chomp_get_restaurants(
+                        $excludes = $featured_restaurant,
+                        $text = ''
+                    );
+
+                endif;
+
+            } elseif ( isset($_GET['search']) && !empty($_GET['search']) ) {
+
+                // Get remaining restaurants from search text
+                $text = $_GET['search'];
+
+                $restaurants = chomp_get_restaurants(
+                    $excludes = '',
+                    $text
+                );
+
+            } else {
+
+                // Get remaining restaurants
+                $restaurants = chomp_get_restaurants(
+                    $excludes = '',
+                    $text = ''
+                );
+
+            }
     ?>
-
-    <?php if ( !is_front_page() ) : ?>
-
-        <div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
-
-            <select class="btn btn--sorting-options"> <!-- Search results sorting options start -->
-                <option value="relevance">Sort by relevance</option> <!-- Relevance -->
-                <option value="name">Sort by name</option> <!-- Name -->
-                <option value="options">Sort by features</option> <!-- Features -->
-            </select> <!-- Search results sorting options end  -->
-
-        </div> <!-- Search results sorting end -->
-
-    <?php endif; ?>
 
     <div class="grid grid--flex results--grid"> <!-- Restaurants grid start -->
 
@@ -28,7 +54,7 @@
 
             <?php while ( $restaurants->have_posts() ) : $restaurants->the_post(); ?>
                 <?php get_template_part('views/restaurants/index'); ?>
-            <?php endwhile; wp_reset_postdata(); ?>
+            <?php endwhile; ?>
 
             <!-- Pagination -->
             <?php if( !is_front_page() ) : ?>
@@ -37,8 +63,12 @@
 
         <?php else : ?>
             <?php get_template_part( 'views/errors/404-posts' ); ?>
-        <?php endif; wp_reset_postdata(); wp_reset_query(); ?>
+        <?php endif; wp_reset_query(); ?>
 
     </div> <!-- Restaurants grid end -->
+
+    <?php endwhile; else: ?>
+        <?php get_template_part( 'views/errors/404-posts' ); ?>
+    <?php endif; ?>
 
 </div> <!-- Restaurants results end -->
