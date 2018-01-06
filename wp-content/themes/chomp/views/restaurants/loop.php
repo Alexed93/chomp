@@ -1,3 +1,13 @@
+<div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
+
+     <select class="btn btn--sorting-options"> <!-- Search results sorting options start -->
+         <option value="relevance">Sort by relevance</option> <!-- Relevance -->
+         <option value="name">Sort by name</option> <!-- Name -->
+         <option value="options">Sort by features</option> <!-- Features -->
+     </select> <!-- Search results sorting options end  -->
+
+</div> <!-- Search results sorting end -->
+
 <div class="results test--flexbox"> <!-- Restaurants results start -->
 
     <?php
