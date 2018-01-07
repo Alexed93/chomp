@@ -60,6 +60,11 @@ $formatted_telephone = chomp_format_tel($telephone);
 
 // Get slider images
 $images = filterValidACF('restaurant_gallery_image', 6);
+if( $images ) :
+    $images = filterValidACF('restaurant_gallery_image', 6);
+else:
+    $images = get_stylesheet_directory_uri() . "/assets/dist/imgs/placeholder_restaurant.svg";
+endif;
 
 // Get downloads
 $downloads = filterValidACF('restaurant_downloadable_file', 6);
