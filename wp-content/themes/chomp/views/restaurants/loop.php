@@ -1,15 +1,3 @@
-<div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
-
-     <select class="btn btn--sorting-options"> <!-- Search results sorting options start -->
-         <option value="relevance">Sort by relevance</option> <!-- Relevance -->
-         <option value="name">Sort by name</option> <!-- Name -->
-         <option value="options">Sort by features</option> <!-- Features -->
-     </select> <!-- Search results sorting options end  -->
-
-</div> <!-- Search results sorting end -->
-
-<div class="results test--flexbox"> <!-- Restaurants results start -->
-
     <?php
 
             $excludes = '';
@@ -31,7 +19,7 @@
                     // Get remaining restaurants
                     $restaurants = chomp_get_restaurants(
                         $excludes = $featured_restaurant,
-                        $text = ''
+                        $search_text = ''
                     );
 
                 endif;
@@ -39,11 +27,11 @@
             } elseif ( isset($_GET['search']) && !empty($_GET['search']) ) {
 
                 // Get remaining restaurants from search text
-                $text = $_GET['search'];
+                $search_text = $_GET['search'];
 
                 $restaurants = chomp_get_restaurants(
                     $excludes = '',
-                    $text
+                    $search_text
                 );
 
             } else {
@@ -51,11 +39,25 @@
                 // Get remaining restaurants
                 $restaurants = chomp_get_restaurants(
                     $excludes = '',
-                    $text = ''
+                    $search_text = ''
                 );
 
             }
     ?>
+
+<?php if( !is_front_page() ) : ?>
+    <div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
+
+         <select class="btn btn--sorting-options"> <!-- Search results sorting options start -->
+             <option value="relevance">Sort by relevance</option> <!-- Relevance -->
+             <option value="name">Sort by name</option> <!-- Name -->
+             <option value="options">Sort by features</option> <!-- Features -->
+         </select> <!-- Search results sorting options end  -->
+
+    </div> <!-- Search results sorting end -->
+<?php endif; ?>
+
+<div class="results test--flexbox"> <!-- Restaurants results start -->
 
     <div class="grid grid--flex results--grid"> <!-- Restaurants grid start -->
 
