@@ -22,14 +22,17 @@ get_header();
 
 // Hero image
 $hero_image = get_field('hero_image');
-if( $hero_image ){
-    $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
-}
+if( $hero_image ) :
+    $hero_image_url = $hero_image['sizes']['hero'];
+else:
+    $hero_image_url = get_stylesheet_directory_uri() . "/assets/dist/imgs/placeholder_restaurant.svg";
+endif;
 
+// Get remaining restaurants from search text
 $total_posts = '';
 
 if ( isset($_GET['search']) && !empty($_GET['search']) ) {
-// Get remaining restaurants from search text
+
     $text = $_GET['search'];
     $restaurants = chomp_get_restaurants(
         $excludes = '',

@@ -14,6 +14,14 @@
 // Get the header
 get_header();
 
+// Hero image
+$hero_image = get_field('hero_image');
+if( $hero_image ) :
+    $hero_image_url = $hero_image['sizes']['hero'];
+else:
+    $hero_image_url = get_stylesheet_directory_uri() . "/assets/dist/imgs/placeholder_restaurant.svg";
+endif;
+
 // Get featured cuisine
 $featured_cuisines = get_field('featured_cuisine', 7);
 $opening_icon = 'icon--opening--';
@@ -32,12 +40,6 @@ else:
     $phone_icon .= 'default';
     $download_icon .= 'default';
 endif;
-
-// Hero image
-$hero_image = get_field('hero_image');
-if( $hero_image ){
-    $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
-}
 
 // Get cuisine
 $restaurant_cuisine = get_the_terms( get_the_ID(), 'cuisine' );

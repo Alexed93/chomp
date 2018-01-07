@@ -19,9 +19,11 @@ get_header();
 
 // Hero image
 $hero_image = get_field('hero_image');
-if( $hero_image ){
-    $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
-}
+if( $hero_image ) :
+    $hero_image_url = $hero_image['sizes']['hero'];
+else:
+    $hero_image_url = get_stylesheet_directory_uri() . "/assets/dist/imgs/placeholder_restaurant.svg";
+endif;
 
 // Check the time of day and generate the correct message
 // With help from https://stackoverflow.com/questions/8652502/run-code-depending-on-the-time-of-day
