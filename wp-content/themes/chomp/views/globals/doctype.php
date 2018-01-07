@@ -65,4 +65,4 @@ endif;
 
 ?>
 
-<body class="debug <?php echo $site_color; ?>">
+<body class="<?php echo $site_color; ?>">
