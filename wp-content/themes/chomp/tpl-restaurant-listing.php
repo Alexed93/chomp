@@ -83,7 +83,7 @@ if ( isset($_GET['search']) && !empty($_GET['search']) ) {
 
                 <div class="search-area cf"> <!-- Search area start -->
 
-                    <h3 class="u-push-bottom/2 u-weight-medium">Search again</h3>
+                    <h3 class="u-push-bottom/2 u-weight-medium">Search</h3>
 
                     <form class="u-push-bottom form form-search--filter" action="/restaurants/" method="get"> <!-- Search form start -->
 

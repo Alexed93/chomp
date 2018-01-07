@@ -140,9 +140,15 @@ fieldset:last-child {
     max-width: 300px;
 }
 
-.form-search--filter {
-    .popular__link {
-        color: $color-text;
+.form-search--filter input.search {
+    @include respond-min($bp3) {
+        max-width: 400px;
+    }
+}
+
+.form-search--filter button.search-submit {
+    @include respond-min($bp3) {
+        left: 400px;
     }
 }
 

@@ -172,19 +172,12 @@ button.search-submit {
     width: 60px;
     height: 60px;
     top: 0;
-
-    @include respond-min($bp2) {
-        position: sticky;
-        margin-left: -5px;
-    }
 }
 
 .form-buttons {
     width: 100%;
     clear: both;
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
+
 }
 
 .filter_clear, .submit {
