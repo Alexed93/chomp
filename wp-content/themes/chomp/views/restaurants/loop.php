@@ -11,7 +11,6 @@
 <div class="results test--flexbox"> <!-- Restaurants results start -->
 
     <?php
-        if ( have_posts() ): while ( have_posts() ): the_post();
 
             $excludes = '';
             $featured_restaurant = '';
@@ -76,9 +75,5 @@
         <?php endif; wp_reset_query(); ?>
 
     </div> <!-- Restaurants grid end -->
-
-    <?php endwhile; else: ?>
-        <?php get_template_part( 'views/errors/404-posts' ); ?>
-    <?php endif; ?>
 
 </div> <!-- Restaurants results end -->
