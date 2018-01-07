@@ -230,4 +230,4 @@
 .u-rounded  { border-radius: 100%; }
 .u-curved   { border-radius: $base; }
 .u-bordered { border: ($base/2) solid $white; }
-.u-bordered-none { border: none; }
+.u-bordered-none { border: none !important; }
