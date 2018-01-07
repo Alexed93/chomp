@@ -14,6 +14,25 @@
 // Get the header
 get_header();
 
+// Get featured cuisine
+$featured_cuisines = get_field('featured_cuisine', 7);
+$opening_icon = 'icon--opening--';
+$website_icon = 'icon--website--';
+$phone_icon = 'icon--phone--';
+$download_icon = 'icon--download--';
+
+if (null !== $featured_cuisines) :
+    $opening_icon .= $featured_cuisines->name;
+    $website_icon .= $featured_cuisines->name;
+    $phone_icon .= $featured_cuisines->name;
+    $download_icon .= $featured_cuisines->name;
+else:
+    $opening_icon .= 'default';
+    $website_icon .= 'default';
+    $phone_icon .= 'default';
+    $download_icon .= 'default';
+endif;
+
 // Hero image
 $hero_image = get_field('hero_image');
 if( $hero_image ){
@@ -70,21 +89,21 @@ $map = get_field('restaurant_google_map');
 
             <?php if($images): ?>
 
-            <div class="slider slider-for"> <!-- Slick slider start -->
-            <?php foreach ($images as $image) : ?>
-                <img src="<?php echo $image['sizes']['gallery']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
-            <?php endforeach; ?>
-            </div> <!-- Slick slider end -->
-
-            <div class="slider-nav"> <!-- Slick slider navigation start -->
+                <div class="slider slider-for"> <!-- Slick slider start -->
                 <?php foreach ($images as $image) : ?>
-                    <img src="<?php echo $image['sizes']['gallery_thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
+                    <img src="<?php echo $image['sizes']['gallery']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
                 <?php endforeach; ?>
-            </div> <!-- Slick slider navigation end -->
+                </div> <!-- Slick slider end -->
 
-            <?php else: ?>
+                <div class="slider-nav"> <!-- Slick slider navigation start -->
+                    <?php foreach ($images as $image) : ?>
+                        <img src="<?php echo $image['sizes']['gallery_thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" /> <!-- Slick slider image -->
+                    <?php endforeach; ?>
+                </div> <!-- Slick slider navigation end -->
 
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/imgs/placeholder_restaurant.svg" alt="There are no images of this restaurant available." /> <!-- Slick slider image -->
+                <?php else: ?>
+
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/dist/imgs/placeholder_restaurant.svg" alt="There are no images of this restaurant available." /> <!-- Slick slider image -->
 
             <?php endif; ?>
 
@@ -99,7 +118,7 @@ $map = get_field('restaurant_google_map');
             <?php if($telephone): ?>
             <!-- Restaurant detail - phone number - start -->
             <div class="detail__section detail__section--phone u-push-bottom">
-                <span class="icon icon--medium icon--Phone u-float-left u-push-right"></span>
+                <span class="icon icon--medium u-float-left u-push-right <?php echo $phone_icon; ?>"></span>
                 <h2 class="u-weight-medium epsilon u-zero-bottom">Phone number:</h2>
                 <a href="tel:<?php echo $formatted_telephone; ?>" class="epsilon u-weight-light"><?php echo $telephone; ?></a>
             </div>
@@ -109,7 +128,7 @@ $map = get_field('restaurant_google_map');
             <?php if($website): ?>
             <!-- Restaurant detail - website - start -->
             <div class="detail__section detail__section--web u-push-bottom">
-                <span class="icon icon--medium icon--Website u-float-left u-push-right"></span>
+                <span class="icon icon--medium u-float-left u-push-right <?php echo $website_icon; ?>"></span>
                 <h2 class="u-weight-medium epsilon u-zero-bottom">Website:</h2>
                 <a href="<?php echo $website; ?>" class="epsilon u-weight-light"><?php echo $website; ?></a>
             </div>
@@ -118,7 +137,7 @@ $map = get_field('restaurant_google_map');
 
             <!-- Restaurant detail - opening hours - start -->
             <div class="detail__section detail__section--opening u-push-bottom">
-                <span class="icon icon--medium icon--Opening u-float-left u-push-right"></span>
+                <span class="icon icon--medium u-float-left u-push-right <?php echo $opening_icon; ?>"></span>
                 <h2 class="u-weight-medium epsilon u-zero-bottom">Opening hours:</h2>
 
                 <?php
@@ -246,7 +265,7 @@ $map = get_field('restaurant_google_map');
                     <?php foreach ($downloads as $download) : ?>
                         <div class="download__link u-display-inline u-push-right@2"> <!-- Restaurant download start -->
                             <a href="<?php echo $download['url']; ?>"> <!-- Restaurant download file -->
-                                <span class="icon icon--xlarge icon--download u-push-bottom/2 download__icon"></span> <!-- Restaurant download icon -->
+                                <span class="icon icon--xlarge u-push-bottom/2 download__icon <?php echo $download_icon; ?>"></span> <!-- Restaurant download icon -->
                                 <p class="u-zero-bottom"><?php echo $download['title']; ?></p> <!-- Restaurant download title -->
                             </a>
                         </div> <!-- Restaurant download end -->

@@ -4,6 +4,8 @@
 
 .icon--Chinese { background-image: url('png/Chinese.png'); background-repeat: no-repeat; }
 
+.icon--Combined Shape { background-image: url('png/Combined Shape.png'); background-repeat: no-repeat; }
+
 .icon--English { background-image: url('png/English.png'); background-repeat: no-repeat; }
 
 .icon--Family-Friendly { background-image: url('png/Family-Friendly.png'); background-repeat: no-repeat; }
@@ -22,6 +24,8 @@
 
 .icon--Phone { background-image: url('png/Phone.png'); background-repeat: no-repeat; }
 
+.icon--Rectangle 4 { background-image: url('png/Rectangle 4.png'); background-repeat: no-repeat; }
+
 .icon--Thai { background-image: url('png/Thai.png'); background-repeat: no-repeat; }
 
 .icon--Website { background-image: url('png/Website.png'); background-repeat: no-repeat; }
@@ -29,6 +33,20 @@
 .icon--chevron-down-white { background-image: url('png/chevron-down-white.png'); background-repeat: no-repeat; }
 
 .icon--chevron-right-white { background-image: url('png/chevron-right-white.png'); background-repeat: no-repeat; }
+
+.icon--download--American { background-image: url('png/download--American.png'); background-repeat: no-repeat; }
+
+.icon--download--Chinese { background-image: url('png/download--Chinese.png'); background-repeat: no-repeat; }
+
+.icon--download--English { background-image: url('png/download--English.png'); background-repeat: no-repeat; }
+
+.icon--download--French { background-image: url('png/download--French.png'); background-repeat: no-repeat; }
+
+.icon--download--Indian { background-image: url('png/download--Indian.png'); background-repeat: no-repeat; }
+
+.icon--download--Italian { background-image: url('png/download--Italian.png'); background-repeat: no-repeat; }
+
+.icon--download--Thai { background-image: url('png/download--Thai.png'); background-repeat: no-repeat; }
 
 .icon--download { background-image: url('png/download.png'); background-repeat: no-repeat; }
 
@@ -90,6 +108,34 @@
 
 .icon--menu-open { background-image: url('png/menu-open.png'); background-repeat: no-repeat; }
 
+.icon--opening--American { background-image: url('png/opening--American.png'); background-repeat: no-repeat; }
+
+.icon--opening--Chinese { background-image: url('png/opening--Chinese.png'); background-repeat: no-repeat; }
+
+.icon--opening--English { background-image: url('png/opening--English.png'); background-repeat: no-repeat; }
+
+.icon--opening--French { background-image: url('png/opening--French.png'); background-repeat: no-repeat; }
+
+.icon--opening--Indian { background-image: url('png/opening--Indian.png'); background-repeat: no-repeat; }
+
+.icon--opening--Italian { background-image: url('png/opening--Italian.png'); background-repeat: no-repeat; }
+
+.icon--opening--Thai { background-image: url('png/opening--Thai.png'); background-repeat: no-repeat; }
+
+.icon--phone--American { background-image: url('png/phone--American.png'); background-repeat: no-repeat; }
+
+.icon--phone--Chinese { background-image: url('png/phone--Chinese.png'); background-repeat: no-repeat; }
+
+.icon--phone--English { background-image: url('png/phone--English.png'); background-repeat: no-repeat; }
+
+.icon--phone--French { background-image: url('png/phone--French.png'); background-repeat: no-repeat; }
+
+.icon--phone--Indian { background-image: url('png/phone--Indian.png'); background-repeat: no-repeat; }
+
+.icon--phone--Italian { background-image: url('png/phone--Italian.png'); background-repeat: no-repeat; }
+
+.icon--phone--Thai { background-image: url('png/phone--Thai.png'); background-repeat: no-repeat; }
+
 .icon--search { background-image: url('png/search.png'); background-repeat: no-repeat; }
 
 .icon--select { background-image: url('png/select.png'); background-repeat: no-repeat; }
@@ -117,4 +163,18 @@
 .icon--twitter--italian { background-image: url('png/twitter--italian.png'); background-repeat: no-repeat; }
 
 .icon--user-icon { background-image: url('png/user-icon.png'); background-repeat: no-repeat; }
+
+.icon--website--American { background-image: url('png/website--American.png'); background-repeat: no-repeat; }
+
+.icon--website--Chinese { background-image: url('png/website--Chinese.png'); background-repeat: no-repeat; }
+
+.icon--website--English { background-image: url('png/website--English.png'); background-repeat: no-repeat; }
+
+.icon--website--French { background-image: url('png/website--French.png'); background-repeat: no-repeat; }
+
+.icon--website--Indian { background-image: url('png/website--Indian.png'); background-repeat: no-repeat; }
+
+.icon--website--Italian { background-image: url('png/website--Italian.png'); background-repeat: no-repeat; }
+
+.icon--website--Thai { background-image: url('png/website--Thai.png'); background-repeat: no-repeat; }
 

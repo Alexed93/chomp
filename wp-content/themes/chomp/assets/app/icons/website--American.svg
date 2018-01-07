@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Website</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="20" cy="20" r="20"></circle>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Website">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" stroke="#DFDFDF" fill="#FFFFFF" xlink:href="#path-1"></use>
+            <text id="www." mask="url(#mask-2)" font-family="OpenSans-SemiBold, Open Sans" font-size="10" font-weight="500" fill="#1B99FF">
+                <tspan x="6.19042969" y="23">www.</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop----Detail---Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-70.000000, -1978.000000)">
+        <g id="Group-4" transform="translate(50.000000, 1844.000000)">
+            <g id="Group-2" transform="translate(20.000000, 134.000000)">
+                <rect id="Rectangle-12" fill="#FFFFFF" x="0" y="0" width="90" height="90"></rect>
+                <path d="M50,40 L62,40 L45.5,58 L29,40 L40,40 L40,10 L50,10 L50,40 Z" id="Combined-Shape" fill="#F2A109"></path>
+                <rect id="Rectangle-4" fill="#F2A109" transform="translate(45.000000, 73.000000) rotate(90.000000) translate(-45.000000, -73.000000) " x="40" y="43" width="10" height="60"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
