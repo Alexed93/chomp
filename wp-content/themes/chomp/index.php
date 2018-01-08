@@ -15,6 +15,21 @@
 
 
 
+
+
+
+
+// IGNORE THIS TEMPLATE PLEASE MARC
+
+
+
+
+
+
+
+
+
+
 // Get the header
 get_header();
 
@@ -24,13 +39,8 @@ if( $hero_image ){
     $hero_image_url = !empty( $hero_image ) ? $hero_image['sizes']['hero'] : '';
 }
 
-global $post;
-$post_slug = $post->post_name;
-
 ?>
-<pre>
-<?php print_r($post); ?>
-</pre>
+
 <main>
 
     <div class="hero hero--index | u-push-top" <?php if($hero_image_url): ?> style="background-image: url('<?php echo $hero_image_url; ?>');" <?php endif; ?>> <!-- Hero start -->
