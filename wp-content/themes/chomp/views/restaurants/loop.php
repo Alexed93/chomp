@@ -17,25 +17,29 @@
                         $featured_restaurant[] = $excluded->ID;
                     endforeach;
 
-                    // Get remaining restaurants
+                    // Run the custom query with excludes
                     $restaurants = chomp_get_restaurants(
                         $excludes = $featured_restaurant,
                         $search_text = ''
                     );
 
                 endif;
-
+            // Checks to see: IF there is a search box AND it's not empty OR a restaurant feature checkbox has been ticket
             } elseif ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) ) {
 
-                // Get remaining restaurants from search text
+                // Assign any text in the search box to a variable
                 $search_text = $_GET['search'];
 
-                 if(!empty($_GET['restaurant_feature'])) {
-                     foreach($_GET['restaurant_feature'] as $selected){
-                         $search_text = chomp_format_search($selected);
-                     }
-                 }
+                // Check to see if the restaurant_feature array (the checkboxes) are not all empty
+                if( !empty($_GET['restaurant_feature']) ) {
+                    // For each value in the array...
+                    foreach($_GET['restaurant_feature'] as $selected) {
+                        // Try tidy up (get rid of special chars and what)
+                        $search_text = chomp_format_search($selected);
+                    }
+                }
 
+                // Run the custom query with whatever was in the search box
                 $restaurants = chomp_get_restaurants(
                     $excludes = '',
                     $search_text
@@ -43,14 +47,16 @@
 
             } else {
 
-                if(!empty($_GET['restaurant_feature'])){
-                    // Loop to store and display values of individual checked checkbox.
-                    foreach($_GET['restaurant_feature'] as $selected){
+                // Check to see if the restaurant_feature array (the checkboxes) are not all empty
+                if( !empty($_GET['restaurant_feature']) ) {
+                    // For each value in the array...
+                    foreach($_GET['restaurant_feature'] as $selected) {
+                        // Try tidy up (get rid of special chars and what)
                         $search_text = chomp_format_search($selected);
                     }
                 }
 
-                // Get remaining restaurants
+                // Run the custom query
                 $restaurants = chomp_get_restaurants(
                     $excludes = '',
                     $search_text
@@ -59,6 +65,7 @@
             }
     ?>
 
+<!-- If it's not the front page, make this sort by thing -->
 <?php if( !is_front_page() ) : ?>
     <div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
 
