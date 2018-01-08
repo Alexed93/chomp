@@ -58,7 +58,7 @@
 
             }
     ?>
-<?php var_dump($search_text); ?>
+
 <?php if( !is_front_page() ) : ?>
     <div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
 

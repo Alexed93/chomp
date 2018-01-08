@@ -28,28 +28,36 @@ else:
     $hero_image_url = get_stylesheet_directory_uri() . "/assets/dist/imgs/placeholder_restaurant.svg";
 endif;
 
-// Get remaining restaurants from search text
+// Declare the variables for the total posts and search term text
 $total_posts = '';
 $search_terms = '';
 
+// Checks to see: IF there is a search box AND it's not empty OR a restaurant feature checkbox has been ticket
 if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) ) {
 
+    // Assign any text in the search box to a variable
     $search_text = $_GET['search'];
 
+    // Run the custom query with whatever was in the search box
     $restaurants = chomp_get_restaurants(
         $excludes = '',
         $search_text
     );
 
+    // Check to see if the restaurant_feature array (the checkboxes) are not all empty
     if(!empty($_GET['restaurant_feature'])) {
+        // For each value in the array...
         foreach($_GET['restaurant_feature'] as $selected){
+            // Try tidy up (get rid of special chars and what)
             $search_text = chomp_format_search($selected);
+            // Try make a nicer search term -> BROKE AT THE MOMENT
             $search_terms = "”" . esc_html($restaurants->query_vars['s'], 1) . "” and ”" . $search_text . "”";
         }
     } else {
         $search_terms = "”" . esc_html($restaurants->query_vars['s'], 1) . "”";
     }
 
+    // Get a figure for the total amount of posts brought back
     $total_posts = chomp_total_posts($restaurants);
 }
 
@@ -65,9 +73,11 @@ if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaura
 
                     <h1 class="u-align-center u-push-bottom/2 alpha">Showing
                         <span class="u-weight-medium">
+                            <!-- Total posts brought back -->
                             <?php echo $total_posts; ?>
                         </span> total results for
                         <span class="u-weight-medium">
+                            <!-- Queried terms -->
                             <?php echo $search_terms; ?>
                         </span>
                     </h1>
