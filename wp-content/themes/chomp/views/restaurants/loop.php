@@ -25,7 +25,7 @@
 
                 endif;
             // Checks to see: IF there is a search box AND it's not empty OR a restaurant feature checkbox has been ticket
-            } elseif ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) ) {
+            } elseif ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) || !empty($_GET['restaurant_cuisine']) ) {
 
                 // Assign any text in the search box to a variable
                 $search_text = $_GET['search'];
@@ -34,6 +34,15 @@
                 if( !empty($_GET['restaurant_feature']) ) {
                     // For each value in the array...
                     foreach($_GET['restaurant_feature'] as $selected) {
+                        // Try tidy up (get rid of special chars and what)
+                        $search_text = chomp_format_search($selected);
+                    }
+                }
+
+                // Check to see if the restaurant_feature array (the checkboxes) are not all empty
+                if( !empty($_GET['restaurant_cuisine']) ) {
+                    // For each value in the array...
+                    foreach($_GET['restaurant_cuisine'] as $selected) {
                         // Try tidy up (get rid of special chars and what)
                         $search_text = chomp_format_search($selected);
                     }
@@ -51,6 +60,15 @@
                 if( !empty($_GET['restaurant_feature']) ) {
                     // For each value in the array...
                     foreach($_GET['restaurant_feature'] as $selected) {
+                        // Try tidy up (get rid of special chars and what)
+                        $search_text = chomp_format_search($selected);
+                    }
+                }
+
+                // Check to see if the restaurant_feature array (the checkboxes) are not all empty
+                if( !empty($_GET['restaurant_cuisine']) ) {
+                    // For each value in the array...
+                    foreach($_GET['restaurant_cuisine'] as $selected) {
                         // Try tidy up (get rid of special chars and what)
                         $search_text = chomp_format_search($selected);
                     }

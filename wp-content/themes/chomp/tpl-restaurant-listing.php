@@ -33,7 +33,7 @@ $total_posts = '';
 $search_terms = '';
 
 // Checks to see: IF there is a search box AND it's not empty OR a restaurant feature checkbox has been ticket
-if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) ) {
+if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) || !empty($_GET['restaurant_cuisine']) ) {
 
     // Assign any text in the search box to a variable
     $search_text = $_GET['search'];
@@ -45,16 +45,21 @@ if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaura
     );
 
     // Check to see if the restaurant_feature array (the checkboxes) are not all empty
-    if(!empty($_GET['restaurant_feature'])) {
+    if( !empty($_GET['restaurant_feature']) ) {
         // For each value in the array...
         foreach($_GET['restaurant_feature'] as $selected){
             // Try tidy up (get rid of special chars and what)
             $search_text = chomp_format_search($selected);
-            // Try make a nicer search term -> BROKE AT THE MOMENT
-            $search_terms = "”" . esc_html($restaurants->query_vars['s'], 1) . "” and ”" . $search_text . "”";
         }
-    } else {
-        $search_terms = "”" . esc_html($restaurants->query_vars['s'], 1) . "”";
+    }
+
+    // Check to see if the restaurant_feature array (the checkboxes) are not all empty
+    if( !empty($_GET['restaurant_cuisine']) ) {
+        // For each value in the array...
+        foreach($_GET['restaurant_cuisine'] as $selected){
+            // Try tidy up (get rid of special chars and what)
+            $search_text = chomp_format_search($selected);
+        }
     }
 
     // Get a figure for the total amount of posts brought back
@@ -143,7 +148,7 @@ if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaura
                         <ul class="list--unset options-additional__list"> <!-- Search filters (Features) form options start -->
 
                             <li class=""> <!-- Family Friendly -->
-                                <input type="checkbox" class="checkbox" name="restaurant_feature[]" id="option1" value="family">
+                                <input type="checkbox" class="checkbox" name="restaurant_feature[]" id="option1" value="family friendly">
                                 <label for="option1" class="u-display-inline u-push-left/2 u-weight-light">Family friendly</label>
                             </li>
 
@@ -173,37 +178,37 @@ if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaura
                         <ul class="options-cuisine__list list--unset cf"> <!-- Search filters (Cuisine) form options start -->
 
                             <li class=""> <!-- Chinese -->
-                                <input type="checkbox" class="checkbox" id="cuisine1" value="chinese">
+                                <input type="checkbox" class="checkbox" name="restaurant_cuisine[]" id="cuisine1" value="chinese">
                                 <label for="cuisine1" class="u-display-inline u-push-left/2 u-weight-light">Chinese</label>
                             </li>
 
                             <li class=""> <!-- English -->
-                                <input type="checkbox" class="checkbox" id="cuisine2" value="english">
+                                <input type="checkbox" class="checkbox" name="restaurant_cuisine[]" id="cuisine2" value="english">
                                 <label for="cuisine2" class="u-display-inline u-push-left/2 u-weight-light">English</label>
                             </li>
 
                             <li class=""> <!-- American -->
-                                <input type="checkbox" class="checkbox" id="cuisine3" value="american">
+                                <input type="checkbox" class="checkbox" name="restaurant_cuisine[]" id="cuisine3" value="american">
                                 <label for="cuisine3" class="u-display-inline u-push-left/2 u-weight-light">American</label>
                             </li>
 
                             <li class=""> <!-- Indian -->
-                                <input type="checkbox" class="checkbox" id="cuisine4" value="indian">
+                                <input type="checkbox" class="checkbox" name="restaurant_cuisine[]" id="cuisine4" value="indian">
                                 <label for="cuisine4" class="u-display-inline u-push-left/2 u-weight-light">Indian</label>
                             </li>
 
                             <li class=""> <!-- Italian -->
-                                <input type="checkbox" class="checkbox" id="cuisine5" value="italian">
+                                <input type="checkbox" class="checkbox" name="restaurant_cuisine[]" id="cuisine5" value="italian">
                                 <label for="cuisine5" class="u-display-inline u-push-left/2 u-weight-light">Italian</label>
                             </li>
 
                             <li class=""> <!-- French -->
-                                <input type="checkbox" class="checkbox" id="cuisine6" value="french">
+                                <input type="checkbox" class="checkbox" name="restaurant_cuisine[]" id="cuisine6" value="french">
                                 <label for="cuisine6" class="u-display-inline u-push-left/2 u-weight-light">French</label>
                             </li>
 
                             <li class=""> <!-- Thai -->
-                                <input type="checkbox" class="checkbox" id="cuisine7" value="thai">
+                                <input type="checkbox" class="checkbox" name="restaurant_cuisine[]" id="cuisine7" value="thai">
                                 <label for="cuisine7" class="u-display-inline u-push-left/2 u-weight-light">Thai</label>
                             </li>
 
