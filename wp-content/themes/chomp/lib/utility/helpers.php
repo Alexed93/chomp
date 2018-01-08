@@ -156,3 +156,15 @@ function chomp_total_posts($query) {
     return $query->found_posts;
 }
 
+
+
+
+/**
+    * Try tidy the URL for checkbox term thing
+*/
+function chomp_format_search($text){
+    $exp = "/[%5B]/";
+    $text = preg_replace($exp, '', strip_tags($text));
+    return $text;
+}
+

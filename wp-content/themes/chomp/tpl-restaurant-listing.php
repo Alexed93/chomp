@@ -30,14 +30,25 @@ endif;
 
 // Get remaining restaurants from search text
 $total_posts = '';
+$search_terms = '';
 
-if ( isset($_GET['search']) && !empty($_GET['search']) ) {
+if ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) ) {
 
-    $text = $_GET['search'];
+    $search_text = $_GET['search'];
+
     $restaurants = chomp_get_restaurants(
         $excludes = '',
-        $text
+        $search_text
     );
+
+    if(!empty($_GET['restaurant_feature'])) {
+        foreach($_GET['restaurant_feature'] as $selected){
+            $search_text = chomp_format_search($selected);
+            $search_terms = "”" . esc_html($restaurants->query_vars['s'], 1) . "” and ”" . $search_text . "”";
+        }
+    } else {
+        $search_terms = "”" . esc_html($restaurants->query_vars['s'], 1) . "”";
+    }
 
     $total_posts = chomp_total_posts($restaurants);
 }
@@ -57,7 +68,7 @@ if ( isset($_GET['search']) && !empty($_GET['search']) ) {
                             <?php echo $total_posts; ?>
                         </span> total results for
                         <span class="u-weight-medium">
-                            <?php echo "”" . esc_html($restaurants->query_vars['s'], 1) . "”"; ?>
+                            <?php echo $search_terms; ?>
                         </span>
                     </h1>
 
@@ -69,9 +80,6 @@ if ( isset($_GET['search']) && !empty($_GET['search']) ) {
 
             </h1> <!-- Dynamic depending on how many results -->
 
-            <!-- <h2 class="u-align-center u-push-bottom/2 gamma u-weight-medium">Chinese
-                <span class="u-weight-light">restaurants with</span> Family Friendly
-            </h2>  -->
             <!-- Dynamic depending on filter type -->
 
         </div> <!-- Hero container end -->
@@ -125,22 +133,22 @@ if ( isset($_GET['search']) && !empty($_GET['search']) ) {
                         <ul class="list--unset options-additional__list"> <!-- Search filters (Features) form options start -->
 
                             <li class=""> <!-- Family Friendly -->
-                                <input type="checkbox" class="checkbox" id="option1" value="family">
+                                <input type="checkbox" class="checkbox" name="restaurant_feature[]" id="option1" value="family">
                                 <label for="option1" class="u-display-inline u-push-left/2 u-weight-light">Family friendly</label>
                             </li>
 
                             <li class=""> <!-- Open late -->
-                                <input type="checkbox" class="checkbox" id="option2" value="openlate">
+                                <input type="checkbox" class="checkbox" name="restaurant_feature[]" id="option2" value="open late">
                                 <label for="option2" class="u-display-inline u-push-left/2 u-weight-light">Open late</label>
                             </li>
 
                             <li class=""> <!-- Parking -->
-                                <input type="checkbox" class="checkbox" id="option3" value="parking">
+                                <input type="checkbox" class="checkbox" name="restaurant_feature[]" id="option3" value="parking">
                                 <label for="option3" class="u-display-inline u-push-left/2 u-weight-light">Customer parking</label>
                             </li>
 
                             <li class=""> <!-- Serves alcohol -->
-                                <input type="checkbox" class="checkbox" id="option4" value="alcohol">
+                                <input type="checkbox" class="checkbox" name="restaurant_feature[]" id="option4" value="alcohol">
                                 <label for="option4" class="u-display-inline u-push-left/2 u-weight-light">Serves alcohol</label>
                             </li>
 

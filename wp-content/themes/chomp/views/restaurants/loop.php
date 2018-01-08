@@ -2,6 +2,7 @@
 
             $excludes = '';
             $featured_restaurant = '';
+            $search_text = '';
 
             if( is_front_page() ) {
 
@@ -24,10 +25,16 @@
 
                 endif;
 
-            } elseif ( isset($_GET['search']) && !empty($_GET['search']) ) {
+            } elseif ( isset($_GET['search']) && !empty($_GET['search']) || !empty($_GET['restaurant_feature']) ) {
 
                 // Get remaining restaurants from search text
                 $search_text = $_GET['search'];
+
+                 if(!empty($_GET['restaurant_feature'])) {
+                     foreach($_GET['restaurant_feature'] as $selected){
+                         $search_text = chomp_format_search($selected);
+                     }
+                 }
 
                 $restaurants = chomp_get_restaurants(
                     $excludes = '',
@@ -36,15 +43,22 @@
 
             } else {
 
+                if(!empty($_GET['restaurant_feature'])){
+                    // Loop to store and display values of individual checked checkbox.
+                    foreach($_GET['restaurant_feature'] as $selected){
+                        $search_text = chomp_format_search($selected);
+                    }
+                }
+
                 // Get remaining restaurants
                 $restaurants = chomp_get_restaurants(
                     $excludes = '',
-                    $search_text = ''
+                    $search_text
                 );
 
             }
     ?>
-
+<?php var_dump($search_text); ?>
 <?php if( !is_front_page() ) : ?>
     <div class="u-push-top@2 u-push-bottom@2 sorting"> <!-- Search results sorting start -->
 
