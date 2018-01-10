@@ -30,6 +30,9 @@ function chomp_taxonomy_cuisine () {
                 'add_new_item' => __( 'Add New Cuisine' ),
                 'new_item_name' => __( 'New Cuisine' ),
             ),
+            'capabilities' => array(
+                'assign_terms' => 'assign_cuisine',
+            ),
             'public' => true,
             'show_in_nav_menus' => true,
             'show_ui' => true,
