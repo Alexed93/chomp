@@ -27,7 +27,7 @@ endif;
 
 // Check the time of day and generate the correct message
 // With help from https://stackoverflow.com/questions/8652502/run-code-depending-on-the-time-of-day
-date_default_timezone_set('UTC');
+date_default_timezone_set('Europe/London');
 
 $hour = date('H', time());
 $month = date('F', time());
@@ -256,7 +256,7 @@ $featured_restaurants = get_field('featured_restaurants');
 
     <div class="container additional-restaurants cf"> <!-- Additional restaurants start -->
 
-        <h1 class="beta u-push-top sub-heading--inverted u-weight-medium">Other popular restaruants in Leeds</h1>
+        <h1 class="beta u-push-top sub-heading--inverted u-weight-medium">Other popular restaurants in Leeds</h1>
 
         <?php get_template_part('views/restaurants/loop'); ?> <!-- Additional restaurants results -->
 

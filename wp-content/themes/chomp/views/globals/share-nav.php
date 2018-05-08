@@ -15,6 +15,7 @@
 ?>
 
 <div class="share-nav u-push-top">
+
     <h2 class="delta u-push-bottom/2">Share this restaurant</h2>
 
     <nav class="list--inline" role="menu" aria-label="Share Links">
